@@ -12,10 +12,6 @@
       "text": {
         "type": "string"
       },
-      "parse_tree": {
-        "description": "Parse tree in Penn Treebank format",
-        "type": "string"
-      },
       "annotations": {
         "type": "array",
         "items": {
@@ -74,7 +70,8 @@
     "required": [
       "id",
       "text",
-      "parse_tree"
+      "annotations",
+      "relations"
     ]
   }
 }

@@ -9,8 +9,8 @@ Options:
     -v           create vocabularies [default: False]
     -m           create matrix [default: False]
     -s           create shortest path matrix [default: False]
-    -t           test matrix [default: False]
     -d           create doc2vec [default: False]
+    -t           test matrix format [default: False]
 """
 import docopt
 import logging
