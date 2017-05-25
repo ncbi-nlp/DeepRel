@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Dataset to train/test a CNN model",
+  "title": "CNN",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "parse_tree": {
+        "description": "Parse tree in Penn Treebank format",
+        "type": "string"
+      },
+      "annotations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "Protein"
+              ]
+            },
+            "text": {
+              "type": "string"
+            },
+            "start": {
+              "type": "number",
+              "minimum": 0
+            },
+            "end": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": ["id", "text", "start", "end", "type"]
+        }
+      },
+      "relations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "arg1": {
+              "type": "string"
+            },
+            "arg2": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string",
+              "enum": [
+                "PPI-False",
+                "PPI-True"
+              ]
+            }
+          },
+          "required": ["id", "arg1", "arg2", "label"]
+        }
+      }
+    },
+    "required": [
+      "id",
+      "text",
+      "parse_tree"
+    ]
+  }
+}

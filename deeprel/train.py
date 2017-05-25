@@ -33,7 +33,15 @@ def read_vocabs(config):
     return vocabs
 
 
-def read_embeddings(config, embeddings):
+def read_embeddings(config):
+    embeddings = [VocabsCreater.word_embedding_file,
+                  VocabsCreater.pos_embedding_file,
+                  VocabsCreater.chunk_embedding_file,
+                  VocabsCreater.arg1_dis_embedding_file,
+                  VocabsCreater.arg2_dis_embedding_file,
+                  VocabsCreater.type_embedding_file,
+                  VocabsCreater.dependency_embedding_file]
+
     matrices = []
     for embedding in embeddings:
         filename = os.path.join(config['model_dir'], embedding)
@@ -57,23 +65,24 @@ def prepare_config(config):
     Returns:
         dict: new config
     """
+    cnn_section = config['cnn']
     newconfig = OrderedDict({
-        'model_dir': config['deeprel']['model_dir'],
-        'cnn_config': os.path.join(config['deeprel']['model_dir'], 'cnn_model_config.json'),
-        'log_dir': config['deeprel']['model_dir'],
-        'checkpoint_dir': config['deeprel']['model_dir'],
+        'model_dir': cnn_section['model_dir'],
+        'cnn_config': os.path.join(cnn_section['model_dir'], 'cnn_model_config.json'),
+        'log_dir': cnn_section['model_dir'],
+        'checkpoint_dir': cnn_section['model_dir'],
         #
-        'train_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['training_set'] + '.npz'),
-        'train_sp_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['training_set'] + '-sp.npz'),
-        'train_doc_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['training_set'] + '-doc.npz'),
+        'train_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '.npz'),
+        'train_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-sp.npz'),
+        'train_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-doc.npz'),
         #
-        'dev_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['dev_set'] + '.npz'),
-        'dev_sp_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['dev_set'] + '-sp.npz'),
-        'dev_doc_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['dev_set'] + '-doc.npz'),
+        'dev_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.npz'),
+        'dev_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-sp.npz'),
+        'dev_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-doc.npz'),
         #
-        'test_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['test_set'] + '.npz'),
-        'test_sp_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['test_set'] + '-sp.npz'),
-        'test_doc_matrix': os.path.join(config['deeprel']['model_dir'], config['deeprel']['test_set'] + '-doc.npz'),
+        'test_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.npz'),
+        'test_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-sp.npz'),
+        'test_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-doc.npz'),
     })
     return newconfig
 
@@ -88,19 +97,11 @@ def main(argv):
     oldconfig = configparser.ConfigParser()
     oldconfig.read(arguments['INI_FILE'])
 
-    embeddings = [VocabsCreater.word_embedding_file,
-                  VocabsCreater.pos_embedding_file,
-                  VocabsCreater.chunk_embedding_file,
-                  VocabsCreater.arg1_dis_embedding_file,
-                  VocabsCreater.arg2_dis_embedding_file,
-                  VocabsCreater.type_embedding_file,
-                  VocabsCreater.dependency_embedding_file]
-
     newconfig = prepare_config(oldconfig)
     # read vocabs
     vocabs = read_vocabs(newconfig)
     # read embeddings
-    matrices = read_embeddings(newconfig, embeddings)
+    matrices = read_embeddings(newconfig)
 
     x_train, y_train = create_matrix.read_matrix(newconfig['train_matrix'])
     x_dev, y_dev = create_matrix.read_matrix(newconfig['dev_matrix'])

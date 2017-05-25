@@ -1,0 +1,6405 @@
+[
+  {
+    "id": "AIMed.d7.s56", 
+    "text": "The purpose of the present comparative immunohistochemical study was to compare rates of cell adhesion molecule (E-cadherin) and protease [stromelysin-3 (ST-3)] expression in groups of de novo (n=64) and ex adenoma (n=42) lesions in order to see whether their more aggressive behavior is associated with decreased cell adhesion and increased protease expression.", 
+    "annotations": [
+      {
+        "id": "AIMed.d7.s56.e0", 
+        "type": "Protein", 
+        "text": "E-cadherin", 
+        "start": 113, 
+        "end": 123
+      }, 
+      {
+        "id": "AIMed.d7.s56.e1", 
+        "type": "Protein", 
+        "text": "stromelysin-3", 
+        "start": 139, 
+        "end": 152
+      }, 
+      {
+        "id": "AIMed.d7.s56.e2", 
+        "type": "Protein", 
+        "text": "ST-3", 
+        "start": 154, 
+        "end": 158
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d7.s56.p0", 
+        "arg1": "AIMed.d7.s56.e0", 
+        "arg2": "AIMed.d7.s56.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d7.s56.p1", 
+        "arg1": "AIMed.d7.s56.e0", 
+        "arg2": "AIMed.d7.s56.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d7.s56.p2", 
+        "arg1": "AIMed.d7.s56.e1", 
+        "arg2": "AIMed.d7.s56.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d10.s84", 
+    "text": "We postulate that the mechanism of bone induction is based on the secretion of bone morphogenetic proteins BMP-4 and BMP-6 by the grafted HeLa cells.", 
+    "annotations": [
+      {
+        "id": "AIMed.d10.s84.e0", 
+        "type": "Protein", 
+        "text": "BMP-4", 
+        "start": 107, 
+        "end": 112
+      }, 
+      {
+        "id": "AIMed.d10.s84.e1", 
+        "type": "Protein", 
+        "text": "BMP-6", 
+        "start": 117, 
+        "end": 122
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d10.s84.p0", 
+        "arg1": "AIMed.d10.s84.e0", 
+        "arg2": "AIMed.d10.s84.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d14.s117", 
+    "text": "Concentrations of glial fibrillary acidic protein (GFAp) and light subunit neurofilament protein (NFL) in cerebrospinal fluid (CSF) were measured in patients with second-stage Trypanosoma brucei gambiense sleeping sickness.", 
+    "annotations": [
+      {
+        "id": "AIMed.d14.s117.e0", 
+        "type": "Protein", 
+        "text": "glial fibrillary acidic protein", 
+        "start": 18, 
+        "end": 49
+      }, 
+      {
+        "id": "AIMed.d14.s117.e1", 
+        "type": "Protein", 
+        "text": "GFAp", 
+        "start": 51, 
+        "end": 55
+      }, 
+      {
+        "id": "AIMed.d14.s117.e2", 
+        "type": "Protein", 
+        "text": "light subunit neurofilament protein", 
+        "start": 61, 
+        "end": 96
+      }, 
+      {
+        "id": "AIMed.d14.s117.e3", 
+        "type": "Protein", 
+        "text": "NFL", 
+        "start": 98, 
+        "end": 101
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d14.s117.p0", 
+        "arg1": "AIMed.d14.s117.e0", 
+        "arg2": "AIMed.d14.s117.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d14.s117.p1", 
+        "arg1": "AIMed.d14.s117.e0", 
+        "arg2": "AIMed.d14.s117.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d14.s117.p2", 
+        "arg1": "AIMed.d14.s117.e0", 
+        "arg2": "AIMed.d14.s117.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d14.s117.p3", 
+        "arg1": "AIMed.d14.s117.e1", 
+        "arg2": "AIMed.d14.s117.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d14.s117.p4", 
+        "arg1": "AIMed.d14.s117.e1", 
+        "arg2": "AIMed.d14.s117.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d14.s117.p5", 
+        "arg1": "AIMed.d14.s117.e2", 
+        "arg2": "AIMed.d14.s117.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d18.s157", 
+    "text": "We established a strong correlation between chromatin activity of lymphocytes and the serum concentration of IL-1beta, IL-6, and IL-10, which are the active participants in the pro- and anti-inflammatory program in atherogenesis.", 
+    "annotations": [
+      {
+        "id": "AIMed.d18.s157.e0", 
+        "type": "Protein", 
+        "text": "IL-1beta", 
+        "start": 109, 
+        "end": 117
+      }, 
+      {
+        "id": "AIMed.d18.s157.e1", 
+        "type": "Protein", 
+        "text": "IL-6", 
+        "start": 119, 
+        "end": 123
+      }, 
+      {
+        "id": "AIMed.d18.s157.e2", 
+        "type": "Protein", 
+        "text": "IL-10", 
+        "start": 129, 
+        "end": 134
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d18.s157.p0", 
+        "arg1": "AIMed.d18.s157.e0", 
+        "arg2": "AIMed.d18.s157.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d18.s157.p1", 
+        "arg1": "AIMed.d18.s157.e0", 
+        "arg2": "AIMed.d18.s157.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d18.s157.p2", 
+        "arg1": "AIMed.d18.s157.e1", 
+        "arg2": "AIMed.d18.s157.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d23.s194", 
+    "text": "In contrast, in normal nasal tissues, COX-2 labeling was only found in the vascular wall, and the expression was weaker--a finding demonstrating that COX-2 is upregulated in nasal polyps.", 
+    "annotations": [
+      {
+        "id": "AIMed.d23.s194.e0", 
+        "type": "Protein", 
+        "text": "COX-2", 
+        "start": 38, 
+        "end": 43
+      }, 
+      {
+        "id": "AIMed.d23.s194.e1", 
+        "type": "Protein", 
+        "text": "COX-2", 
+        "start": 150, 
+        "end": 155
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d23.s194.p0", 
+        "arg1": "AIMed.d23.s194.e0", 
+        "arg2": "AIMed.d23.s194.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d25.s204", 
+    "text": "The objective of this study was to measure the concentrations of tumor necrosis factor-alpha (TNFalpha) in pleural and peritoneal effusions of different causes and to verify whether TNFalpha, alpha-1-antitrypsin (alpha1AT), and complement factors C3 and C4 can be used in the differential diagnosis of serous effusion.", 
+    "annotations": [
+      {
+        "id": "AIMed.d25.s204.e0", 
+        "type": "Protein", 
+        "text": "tumor necrosis factor-alpha", 
+        "start": 65, 
+        "end": 92
+      }, 
+      {
+        "id": "AIMed.d25.s204.e1", 
+        "type": "Protein", 
+        "text": "TNFalpha", 
+        "start": 94, 
+        "end": 102
+      }, 
+      {
+        "id": "AIMed.d25.s204.e2", 
+        "type": "Protein", 
+        "text": "TNFalpha", 
+        "start": 182, 
+        "end": 190
+      }, 
+      {
+        "id": "AIMed.d25.s204.e3", 
+        "type": "Protein", 
+        "text": "alpha-1-antitrypsin", 
+        "start": 192, 
+        "end": 211
+      }, 
+      {
+        "id": "AIMed.d25.s204.e4", 
+        "type": "Protein", 
+        "text": "alpha1AT", 
+        "start": 213, 
+        "end": 221
+      }, 
+      {
+        "id": "AIMed.d25.s204.e5", 
+        "type": "Protein", 
+        "text": "C3", 
+        "start": 247, 
+        "end": 249
+      }, 
+      {
+        "id": "AIMed.d25.s204.e6", 
+        "type": "Protein", 
+        "text": "C4", 
+        "start": 254, 
+        "end": 256
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d25.s204.p0", 
+        "arg1": "AIMed.d25.s204.e0", 
+        "arg2": "AIMed.d25.s204.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p1", 
+        "arg1": "AIMed.d25.s204.e0", 
+        "arg2": "AIMed.d25.s204.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p2", 
+        "arg1": "AIMed.d25.s204.e0", 
+        "arg2": "AIMed.d25.s204.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p3", 
+        "arg1": "AIMed.d25.s204.e0", 
+        "arg2": "AIMed.d25.s204.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p4", 
+        "arg1": "AIMed.d25.s204.e0", 
+        "arg2": "AIMed.d25.s204.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p5", 
+        "arg1": "AIMed.d25.s204.e0", 
+        "arg2": "AIMed.d25.s204.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p6", 
+        "arg1": "AIMed.d25.s204.e1", 
+        "arg2": "AIMed.d25.s204.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p7", 
+        "arg1": "AIMed.d25.s204.e1", 
+        "arg2": "AIMed.d25.s204.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p8", 
+        "arg1": "AIMed.d25.s204.e1", 
+        "arg2": "AIMed.d25.s204.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p9", 
+        "arg1": "AIMed.d25.s204.e1", 
+        "arg2": "AIMed.d25.s204.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p10", 
+        "arg1": "AIMed.d25.s204.e1", 
+        "arg2": "AIMed.d25.s204.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p11", 
+        "arg1": "AIMed.d25.s204.e2", 
+        "arg2": "AIMed.d25.s204.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p12", 
+        "arg1": "AIMed.d25.s204.e2", 
+        "arg2": "AIMed.d25.s204.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p13", 
+        "arg1": "AIMed.d25.s204.e2", 
+        "arg2": "AIMed.d25.s204.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p14", 
+        "arg1": "AIMed.d25.s204.e2", 
+        "arg2": "AIMed.d25.s204.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p15", 
+        "arg1": "AIMed.d25.s204.e3", 
+        "arg2": "AIMed.d25.s204.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p16", 
+        "arg1": "AIMed.d25.s204.e3", 
+        "arg2": "AIMed.d25.s204.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p17", 
+        "arg1": "AIMed.d25.s204.e3", 
+        "arg2": "AIMed.d25.s204.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p18", 
+        "arg1": "AIMed.d25.s204.e4", 
+        "arg2": "AIMed.d25.s204.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p19", 
+        "arg1": "AIMed.d25.s204.e4", 
+        "arg2": "AIMed.d25.s204.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d25.s204.p20", 
+        "arg1": "AIMed.d25.s204.e5", 
+        "arg2": "AIMed.d25.s204.e6", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d26.s214", 
+    "text": "Differential expression of granulysin and perforin by NK cells in cancer patients and correlation of impaired granulysin expression withprogression of cancer.", 
+    "annotations": [
+      {
+        "id": "AIMed.d26.s214.e0", 
+        "type": "Protein", 
+        "text": "granulysin", 
+        "start": 27, 
+        "end": 37
+      }, 
+      {
+        "id": "AIMed.d26.s214.e1", 
+        "type": "Protein", 
+        "text": "perforin", 
+        "start": 42, 
+        "end": 50
+      }, 
+      {
+        "id": "AIMed.d26.s214.e2", 
+        "type": "Protein", 
+        "text": "granulysin", 
+        "start": 110, 
+        "end": 120
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d26.s214.p0", 
+        "arg1": "AIMed.d26.s214.e0", 
+        "arg2": "AIMed.d26.s214.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d26.s214.p1", 
+        "arg1": "AIMed.d26.s214.e0", 
+        "arg2": "AIMed.d26.s214.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d26.s214.p2", 
+        "arg1": "AIMed.d26.s214.e1", 
+        "arg2": "AIMed.d26.s214.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d28.s234", 
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].", 
+    "annotations": [
+      {
+        "id": "AIMed.d28.s234.e0", 
+        "type": "Protein", 
+        "text": "GITR", 
+        "start": 62, 
+        "end": 66
+      }, 
+      {
+        "id": "AIMed.d28.s234.e1", 
+        "type": "Protein", 
+        "text": "GITR ligand", 
+        "start": 62, 
+        "end": 73
+      }, 
+      {
+        "id": "AIMed.d28.s234.e2", 
+        "type": "Protein", 
+        "text": "hGITRL", 
+        "start": 75, 
+        "end": 81
+      }, 
+      {
+        "id": "AIMed.d28.s234.e3", 
+        "type": "Protein", 
+        "text": "hGITR", 
+        "start": 108, 
+        "end": 113
+      }, 
+      {
+        "id": "AIMed.d28.s234.e4", 
+        "type": "Protein", 
+        "text": "mGITR", 
+        "start": 199, 
+        "end": 204
+      }, 
+      {
+        "id": "AIMed.d28.s234.e5", 
+        "type": "Protein", 
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein", 
+        "start": 162, 
+        "end": 213
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d28.s234.p0", 
+        "arg1": "AIMed.d28.s234.e0", 
+        "arg2": "AIMed.d28.s234.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p1", 
+        "arg1": "AIMed.d28.s234.e0", 
+        "arg2": "AIMed.d28.s234.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p2", 
+        "arg1": "AIMed.d28.s234.e0", 
+        "arg2": "AIMed.d28.s234.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p3", 
+        "arg1": "AIMed.d28.s234.e0", 
+        "arg2": "AIMed.d28.s234.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p4", 
+        "arg1": "AIMed.d28.s234.e0", 
+        "arg2": "AIMed.d28.s234.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p5", 
+        "arg1": "AIMed.d28.s234.e1", 
+        "arg2": "AIMed.d28.s234.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p6", 
+        "arg1": "AIMed.d28.s234.e1", 
+        "arg2": "AIMed.d28.s234.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p7", 
+        "arg1": "AIMed.d28.s234.e1", 
+        "arg2": "AIMed.d28.s234.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p8", 
+        "arg1": "AIMed.d28.s234.e1", 
+        "arg2": "AIMed.d28.s234.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p9", 
+        "arg1": "AIMed.d28.s234.e2", 
+        "arg2": "AIMed.d28.s234.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p10", 
+        "arg1": "AIMed.d28.s234.e2", 
+        "arg2": "AIMed.d28.s234.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p11", 
+        "arg1": "AIMed.d28.s234.e2", 
+        "arg2": "AIMed.d28.s234.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p12", 
+        "arg1": "AIMed.d28.s234.e3", 
+        "arg2": "AIMed.d28.s234.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p13", 
+        "arg1": "AIMed.d28.s234.e3", 
+        "arg2": "AIMed.d28.s234.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d28.s234.p14", 
+        "arg1": "AIMed.d28.s234.e4", 
+        "arg2": "AIMed.d28.s234.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d29.s244", 
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.", 
+    "annotations": [
+      {
+        "id": "AIMed.d29.s244.e0", 
+        "type": "Protein", 
+        "text": "IL-8", 
+        "start": 79, 
+        "end": 83
+      }, 
+      {
+        "id": "AIMed.d29.s244.e1", 
+        "type": "Protein", 
+        "text": "IL-8", 
+        "start": 130, 
+        "end": 134
+      }, 
+      {
+        "id": "AIMed.d29.s244.e2", 
+        "type": "Protein", 
+        "text": "IL-8 receptor subtypes A", 
+        "start": 130, 
+        "end": 154
+      }, 
+      {
+        "id": "AIMed.d29.s244.e3", 
+        "type": "Protein", 
+        "text": "CXCR1", 
+        "start": 156, 
+        "end": 161
+      }, 
+      {
+        "id": "AIMed.d29.s244.e4", 
+        "type": "Protein", 
+        "text": "CXCR2", 
+        "start": 170, 
+        "end": 175
+      }, 
+      {
+        "id": "AIMed.d29.s244.e5", 
+        "type": "Protein", 
+        "text": "Duffy antigen", 
+        "start": 188, 
+        "end": 201
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d29.s244.p0", 
+        "arg1": "AIMed.d29.s244.e0", 
+        "arg2": "AIMed.d29.s244.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p1", 
+        "arg1": "AIMed.d29.s244.e0", 
+        "arg2": "AIMed.d29.s244.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p2", 
+        "arg1": "AIMed.d29.s244.e0", 
+        "arg2": "AIMed.d29.s244.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p3", 
+        "arg1": "AIMed.d29.s244.e0", 
+        "arg2": "AIMed.d29.s244.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p4", 
+        "arg1": "AIMed.d29.s244.e0", 
+        "arg2": "AIMed.d29.s244.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p5", 
+        "arg1": "AIMed.d29.s244.e1", 
+        "arg2": "AIMed.d29.s244.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p6", 
+        "arg1": "AIMed.d29.s244.e1", 
+        "arg2": "AIMed.d29.s244.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p7", 
+        "arg1": "AIMed.d29.s244.e1", 
+        "arg2": "AIMed.d29.s244.e4", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p8", 
+        "arg1": "AIMed.d29.s244.e1", 
+        "arg2": "AIMed.d29.s244.e5", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p9", 
+        "arg1": "AIMed.d29.s244.e2", 
+        "arg2": "AIMed.d29.s244.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p10", 
+        "arg1": "AIMed.d29.s244.e2", 
+        "arg2": "AIMed.d29.s244.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p11", 
+        "arg1": "AIMed.d29.s244.e2", 
+        "arg2": "AIMed.d29.s244.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p12", 
+        "arg1": "AIMed.d29.s244.e3", 
+        "arg2": "AIMed.d29.s244.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p13", 
+        "arg1": "AIMed.d29.s244.e3", 
+        "arg2": "AIMed.d29.s244.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d29.s244.p14", 
+        "arg1": "AIMed.d29.s244.e4", 
+        "arg2": "AIMed.d29.s244.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d30.s252", 
+    "text": "Yeast two-hybrid assay, GST binding assay and immunoprecipitation demonstrated that delta-catenin interacted with a hydrophilic loop region in the endoproteolytic C-terminal fragment of PS1, but not with that of PS-2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d30.s252.e0", 
+        "type": "Protein", 
+        "text": "delta-catenin", 
+        "start": 84, 
+        "end": 97
+      }, 
+      {
+        "id": "AIMed.d30.s252.e1", 
+        "type": "Protein", 
+        "text": "PS1", 
+        "start": 186, 
+        "end": 189
+      }, 
+      {
+        "id": "AIMed.d30.s252.e2", 
+        "type": "Protein", 
+        "text": "PS-2", 
+        "start": 212, 
+        "end": 216
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d30.s252.p0", 
+        "arg1": "AIMed.d30.s252.e0", 
+        "arg2": "AIMed.d30.s252.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d30.s252.p1", 
+        "arg1": "AIMed.d30.s252.e0", 
+        "arg2": "AIMed.d30.s252.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d30.s252.p2", 
+        "arg1": "AIMed.d30.s252.e1", 
+        "arg2": "AIMed.d30.s252.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d31.s262", 
+    "text": "Here, we demonstrate that TR6 specifically binds two cellular ligands, LIGHT (herpes virus entry mediator (HVEM)-L) and Fas ligand (FasL/CD95L).", 
+    "annotations": [
+      {
+        "id": "AIMed.d31.s262.e0", 
+        "type": "Protein", 
+        "text": "TR6", 
+        "start": 26, 
+        "end": 29
+      }, 
+      {
+        "id": "AIMed.d31.s262.e1", 
+        "type": "Protein", 
+        "text": "LIGHT", 
+        "start": 71, 
+        "end": 76
+      }, 
+      {
+        "id": "AIMed.d31.s262.e2", 
+        "type": "Protein", 
+        "text": "HVEM", 
+        "start": 107, 
+        "end": 111
+      }, 
+      {
+        "id": "AIMed.d31.s262.e3", 
+        "type": "Protein", 
+        "text": "herpes virus entry mediator (HVEM)-L", 
+        "start": 78, 
+        "end": 114
+      }, 
+      {
+        "id": "AIMed.d31.s262.e4", 
+        "type": "Protein", 
+        "text": "Fas ligand", 
+        "start": 120, 
+        "end": 130
+      }, 
+      {
+        "id": "AIMed.d31.s262.e5", 
+        "type": "Protein", 
+        "text": "FasL", 
+        "start": 132, 
+        "end": 136
+      }, 
+      {
+        "id": "AIMed.d31.s262.e6", 
+        "type": "Protein", 
+        "text": "CD95L", 
+        "start": 137, 
+        "end": 142
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d31.s262.p0", 
+        "arg1": "AIMed.d31.s262.e0", 
+        "arg2": "AIMed.d31.s262.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p1", 
+        "arg1": "AIMed.d31.s262.e0", 
+        "arg2": "AIMed.d31.s262.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p2", 
+        "arg1": "AIMed.d31.s262.e0", 
+        "arg2": "AIMed.d31.s262.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p3", 
+        "arg1": "AIMed.d31.s262.e0", 
+        "arg2": "AIMed.d31.s262.e4", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p4", 
+        "arg1": "AIMed.d31.s262.e0", 
+        "arg2": "AIMed.d31.s262.e5", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p5", 
+        "arg1": "AIMed.d31.s262.e0", 
+        "arg2": "AIMed.d31.s262.e6", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p6", 
+        "arg1": "AIMed.d31.s262.e1", 
+        "arg2": "AIMed.d31.s262.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p7", 
+        "arg1": "AIMed.d31.s262.e1", 
+        "arg2": "AIMed.d31.s262.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p8", 
+        "arg1": "AIMed.d31.s262.e1", 
+        "arg2": "AIMed.d31.s262.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p9", 
+        "arg1": "AIMed.d31.s262.e1", 
+        "arg2": "AIMed.d31.s262.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p10", 
+        "arg1": "AIMed.d31.s262.e1", 
+        "arg2": "AIMed.d31.s262.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p11", 
+        "arg1": "AIMed.d31.s262.e2", 
+        "arg2": "AIMed.d31.s262.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p12", 
+        "arg1": "AIMed.d31.s262.e2", 
+        "arg2": "AIMed.d31.s262.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p13", 
+        "arg1": "AIMed.d31.s262.e2", 
+        "arg2": "AIMed.d31.s262.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p14", 
+        "arg1": "AIMed.d31.s262.e2", 
+        "arg2": "AIMed.d31.s262.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p15", 
+        "arg1": "AIMed.d31.s262.e3", 
+        "arg2": "AIMed.d31.s262.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p16", 
+        "arg1": "AIMed.d31.s262.e3", 
+        "arg2": "AIMed.d31.s262.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p17", 
+        "arg1": "AIMed.d31.s262.e3", 
+        "arg2": "AIMed.d31.s262.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p18", 
+        "arg1": "AIMed.d31.s262.e4", 
+        "arg2": "AIMed.d31.s262.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p19", 
+        "arg1": "AIMed.d31.s262.e4", 
+        "arg2": "AIMed.d31.s262.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d31.s262.p20", 
+        "arg1": "AIMed.d31.s262.e5", 
+        "arg2": "AIMed.d31.s262.e6", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d33.s282", 
+    "text": "Analysis of sedimentation equilibria and also of the fluorescence enhancement of suramin when bound to protein provided evidence for two suramin-binding sites on each C9 and three on each C8 in the oligomers.", 
+    "annotations": [
+      {
+        "id": "AIMed.d33.s282.e0", 
+        "type": "Protein", 
+        "text": "C9", 
+        "start": 167, 
+        "end": 169
+      }, 
+      {
+        "id": "AIMed.d33.s282.e1", 
+        "type": "Protein", 
+        "text": "C8", 
+        "start": 188, 
+        "end": 190
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d33.s282.p0", 
+        "arg1": "AIMed.d33.s282.e0", 
+        "arg2": "AIMed.d33.s282.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d35.s292", 
+    "text": "Most familial early-onset Alzheimer's disease cases are caused by mutations in the presenilin 1 (PS1) gene.", 
+    "annotations": [
+      {
+        "id": "AIMed.d35.s292.e0", 
+        "type": "Protein", 
+        "text": "presenilin 1", 
+        "start": 83, 
+        "end": 95
+      }, 
+      {
+        "id": "AIMed.d35.s292.e1", 
+        "type": "Protein", 
+        "text": "PS1", 
+        "start": 97, 
+        "end": 100
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d35.s292.p0", 
+        "arg1": "AIMed.d35.s292.e0", 
+        "arg2": "AIMed.d35.s292.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d36.s302", 
+    "text": "In a previous work, we predicted and demonstrated that the 29-42-residue fragment of beta-amyloid peptide (Abeta peptide) has in vitro capacities close to those of the tilted fragment of viral fusion proteins.", 
+    "annotations": [
+      {
+        "id": "AIMed.d36.s302.e0", 
+        "type": "Protein", 
+        "text": "beta-amyloid peptide", 
+        "start": 85, 
+        "end": 105
+      }, 
+      {
+        "id": "AIMed.d36.s302.e1", 
+        "type": "Protein", 
+        "text": "Abeta peptide", 
+        "start": 107, 
+        "end": 120
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d36.s302.p0", 
+        "arg1": "AIMed.d36.s302.e0", 
+        "arg2": "AIMed.d36.s302.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d38.s332", 
+    "text": "Identification of eotaxin-3 will further promote our understanding of the control of eosinophil trafficking and other CCR3-mediated biological phenomena.", 
+    "annotations": [
+      {
+        "id": "AIMed.d38.s332.e0", 
+        "type": "Protein", 
+        "text": "eotaxin-3", 
+        "start": 18, 
+        "end": 27
+      }, 
+      {
+        "id": "AIMed.d38.s332.e1", 
+        "type": "Protein", 
+        "text": "CCR3", 
+        "start": 118, 
+        "end": 122
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d38.s332.p0", 
+        "arg1": "AIMed.d38.s332.e0", 
+        "arg2": "AIMed.d38.s332.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d39.s342", 
+    "text": "PS1 suppressed c-jun-associated apoptosis by retinoic acid in F9 embryonic carcinoma cells, whereas this suppression of apoptosis is attenuated by mutation in PS1.", 
+    "annotations": [
+      {
+        "id": "AIMed.d39.s342.e0", 
+        "type": "Protein", 
+        "text": "PS1", 
+        "start": 0, 
+        "end": 3
+      }, 
+      {
+        "id": "AIMed.d39.s342.e1", 
+        "type": "Protein", 
+        "text": "c-jun", 
+        "start": 15, 
+        "end": 20
+      }, 
+      {
+        "id": "AIMed.d39.s342.e2", 
+        "type": "Protein", 
+        "text": "PS1", 
+        "start": 159, 
+        "end": 162
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d39.s342.p0", 
+        "arg1": "AIMed.d39.s342.e0", 
+        "arg2": "AIMed.d39.s342.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d39.s342.p1", 
+        "arg1": "AIMed.d39.s342.e0", 
+        "arg2": "AIMed.d39.s342.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d39.s342.p2", 
+        "arg1": "AIMed.d39.s342.e1", 
+        "arg2": "AIMed.d39.s342.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d41.s354", 
+    "text": "HFE binds to the transferrin receptor (TfR), a receptor by which cells acquire iron-loaded transferrin.", 
+    "annotations": [
+      {
+        "id": "AIMed.d41.s354.e0", 
+        "type": "Protein", 
+        "text": "HFE", 
+        "start": 0, 
+        "end": 3
+      }, 
+      {
+        "id": "AIMed.d41.s354.e1", 
+        "type": "Protein", 
+        "text": "transferrin", 
+        "start": 17, 
+        "end": 28
+      }, 
+      {
+        "id": "AIMed.d41.s354.e2", 
+        "type": "Protein", 
+        "text": "transferrin receptor", 
+        "start": 17, 
+        "end": 37
+      }, 
+      {
+        "id": "AIMed.d41.s354.e3", 
+        "type": "Protein", 
+        "text": "TfR", 
+        "start": 39, 
+        "end": 42
+      }, 
+      {
+        "id": "AIMed.d41.s354.e4", 
+        "type": "Protein", 
+        "text": "transferrin", 
+        "start": 91, 
+        "end": 102
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d41.s354.p0", 
+        "arg1": "AIMed.d41.s354.e0", 
+        "arg2": "AIMed.d41.s354.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p1", 
+        "arg1": "AIMed.d41.s354.e0", 
+        "arg2": "AIMed.d41.s354.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p2", 
+        "arg1": "AIMed.d41.s354.e0", 
+        "arg2": "AIMed.d41.s354.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p3", 
+        "arg1": "AIMed.d41.s354.e0", 
+        "arg2": "AIMed.d41.s354.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p4", 
+        "arg1": "AIMed.d41.s354.e1", 
+        "arg2": "AIMed.d41.s354.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p5", 
+        "arg1": "AIMed.d41.s354.e1", 
+        "arg2": "AIMed.d41.s354.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p6", 
+        "arg1": "AIMed.d41.s354.e1", 
+        "arg2": "AIMed.d41.s354.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p7", 
+        "arg1": "AIMed.d41.s354.e2", 
+        "arg2": "AIMed.d41.s354.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p8", 
+        "arg1": "AIMed.d41.s354.e2", 
+        "arg2": "AIMed.d41.s354.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d41.s354.p9", 
+        "arg1": "AIMed.d41.s354.e3", 
+        "arg2": "AIMed.d41.s354.e4", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d42.s364", 
+    "text": "Using several complementary approaches, we investigated the formation of homomeric and heteromeric complexes between the two known BMP type I receptors (BR-Ia and BR-Ib) and the BMP type II receptor (BR-II).", 
+    "annotations": [
+      {
+        "id": "AIMed.d42.s364.e0", 
+        "type": "Protein", 
+        "text": "BR-Ia", 
+        "start": 153, 
+        "end": 158
+      }, 
+      {
+        "id": "AIMed.d42.s364.e1", 
+        "type": "Protein", 
+        "text": "BR-Ib", 
+        "start": 163, 
+        "end": 168
+      }, 
+      {
+        "id": "AIMed.d42.s364.e2", 
+        "type": "Protein", 
+        "text": "BMP type II receptor", 
+        "start": 178, 
+        "end": 198
+      }, 
+      {
+        "id": "AIMed.d42.s364.e3", 
+        "type": "Protein", 
+        "text": "BR-II", 
+        "start": 200, 
+        "end": 205
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d42.s364.p0", 
+        "arg1": "AIMed.d42.s364.e0", 
+        "arg2": "AIMed.d42.s364.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d42.s364.p1", 
+        "arg1": "AIMed.d42.s364.e0", 
+        "arg2": "AIMed.d42.s364.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d42.s364.p2", 
+        "arg1": "AIMed.d42.s364.e0", 
+        "arg2": "AIMed.d42.s364.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d42.s364.p3", 
+        "arg1": "AIMed.d42.s364.e1", 
+        "arg2": "AIMed.d42.s364.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d42.s364.p4", 
+        "arg1": "AIMed.d42.s364.e1", 
+        "arg2": "AIMed.d42.s364.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d42.s364.p5", 
+        "arg1": "AIMed.d42.s364.e2", 
+        "arg2": "AIMed.d42.s364.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d44.s384", 
+    "text": "CD30L binding by CD30 is blocked by MAb that recognize epitopes belonging to cluster Group A (like Ber-H2, Ber-H8, and HRS-4) as well as cluster Group C (like HeFi-1 and M44).", 
+    "annotations": [
+      {
+        "id": "AIMed.d44.s384.e0", 
+        "type": "Protein", 
+        "text": "CD30L", 
+        "start": 0, 
+        "end": 5
+      }, 
+      {
+        "id": "AIMed.d44.s384.e1", 
+        "type": "Protein", 
+        "text": "CD30", 
+        "start": 17, 
+        "end": 21
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d44.s384.p0", 
+        "arg1": "AIMed.d44.s384.e0", 
+        "arg2": "AIMed.d44.s384.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d45.s394", 
+    "text": "Comparison of the wild-type receptor-binding domain and the Asp111-containing domain of IFN-gamma SC1 show that they are structurally equivalent but have very different electrostatic surface potentials.", 
+    "annotations": [
+      {
+        "id": "AIMed.d45.s394.e0", 
+        "type": "Protein", 
+        "text": "IFN-gamma", 
+        "start": 88, 
+        "end": 97
+      }, 
+      {
+        "id": "AIMed.d45.s394.e1", 
+        "type": "Protein", 
+        "text": "IFN-gamma SC1", 
+        "start": 88, 
+        "end": 101
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d45.s394.p0", 
+        "arg1": "AIMed.d45.s394.e0", 
+        "arg2": "AIMed.d45.s394.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d46.s404", 
+    "text": "BMP-2 is a homodimeric cysteine knot protein that, as a member of the transforming growth factor-beta (TGF-beta) superfamily, signals by oligomerizing type I and type II receptor serine-kinases in the cell membrane.", 
+    "annotations": [
+      {
+        "id": "AIMed.d46.s404.e0", 
+        "type": "Protein", 
+        "text": "BMP-2", 
+        "start": 0, 
+        "end": 5
+      }, 
+      {
+        "id": "AIMed.d46.s404.e1", 
+        "type": "Protein", 
+        "text": "transforming growth factor-beta", 
+        "start": 70, 
+        "end": 101
+      }, 
+      {
+        "id": "AIMed.d46.s404.e2", 
+        "type": "Protein", 
+        "text": "TGF-beta", 
+        "start": 103, 
+        "end": 111
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d46.s404.p0", 
+        "arg1": "AIMed.d46.s404.e0", 
+        "arg2": "AIMed.d46.s404.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d46.s404.p1", 
+        "arg1": "AIMed.d46.s404.e0", 
+        "arg2": "AIMed.d46.s404.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d46.s404.p2", 
+        "arg1": "AIMed.d46.s404.e1", 
+        "arg2": "AIMed.d46.s404.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d48.s424", 
+    "text": "The molar concentration of LEC required to induce maximum cell migration is 20- to 200-fold greater than that required for RANTES or I309, respectively.", 
+    "annotations": [
+      {
+        "id": "AIMed.d48.s424.e0", 
+        "type": "Protein", 
+        "text": "LEC", 
+        "start": 27, 
+        "end": 30
+      }, 
+      {
+        "id": "AIMed.d48.s424.e1", 
+        "type": "Protein", 
+        "text": "RANTES", 
+        "start": 123, 
+        "end": 129
+      }, 
+      {
+        "id": "AIMed.d48.s424.e2", 
+        "type": "Protein", 
+        "text": "I309", 
+        "start": 133, 
+        "end": 137
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d48.s424.p0", 
+        "arg1": "AIMed.d48.s424.e0", 
+        "arg2": "AIMed.d48.s424.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d48.s424.p1", 
+        "arg1": "AIMed.d48.s424.e0", 
+        "arg2": "AIMed.d48.s424.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d48.s424.p2", 
+        "arg1": "AIMed.d48.s424.e1", 
+        "arg2": "AIMed.d48.s424.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d49.s434", 
+    "text": "The sequences that confer on FGF-7 its specific binding to KGFR have not been identified.", 
+    "annotations": [
+      {
+        "id": "AIMed.d49.s434.e0", 
+        "type": "Protein", 
+        "text": "FGF-7", 
+        "start": 29, 
+        "end": 34
+      }, 
+      {
+        "id": "AIMed.d49.s434.e1", 
+        "type": "Protein", 
+        "text": "KGFR", 
+        "start": 59, 
+        "end": 63
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d49.s434.p0", 
+        "arg1": "AIMed.d49.s434.e0", 
+        "arg2": "AIMed.d49.s434.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d53.s469", 
+    "text": "Kaposi's sarcoma-associated herpesvirus encodes a functional homolog of human interleukin-6 (IL-6) that activates human gp130.", 
+    "annotations": [
+      {
+        "id": "AIMed.d53.s469.e0", 
+        "type": "Protein", 
+        "text": "interleukin-6", 
+        "start": 78, 
+        "end": 91
+      }, 
+      {
+        "id": "AIMed.d53.s469.e1", 
+        "type": "Protein", 
+        "text": "IL-6", 
+        "start": 93, 
+        "end": 97
+      }, 
+      {
+        "id": "AIMed.d53.s469.e2", 
+        "type": "Protein", 
+        "text": "gp130", 
+        "start": 120, 
+        "end": 125
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d53.s469.p0", 
+        "arg1": "AIMed.d53.s469.e0", 
+        "arg2": "AIMed.d53.s469.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d53.s469.p1", 
+        "arg1": "AIMed.d53.s469.e0", 
+        "arg2": "AIMed.d53.s469.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d53.s469.p2", 
+        "arg1": "AIMed.d53.s469.e1", 
+        "arg2": "AIMed.d53.s469.e2", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d54.s479", 
+    "text": "Analysis of PDGF-CC in vivo in a diabetic mouse model of delayed wound healing showed that PDGF-CC significantly enhanced repair of a full-thickness skin excision.", 
+    "annotations": [
+      {
+        "id": "AIMed.d54.s479.e0", 
+        "type": "Protein", 
+        "text": "PDGF-CC", 
+        "start": 12, 
+        "end": 19
+      }, 
+      {
+        "id": "AIMed.d54.s479.e1", 
+        "type": "Protein", 
+        "text": "PDGF-CC", 
+        "start": 91, 
+        "end": 98
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d54.s479.p0", 
+        "arg1": "AIMed.d54.s479.e0", 
+        "arg2": "AIMed.d54.s479.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d56.s499", 
+    "text": "TRAP is highly similar to an identified murine CD40 ligand both at the cDNA (82.8% identity) and the protein (77.4% identity) levels, and related to tumor necrosis factor/lymphotoxin.", 
+    "annotations": [
+      {
+        "id": "AIMed.d56.s499.e0", 
+        "type": "Protein", 
+        "text": "TRAP", 
+        "start": 0, 
+        "end": 4
+      }, 
+      {
+        "id": "AIMed.d56.s499.e1", 
+        "type": "Protein", 
+        "text": "CD40 ligand", 
+        "start": 47, 
+        "end": 58
+      }, 
+      {
+        "id": "AIMed.d56.s499.e2", 
+        "type": "Protein", 
+        "text": "lymphotoxin", 
+        "start": 171, 
+        "end": 182
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d56.s499.p0", 
+        "arg1": "AIMed.d56.s499.e0", 
+        "arg2": "AIMed.d56.s499.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d56.s499.p1", 
+        "arg1": "AIMed.d56.s499.e0", 
+        "arg2": "AIMed.d56.s499.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d56.s499.p2", 
+        "arg1": "AIMed.d56.s499.e1", 
+        "arg2": "AIMed.d56.s499.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d57.s509", 
+    "text": "As previously shown with reticulocyte lysate-reconstituted steroid receptor heteroprotein complexes, the reconstituted pp60src multiprotein complex contains hsp70, which is a major candidate for providing the protein unfoldase activity required for hsp90 association.", 
+    "annotations": [
+      {
+        "id": "AIMed.d57.s509.e0", 
+        "type": "Protein", 
+        "text": "pp60src", 
+        "start": 119, 
+        "end": 126
+      }, 
+      {
+        "id": "AIMed.d57.s509.e1", 
+        "type": "Protein", 
+        "text": "hsp70", 
+        "start": 157, 
+        "end": 162
+      }, 
+      {
+        "id": "AIMed.d57.s509.e2", 
+        "type": "Protein", 
+        "text": "hsp90", 
+        "start": 249, 
+        "end": 254
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d57.s509.p0", 
+        "arg1": "AIMed.d57.s509.e0", 
+        "arg2": "AIMed.d57.s509.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d57.s509.p1", 
+        "arg1": "AIMed.d57.s509.e0", 
+        "arg2": "AIMed.d57.s509.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d57.s509.p2", 
+        "arg1": "AIMed.d57.s509.e1", 
+        "arg2": "AIMed.d57.s509.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d63.s546", 
+    "text": "We further showed that CD26 was comodulated on the T cell surface with CD45, a known membrane-linked protein tyrosine phosphatase and that anti-CD26 was capable of precipitating CD45 from T cell lysates.", 
+    "annotations": [
+      {
+        "id": "AIMed.d63.s546.e0", 
+        "type": "Protein", 
+        "text": "CD26", 
+        "start": 23, 
+        "end": 27
+      }, 
+      {
+        "id": "AIMed.d63.s546.e1", 
+        "type": "Protein", 
+        "text": "CD45", 
+        "start": 71, 
+        "end": 75
+      }, 
+      {
+        "id": "AIMed.d63.s546.e2", 
+        "type": "Protein", 
+        "text": "CD26", 
+        "start": 144, 
+        "end": 148
+      }, 
+      {
+        "id": "AIMed.d63.s546.e3", 
+        "type": "Protein", 
+        "text": "CD45", 
+        "start": 178, 
+        "end": 182
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d63.s546.p0", 
+        "arg1": "AIMed.d63.s546.e0", 
+        "arg2": "AIMed.d63.s546.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d63.s546.p1", 
+        "arg1": "AIMed.d63.s546.e0", 
+        "arg2": "AIMed.d63.s546.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d63.s546.p2", 
+        "arg1": "AIMed.d63.s546.e0", 
+        "arg2": "AIMed.d63.s546.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d63.s546.p3", 
+        "arg1": "AIMed.d63.s546.e1", 
+        "arg2": "AIMed.d63.s546.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d63.s546.p4", 
+        "arg1": "AIMed.d63.s546.e1", 
+        "arg2": "AIMed.d63.s546.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d63.s546.p5", 
+        "arg1": "AIMed.d63.s546.e2", 
+        "arg2": "AIMed.d63.s546.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d66.s566", 
+    "text": "One was CDC2-HS, and the second was the human homolog of Xenopus CDK2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d66.s566.e0", 
+        "type": "Protein", 
+        "text": "CDC2", 
+        "start": 8, 
+        "end": 12
+      }, 
+      {
+        "id": "AIMed.d66.s566.e1", 
+        "type": "Protein", 
+        "text": "CDC2-HS", 
+        "start": 8, 
+        "end": 15
+      }, 
+      {
+        "id": "AIMed.d66.s566.e2", 
+        "type": "Protein", 
+        "text": "CDK2", 
+        "start": 65, 
+        "end": 69
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d66.s566.p0", 
+        "arg1": "AIMed.d66.s566.e0", 
+        "arg2": "AIMed.d66.s566.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d66.s566.p1", 
+        "arg1": "AIMed.d66.s566.e0", 
+        "arg2": "AIMed.d66.s566.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d66.s566.p2", 
+        "arg1": "AIMed.d66.s566.e1", 
+        "arg2": "AIMed.d66.s566.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d69.s586", 
+    "text": "Activation of protein kinase C decreases phosphorylation of c-Jun at sites that negatively regulate its DNA-binding activity.", 
+    "annotations": [
+      {
+        "id": "AIMed.d69.s586.e0", 
+        "type": "Protein", 
+        "text": "protein kinase C", 
+        "start": 14, 
+        "end": 30
+      }, 
+      {
+        "id": "AIMed.d69.s586.e1", 
+        "type": "Protein", 
+        "text": "c-Jun", 
+        "start": 60, 
+        "end": 65
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d69.s586.p0", 
+        "arg1": "AIMed.d69.s586.e0", 
+        "arg2": "AIMed.d69.s586.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d70.s599", 
+    "text": "Specifically, substitution of proline for Ala-498 significantly diminished RII alpha binding, and similar mutation of Ile-502 or Ile-507 abolished interaction.", 
+    "annotations": [
+      {
+        "id": "AIMed.d70.s599.e0", 
+        "type": "Protein", 
+        "text": "RII", 
+        "start": 75, 
+        "end": 78
+      }, 
+      {
+        "id": "AIMed.d70.s599.e1", 
+        "type": "Protein", 
+        "text": "RII alpha", 
+        "start": 75, 
+        "end": 84
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d70.s599.p0", 
+        "arg1": "AIMed.d70.s599.e0", 
+        "arg2": "AIMed.d70.s599.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d72.s609", 
+    "text": "A cellular protein that competes with SV40 T antigen for binding to the retinoblastoma gene product.", 
+    "annotations": [
+      {
+        "id": "AIMed.d72.s609.e0", 
+        "type": "Protein", 
+        "text": "SV40 T antigen", 
+        "start": 38, 
+        "end": 52
+      }, 
+      {
+        "id": "AIMed.d72.s609.e1", 
+        "type": "Protein", 
+        "text": "retinoblastoma", 
+        "start": 72, 
+        "end": 86
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d72.s609.p0", 
+        "arg1": "AIMed.d72.s609.e0", 
+        "arg2": "AIMed.d72.s609.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d76.s639", 
+    "text": "CD5 associates with the T-cell receptor zeta chain (TcR zeta)/CD3 complex and is rapidly phosphosphorylated on tyrosine residues as a result of TcR zeta/CD3 ligation.", 
+    "annotations": [
+      {
+        "id": "AIMed.d76.s639.e0", 
+        "type": "Protein", 
+        "text": "CD5", 
+        "start": 0, 
+        "end": 3
+      }, 
+      {
+        "id": "AIMed.d76.s639.e1", 
+        "type": "Protein", 
+        "text": "T-cell receptor zeta chain", 
+        "start": 24, 
+        "end": 50
+      }, 
+      {
+        "id": "AIMed.d76.s639.e2", 
+        "type": "Protein", 
+        "text": "TcR zeta", 
+        "start": 52, 
+        "end": 60
+      }, 
+      {
+        "id": "AIMed.d76.s639.e3", 
+        "type": "Protein", 
+        "text": "CD3", 
+        "start": 62, 
+        "end": 65
+      }, 
+      {
+        "id": "AIMed.d76.s639.e4", 
+        "type": "Protein", 
+        "text": "T-cell receptor zeta chain (TcR zeta)/CD3", 
+        "start": 24, 
+        "end": 65
+      }, 
+      {
+        "id": "AIMed.d76.s639.e5", 
+        "type": "Protein", 
+        "text": "TcR zeta", 
+        "start": 144, 
+        "end": 152
+      }, 
+      {
+        "id": "AIMed.d76.s639.e6", 
+        "type": "Protein", 
+        "text": "CD3", 
+        "start": 153, 
+        "end": 156
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d76.s639.p0", 
+        "arg1": "AIMed.d76.s639.e0", 
+        "arg2": "AIMed.d76.s639.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p1", 
+        "arg1": "AIMed.d76.s639.e0", 
+        "arg2": "AIMed.d76.s639.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p2", 
+        "arg1": "AIMed.d76.s639.e0", 
+        "arg2": "AIMed.d76.s639.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p3", 
+        "arg1": "AIMed.d76.s639.e0", 
+        "arg2": "AIMed.d76.s639.e4", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p4", 
+        "arg1": "AIMed.d76.s639.e0", 
+        "arg2": "AIMed.d76.s639.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p5", 
+        "arg1": "AIMed.d76.s639.e0", 
+        "arg2": "AIMed.d76.s639.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p6", 
+        "arg1": "AIMed.d76.s639.e1", 
+        "arg2": "AIMed.d76.s639.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p7", 
+        "arg1": "AIMed.d76.s639.e1", 
+        "arg2": "AIMed.d76.s639.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p8", 
+        "arg1": "AIMed.d76.s639.e1", 
+        "arg2": "AIMed.d76.s639.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p9", 
+        "arg1": "AIMed.d76.s639.e1", 
+        "arg2": "AIMed.d76.s639.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p10", 
+        "arg1": "AIMed.d76.s639.e1", 
+        "arg2": "AIMed.d76.s639.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p11", 
+        "arg1": "AIMed.d76.s639.e2", 
+        "arg2": "AIMed.d76.s639.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p12", 
+        "arg1": "AIMed.d76.s639.e2", 
+        "arg2": "AIMed.d76.s639.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p13", 
+        "arg1": "AIMed.d76.s639.e2", 
+        "arg2": "AIMed.d76.s639.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p14", 
+        "arg1": "AIMed.d76.s639.e2", 
+        "arg2": "AIMed.d76.s639.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p15", 
+        "arg1": "AIMed.d76.s639.e3", 
+        "arg2": "AIMed.d76.s639.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p16", 
+        "arg1": "AIMed.d76.s639.e3", 
+        "arg2": "AIMed.d76.s639.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p17", 
+        "arg1": "AIMed.d76.s639.e3", 
+        "arg2": "AIMed.d76.s639.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p18", 
+        "arg1": "AIMed.d76.s639.e4", 
+        "arg2": "AIMed.d76.s639.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p19", 
+        "arg1": "AIMed.d76.s639.e4", 
+        "arg2": "AIMed.d76.s639.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s639.p20", 
+        "arg1": "AIMed.d76.s639.e5", 
+        "arg2": "AIMed.d76.s639.e6", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d76.s649", 
+    "text": "CD5 interaction with p56lck represents a novel variant of a receptor-kinase complex in which receptor can also serve as substrate. ( ABSTRACT TRUNCATED AT 250 WORDS )", 
+    "annotations": [
+      {
+        "id": "AIMed.d76.s649.e0", 
+        "type": "Protein", 
+        "text": "CD5", 
+        "start": 0, 
+        "end": 3
+      }, 
+      {
+        "id": "AIMed.d76.s649.e1", 
+        "type": "Protein", 
+        "text": "ith", 
+        "start": 17, 
+        "end": 20
+      }, 
+      {
+        "id": "AIMed.d76.s649.e2", 
+        "type": "Protein", 
+        "text": "p56lck", 
+        "start": 21, 
+        "end": 27
+      }, 
+      {
+        "id": "AIMed.d76.s649.e3", 
+        "type": "Protein", 
+        "text": "e compl", 
+        "start": 74, 
+        "end": 81
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d76.s649.p0", 
+        "arg1": "AIMed.d76.s649.e0", 
+        "arg2": "AIMed.d76.s649.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s649.p1", 
+        "arg1": "AIMed.d76.s649.e0", 
+        "arg2": "AIMed.d76.s649.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d76.s649.p2", 
+        "arg1": "AIMed.d76.s649.e0", 
+        "arg2": "AIMed.d76.s649.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s649.p3", 
+        "arg1": "AIMed.d76.s649.e1", 
+        "arg2": "AIMed.d76.s649.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s649.p4", 
+        "arg1": "AIMed.d76.s649.e1", 
+        "arg2": "AIMed.d76.s649.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d76.s649.p5", 
+        "arg1": "AIMed.d76.s649.e2", 
+        "arg2": "AIMed.d76.s649.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d78.s659", 
+    "text": "A newly identified member of tumor necrosis factor receptor superfamily ( TR6 ) suppresses LIGHT-mediated apoptosis .", 
+    "annotations": [
+      {
+        "id": "AIMed.d78.s659.e0", 
+        "type": "Protein", 
+        "text": "TR6", 
+        "start": 74, 
+        "end": 77
+      }, 
+      {
+        "id": "AIMed.d78.s659.e1", 
+        "type": "Protein", 
+        "text": "LIGHT", 
+        "start": 91, 
+        "end": 96
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d78.s659.p0", 
+        "arg1": "AIMed.d78.s659.e0", 
+        "arg2": "AIMed.d78.s659.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d78.s669", 
+    "text": "Our data suggest that TR6 inhibits the interactions of LIGHT with HVEM / TR2 and LTbetaR , thereby suppressing LIGHT-mediated HT29 cell death .", 
+    "annotations": [
+      {
+        "id": "AIMed.d78.s669.e0", 
+        "type": "Protein", 
+        "text": "TR6", 
+        "start": 22, 
+        "end": 25
+      }, 
+      {
+        "id": "AIMed.d78.s669.e1", 
+        "type": "Protein", 
+        "text": "LIGHT", 
+        "start": 55, 
+        "end": 60
+      }, 
+      {
+        "id": "AIMed.d78.s669.e2", 
+        "type": "Protein", 
+        "text": "HVEM", 
+        "start": 66, 
+        "end": 70
+      }, 
+      {
+        "id": "AIMed.d78.s669.e3", 
+        "type": "Protein", 
+        "text": "TR2", 
+        "start": 73, 
+        "end": 76
+      }, 
+      {
+        "id": "AIMed.d78.s669.e4", 
+        "type": "Protein", 
+        "text": "LTbetaR", 
+        "start": 81, 
+        "end": 88
+      }, 
+      {
+        "id": "AIMed.d78.s669.e5", 
+        "type": "Protein", 
+        "text": "LIGHT", 
+        "start": 111, 
+        "end": 116
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d78.s669.p0", 
+        "arg1": "AIMed.d78.s669.e0", 
+        "arg2": "AIMed.d78.s669.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p1", 
+        "arg1": "AIMed.d78.s669.e0", 
+        "arg2": "AIMed.d78.s669.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p2", 
+        "arg1": "AIMed.d78.s669.e0", 
+        "arg2": "AIMed.d78.s669.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p3", 
+        "arg1": "AIMed.d78.s669.e0", 
+        "arg2": "AIMed.d78.s669.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p4", 
+        "arg1": "AIMed.d78.s669.e0", 
+        "arg2": "AIMed.d78.s669.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p5", 
+        "arg1": "AIMed.d78.s669.e1", 
+        "arg2": "AIMed.d78.s669.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p6", 
+        "arg1": "AIMed.d78.s669.e1", 
+        "arg2": "AIMed.d78.s669.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p7", 
+        "arg1": "AIMed.d78.s669.e1", 
+        "arg2": "AIMed.d78.s669.e4", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p8", 
+        "arg1": "AIMed.d78.s669.e1", 
+        "arg2": "AIMed.d78.s669.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p9", 
+        "arg1": "AIMed.d78.s669.e2", 
+        "arg2": "AIMed.d78.s669.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p10", 
+        "arg1": "AIMed.d78.s669.e2", 
+        "arg2": "AIMed.d78.s669.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p11", 
+        "arg1": "AIMed.d78.s669.e2", 
+        "arg2": "AIMed.d78.s669.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p12", 
+        "arg1": "AIMed.d78.s669.e3", 
+        "arg2": "AIMed.d78.s669.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p13", 
+        "arg1": "AIMed.d78.s669.e3", 
+        "arg2": "AIMed.d78.s669.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d78.s669.p14", 
+        "arg1": "AIMed.d78.s669.e4", 
+        "arg2": "AIMed.d78.s669.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d81.s689", 
+    "text": "Ligation of the extracellular domain of the cell surface receptor Fas/APO-1 (CD95) elicits a characteristic programmed death response in susceptible cells.", 
+    "annotations": [
+      {
+        "id": "AIMed.d81.s689.e0", 
+        "type": "Protein", 
+        "text": "Fas", 
+        "start": 66, 
+        "end": 69
+      }, 
+      {
+        "id": "AIMed.d81.s689.e1", 
+        "type": "Protein", 
+        "text": "APO-1", 
+        "start": 70, 
+        "end": 75
+      }, 
+      {
+        "id": "AIMed.d81.s689.e2", 
+        "type": "Protein", 
+        "text": "CD95", 
+        "start": 77, 
+        "end": 81
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d81.s689.p0", 
+        "arg1": "AIMed.d81.s689.e0", 
+        "arg2": "AIMed.d81.s689.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d81.s689.p1", 
+        "arg1": "AIMed.d81.s689.e0", 
+        "arg2": "AIMed.d81.s689.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d81.s689.p2", 
+        "arg1": "AIMed.d81.s689.e1", 
+        "arg2": "AIMed.d81.s689.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d82.s699", 
+    "text": "Using an in vitro transcription/translation assay method coupled with proteolysis studies, we have identified an 11-kDa FKBP12-rapamycin-binding domain within FRAP.", 
+    "annotations": [
+      {
+        "id": "AIMed.d82.s699.e0", 
+        "type": "Protein", 
+        "text": "FKBP12", 
+        "start": 120, 
+        "end": 126
+      }, 
+      {
+        "id": "AIMed.d82.s699.e1", 
+        "type": "Protein", 
+        "text": "FRAP", 
+        "start": 159, 
+        "end": 163
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d82.s699.p0", 
+        "arg1": "AIMed.d82.s699.e0", 
+        "arg2": "AIMed.d82.s699.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d87.s739", 
+    "text": "Activation of lacZ upon interaction of p85 with IR beta(delta C-43) was 4-fold less as compared to IR beta.", 
+    "annotations": [
+      {
+        "id": "AIMed.d87.s739.e0", 
+        "type": "Protein", 
+        "text": "p85", 
+        "start": 39, 
+        "end": 42
+      }, 
+      {
+        "id": "AIMed.d87.s739.e1", 
+        "type": "Protein", 
+        "text": "IR beta", 
+        "start": 48, 
+        "end": 55
+      }, 
+      {
+        "id": "AIMed.d87.s739.e2", 
+        "type": "Protein", 
+        "text": "delta C-43", 
+        "start": 56, 
+        "end": 66
+      }, 
+      {
+        "id": "AIMed.d87.s739.e3", 
+        "type": "Protein", 
+        "text": "IR beta", 
+        "start": 99, 
+        "end": 106
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d87.s739.p0", 
+        "arg1": "AIMed.d87.s739.e0", 
+        "arg2": "AIMed.d87.s739.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d87.s739.p1", 
+        "arg1": "AIMed.d87.s739.e0", 
+        "arg2": "AIMed.d87.s739.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d87.s739.p2", 
+        "arg1": "AIMed.d87.s739.e0", 
+        "arg2": "AIMed.d87.s739.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d87.s739.p3", 
+        "arg1": "AIMed.d87.s739.e1", 
+        "arg2": "AIMed.d87.s739.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d87.s739.p4", 
+        "arg1": "AIMed.d87.s739.e1", 
+        "arg2": "AIMed.d87.s739.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d87.s739.p5", 
+        "arg1": "AIMed.d87.s739.e2", 
+        "arg2": "AIMed.d87.s739.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d88.s749", 
+    "text": "The specificity of intehraction between G alpha i2 and nucleobindin was confirmed by an in vitro binding assay using recombinant proteins.", 
+    "annotations": [
+      {
+        "id": "AIMed.d88.s749.e0", 
+        "type": "Protein", 
+        "text": "G alpha i2", 
+        "start": 40, 
+        "end": 50
+      }, 
+      {
+        "id": "AIMed.d88.s749.e1", 
+        "type": "Protein", 
+        "text": "nucleobindin", 
+        "start": 55, 
+        "end": 67
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d88.s749.p0", 
+        "arg1": "AIMed.d88.s749.e0", 
+        "arg2": "AIMed.d88.s749.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d90.s768", 
+    "text": "Three of these clones encode DNA binding proteins (NF-IL6 beta, HMG I/Y, and SSRP), one clone encodes a chaperone protein, and another clone encodes a multifunctional phosphatase.", 
+    "annotations": [
+      {
+        "id": "AIMed.d90.s768.e0", 
+        "type": "Protein", 
+        "text": "NF-IL6 beta", 
+        "start": 51, 
+        "end": 62
+      }, 
+      {
+        "id": "AIMed.d90.s768.e1", 
+        "type": "Protein", 
+        "text": "HMG I/Y", 
+        "start": 64, 
+        "end": 71
+      }, 
+      {
+        "id": "AIMed.d90.s768.e2", 
+        "type": "Protein", 
+        "text": "SSRP", 
+        "start": 77, 
+        "end": 81
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d90.s768.p0", 
+        "arg1": "AIMed.d90.s768.e0", 
+        "arg2": "AIMed.d90.s768.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d90.s768.p1", 
+        "arg1": "AIMed.d90.s768.e0", 
+        "arg2": "AIMed.d90.s768.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d90.s768.p2", 
+        "arg1": "AIMed.d90.s768.e1", 
+        "arg2": "AIMed.d90.s768.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d92.s788", 
+    "text": "Although multimeric complexes of trkA and p75 were not detected by affinity crosslinking, immunoprecipitation of cross-linked NGF-receptor complexes with trk-specific antibodies resulted in selective immunoprecipitation of crosslinked p75.", 
+    "annotations": [
+      {
+        "id": "AIMed.d92.s788.e0", 
+        "type": "Protein", 
+        "text": "trkA", 
+        "start": 33, 
+        "end": 37
+      }, 
+      {
+        "id": "AIMed.d92.s788.e1", 
+        "type": "Protein", 
+        "text": "p75", 
+        "start": 42, 
+        "end": 45
+      }, 
+      {
+        "id": "AIMed.d92.s788.e2", 
+        "type": "Protein", 
+        "text": "NGF", 
+        "start": 126, 
+        "end": 129
+      }, 
+      {
+        "id": "AIMed.d92.s788.e3", 
+        "type": "Protein", 
+        "text": "NGF-receptor", 
+        "start": 126, 
+        "end": 138
+      }, 
+      {
+        "id": "AIMed.d92.s788.e4", 
+        "type": "Protein", 
+        "text": "trk", 
+        "start": 154, 
+        "end": 157
+      }, 
+      {
+        "id": "AIMed.d92.s788.e5", 
+        "type": "Protein", 
+        "text": "p75", 
+        "start": 235, 
+        "end": 238
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d92.s788.p0", 
+        "arg1": "AIMed.d92.s788.e0", 
+        "arg2": "AIMed.d92.s788.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p1", 
+        "arg1": "AIMed.d92.s788.e0", 
+        "arg2": "AIMed.d92.s788.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p2", 
+        "arg1": "AIMed.d92.s788.e0", 
+        "arg2": "AIMed.d92.s788.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p3", 
+        "arg1": "AIMed.d92.s788.e0", 
+        "arg2": "AIMed.d92.s788.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p4", 
+        "arg1": "AIMed.d92.s788.e0", 
+        "arg2": "AIMed.d92.s788.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p5", 
+        "arg1": "AIMed.d92.s788.e1", 
+        "arg2": "AIMed.d92.s788.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p6", 
+        "arg1": "AIMed.d92.s788.e1", 
+        "arg2": "AIMed.d92.s788.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p7", 
+        "arg1": "AIMed.d92.s788.e1", 
+        "arg2": "AIMed.d92.s788.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p8", 
+        "arg1": "AIMed.d92.s788.e1", 
+        "arg2": "AIMed.d92.s788.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p9", 
+        "arg1": "AIMed.d92.s788.e2", 
+        "arg2": "AIMed.d92.s788.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p10", 
+        "arg1": "AIMed.d92.s788.e2", 
+        "arg2": "AIMed.d92.s788.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p11", 
+        "arg1": "AIMed.d92.s788.e2", 
+        "arg2": "AIMed.d92.s788.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p12", 
+        "arg1": "AIMed.d92.s788.e3", 
+        "arg2": "AIMed.d92.s788.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p13", 
+        "arg1": "AIMed.d92.s788.e3", 
+        "arg2": "AIMed.d92.s788.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d92.s788.p14", 
+        "arg1": "AIMed.d92.s788.e4", 
+        "arg2": "AIMed.d92.s788.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d94.s798", 
+    "text": "CC CKR3 is a seven-transmembrane domain G protein-coupled receptor most closely related to the previously reported monocyte- and neutrophil-selective receptor CC CKR1 (also known as the MIP-1 alpha/RANTES receptor).", 
+    "annotations": [
+      {
+        "id": "AIMed.d94.s798.e0", 
+        "type": "Protein", 
+        "text": "CC CKR3", 
+        "start": 0, 
+        "end": 7
+      }, 
+      {
+        "id": "AIMed.d94.s798.e1", 
+        "type": "Protein", 
+        "text": "CC CKR1", 
+        "start": 159, 
+        "end": 166
+      }, 
+      {
+        "id": "AIMed.d94.s798.e2", 
+        "type": "Protein", 
+        "text": "MIP-1 alpha", 
+        "start": 186, 
+        "end": 197
+      }, 
+      {
+        "id": "AIMed.d94.s798.e3", 
+        "type": "Protein", 
+        "text": "RANTES", 
+        "start": 198, 
+        "end": 204
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d94.s798.p0", 
+        "arg1": "AIMed.d94.s798.e0", 
+        "arg2": "AIMed.d94.s798.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d94.s798.p1", 
+        "arg1": "AIMed.d94.s798.e0", 
+        "arg2": "AIMed.d94.s798.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d94.s798.p2", 
+        "arg1": "AIMed.d94.s798.e0", 
+        "arg2": "AIMed.d94.s798.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d94.s798.p3", 
+        "arg1": "AIMed.d94.s798.e1", 
+        "arg2": "AIMed.d94.s798.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d94.s798.p4", 
+        "arg1": "AIMed.d94.s798.e1", 
+        "arg2": "AIMed.d94.s798.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d94.s798.p5", 
+        "arg1": "AIMed.d94.s798.e2", 
+        "arg2": "AIMed.d94.s798.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d96.s808", 
+    "text": "It binds homophilically, i.e., PTPmu on the surface of one cell binds to PTPmu on an apposing cell, and the binding site lies within the immunoglobulin domain.", 
+    "annotations": [
+      {
+        "id": "AIMed.d96.s808.e0", 
+        "type": "Protein", 
+        "text": "PTPmu", 
+        "start": 31, 
+        "end": 36
+      }, 
+      {
+        "id": "AIMed.d96.s808.e1", 
+        "type": "Protein", 
+        "text": "PTPmu", 
+        "start": 73, 
+        "end": 78
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d96.s808.p0", 
+        "arg1": "AIMed.d96.s808.e0", 
+        "arg2": "AIMed.d96.s808.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d99.s838", 
+    "text": "The cloned CSB gene encodes a member of a protein family that includes the yeast Snf2 protein, a component of the transcriptional regulator Swi/Snf.", 
+    "annotations": [
+      {
+        "id": "AIMed.d99.s838.e0", 
+        "type": "Protein", 
+        "text": "CSB", 
+        "start": 11, 
+        "end": 14
+      }, 
+      {
+        "id": "AIMed.d99.s838.e1", 
+        "type": "Protein", 
+        "text": "Snf2", 
+        "start": 81, 
+        "end": 85
+      }, 
+      {
+        "id": "AIMed.d99.s838.e2", 
+        "type": "Protein", 
+        "text": "Swi", 
+        "start": 140, 
+        "end": 143
+      }, 
+      {
+        "id": "AIMed.d99.s838.e3", 
+        "type": "Protein", 
+        "text": "Snf", 
+        "start": 144, 
+        "end": 147
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d99.s838.p0", 
+        "arg1": "AIMed.d99.s838.e0", 
+        "arg2": "AIMed.d99.s838.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d99.s838.p1", 
+        "arg1": "AIMed.d99.s838.e0", 
+        "arg2": "AIMed.d99.s838.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d99.s838.p2", 
+        "arg1": "AIMed.d99.s838.e0", 
+        "arg2": "AIMed.d99.s838.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d99.s838.p3", 
+        "arg1": "AIMed.d99.s838.e1", 
+        "arg2": "AIMed.d99.s838.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d99.s838.p4", 
+        "arg1": "AIMed.d99.s838.e1", 
+        "arg2": "AIMed.d99.s838.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d99.s838.p5", 
+        "arg1": "AIMed.d99.s838.e2", 
+        "arg2": "AIMed.d99.s838.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d100.s850", 
+    "text": "Recombinant hTAFII250 binds directly to TBP both in vitro and in yeast, and participates in the formation of the TFIID complex.", 
+    "annotations": [
+      {
+        "id": "AIMed.d100.s850.e0", 
+        "type": "Protein", 
+        "text": "hTAFII250", 
+        "start": 12, 
+        "end": 21
+      }, 
+      {
+        "id": "AIMed.d100.s850.e1", 
+        "type": "Protein", 
+        "text": "TBP", 
+        "start": 40, 
+        "end": 43
+      }, 
+      {
+        "id": "AIMed.d100.s850.e2", 
+        "type": "Protein", 
+        "text": "TFIID", 
+        "start": 113, 
+        "end": 118
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d100.s850.p0", 
+        "arg1": "AIMed.d100.s850.e0", 
+        "arg2": "AIMed.d100.s850.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d100.s850.p1", 
+        "arg1": "AIMed.d100.s850.e0", 
+        "arg2": "AIMed.d100.s850.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d100.s850.p2", 
+        "arg1": "AIMed.d100.s850.e1", 
+        "arg2": "AIMed.d100.s850.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d102.s860", 
+    "text": "RB, the protein product of the retinoblastoma tumor-suppressor gene, regulates the activity of specific transcription factors.", 
+    "annotations": [
+      {
+        "id": "AIMed.d102.s860.e0", 
+        "type": "Protein", 
+        "text": "RB", 
+        "start": 0, 
+        "end": 2
+      }, 
+      {
+        "id": "AIMed.d102.s860.e1", 
+        "type": "Protein", 
+        "text": "retinoblastoma", 
+        "start": 31, 
+        "end": 45
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d102.s860.p0", 
+        "arg1": "AIMed.d102.s860.e0", 
+        "arg2": "AIMed.d102.s860.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d105.s890", 
+    "text": "The binding properties of these variants in vitro, and the result of using a neutralizing monoclonal antibody directed against site 3, lead to the conclusion that gp130 dimer is formed through direct binding at two independent and differently oriented sites on IL-6.", 
+    "annotations": [
+      {
+        "id": "AIMed.d105.s890.e0", 
+        "type": "Protein", 
+        "text": "gp130", 
+        "start": 163, 
+        "end": 168
+      }, 
+      {
+        "id": "AIMed.d105.s890.e1", 
+        "type": "Protein", 
+        "text": "IL-6", 
+        "start": 261, 
+        "end": 265
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d105.s890.p0", 
+        "arg1": "AIMed.d105.s890.e0", 
+        "arg2": "AIMed.d105.s890.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d107.s900", 
+    "text": "Raf-1 is a serine/threonine protein kinase positioned downstream of Ras in the mitogen-activated protein kinase cascade.", 
+    "annotations": [
+      {
+        "id": "AIMed.d107.s900.e0", 
+        "type": "Protein", 
+        "text": "Raf-1", 
+        "start": 0, 
+        "end": 5
+      }, 
+      {
+        "id": "AIMed.d107.s900.e1", 
+        "type": "Protein", 
+        "text": "Ras", 
+        "start": 68, 
+        "end": 71
+      }, 
+      {
+        "id": "AIMed.d107.s900.e2", 
+        "type": "Protein", 
+        "text": "mitogen-activated protein kinase", 
+        "start": 79, 
+        "end": 111
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d107.s900.p0", 
+        "arg1": "AIMed.d107.s900.e0", 
+        "arg2": "AIMed.d107.s900.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d107.s900.p1", 
+        "arg1": "AIMed.d107.s900.e0", 
+        "arg2": "AIMed.d107.s900.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d107.s900.p2", 
+        "arg1": "AIMed.d107.s900.e1", 
+        "arg2": "AIMed.d107.s900.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d111.s931", 
+    "text": "In neurons cAMP-dependent protein kinase II beta (PKAII beta) is sequestered in the dendritic cytoskeleton because the regulatory subunit (RII beta) of the enzyme is tightly bound by A Kinase Anchor Proteins (AKAPs).", 
+    "annotations": [
+      {
+        "id": "AIMed.d111.s931.e0", 
+        "type": "Protein", 
+        "text": "cAMP-dependent protein kinase II beta", 
+        "start": 11, 
+        "end": 48
+      }, 
+      {
+        "id": "AIMed.d111.s931.e1", 
+        "type": "Protein", 
+        "text": "PKAII beta", 
+        "start": 50, 
+        "end": 60
+      }, 
+      {
+        "id": "AIMed.d111.s931.e2", 
+        "type": "Protein", 
+        "text": "RII beta", 
+        "start": 139, 
+        "end": 147
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d111.s931.p0", 
+        "arg1": "AIMed.d111.s931.e0", 
+        "arg2": "AIMed.d111.s931.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d111.s931.p1", 
+        "arg1": "AIMed.d111.s931.e0", 
+        "arg2": "AIMed.d111.s931.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d111.s931.p2", 
+        "arg1": "AIMed.d111.s931.e1", 
+        "arg2": "AIMed.d111.s931.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d111.s941", 
+    "text": "Other NH2-terminal residues directly modulate the affinity of RII beta dimers for the AKAP75 tethering site.", 
+    "annotations": [
+      {
+        "id": "AIMed.d111.s941.e0", 
+        "type": "Protein", 
+        "text": "RII beta", 
+        "start": 62, 
+        "end": 70
+      }, 
+      {
+        "id": "AIMed.d111.s941.e1", 
+        "type": "Protein", 
+        "text": "AKAP75", 
+        "start": 86, 
+        "end": 92
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d111.s941.p0", 
+        "arg1": "AIMed.d111.s941.e0", 
+        "arg2": "AIMed.d111.s941.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d112.s951", 
+    "text": "Several phosphoproteins, including one of 72 kDa and one of 120 kDa, coprecipitated with phospholipase C-gamma 1 (PLC gamma 1).", 
+    "annotations": [
+      {
+        "id": "AIMed.d112.s951.e0", 
+        "type": "Protein", 
+        "text": "phospholipase C-gamma 1", 
+        "start": 89, 
+        "end": 112
+      }, 
+      {
+        "id": "AIMed.d112.s951.e1", 
+        "type": "Protein", 
+        "text": "PLC gamma 1", 
+        "start": 114, 
+        "end": 125
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d112.s951.p0", 
+        "arg1": "AIMed.d112.s951.e0", 
+        "arg2": "AIMed.d112.s951.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d114.s961", 
+    "text": "Syntrophin binds to an alternatively spliced exon of dystrophin.", 
+    "annotations": [
+      {
+        "id": "AIMed.d114.s961.e0", 
+        "type": "Protein", 
+        "text": "Syntrophin", 
+        "start": 0, 
+        "end": 10
+      }, 
+      {
+        "id": "AIMed.d114.s961.e1", 
+        "type": "Protein", 
+        "text": "dystrophin", 
+        "start": 53, 
+        "end": 63
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d114.s961.p0", 
+        "arg1": "AIMed.d114.s961.e0", 
+        "arg2": "AIMed.d114.s961.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d115.s971", 
+    "text": "A few general transcription factors, in particular TFIID and TFIIB, have been found to bind transcriptional activators.", 
+    "annotations": [
+      {
+        "id": "AIMed.d115.s971.e0", 
+        "type": "Protein", 
+        "text": "TFIID", 
+        "start": 51, 
+        "end": 56
+      }, 
+      {
+        "id": "AIMed.d115.s971.e1", 
+        "type": "Protein", 
+        "text": "TFIIB", 
+        "start": 61, 
+        "end": 66
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d115.s971.p0", 
+        "arg1": "AIMed.d115.s971.e0", 
+        "arg2": "AIMed.d115.s971.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d116.s981", 
+    "text": "This last observation was confirmed by affinity chromatography and immunoprecipitation, which demonstrated an interaction between Rb and UBF.", 
+    "annotations": [
+      {
+        "id": "AIMed.d116.s981.e0", 
+        "type": "Protein", 
+        "text": "Rb", 
+        "start": 130, 
+        "end": 132
+      }, 
+      {
+        "id": "AIMed.d116.s981.e1", 
+        "type": "Protein", 
+        "text": "UBF", 
+        "start": 137, 
+        "end": 140
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d116.s981.p0", 
+        "arg1": "AIMed.d116.s981.e0", 
+        "arg2": "AIMed.d116.s981.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d117.s991", 
+    "text": "Inhibin also binds to ActRII through its beta subunit, competes with the binding of activin to ActRII, but fails to form the ActRII.", 
+    "annotations": [
+      {
+        "id": "AIMed.d117.s991.e0", 
+        "type": "Protein", 
+        "text": "Inhibin", 
+        "start": 0, 
+        "end": 7
+      }, 
+      {
+        "id": "AIMed.d117.s991.e1", 
+        "type": "Protein", 
+        "text": "ActRII", 
+        "start": 22, 
+        "end": 28
+      }, 
+      {
+        "id": "AIMed.d117.s991.e2", 
+        "type": "Protein", 
+        "text": "ActRII", 
+        "start": 95, 
+        "end": 101
+      }, 
+      {
+        "id": "AIMed.d117.s991.e3", 
+        "type": "Protein", 
+        "text": "ActRII", 
+        "start": 125, 
+        "end": 131
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d117.s991.p0", 
+        "arg1": "AIMed.d117.s991.e0", 
+        "arg2": "AIMed.d117.s991.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d117.s991.p1", 
+        "arg1": "AIMed.d117.s991.e0", 
+        "arg2": "AIMed.d117.s991.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d117.s991.p2", 
+        "arg1": "AIMed.d117.s991.e0", 
+        "arg2": "AIMed.d117.s991.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d117.s991.p3", 
+        "arg1": "AIMed.d117.s991.e1", 
+        "arg2": "AIMed.d117.s991.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d117.s991.p4", 
+        "arg1": "AIMed.d117.s991.e1", 
+        "arg2": "AIMed.d117.s991.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d117.s991.p5", 
+        "arg1": "AIMed.d117.s991.e2", 
+        "arg2": "AIMed.d117.s991.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d118.s996", 
+    "text": "The p21 inhibitor of cyclin-dependent kinases controls DNA replication by interaction with PCNA.", 
+    "annotations": [
+      {
+        "id": "AIMed.d118.s996.e0", 
+        "type": "Protein", 
+        "text": "p21", 
+        "start": 4, 
+        "end": 7
+      }, 
+      {
+        "id": "AIMed.d118.s996.e1", 
+        "type": "Protein", 
+        "text": "PCNA", 
+        "start": 91, 
+        "end": 95
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d118.s996.p0", 
+        "arg1": "AIMed.d118.s996.e0", 
+        "arg2": "AIMed.d118.s996.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d119.s1011", 
+    "text": "The activation domain of CBP interacts with the basal transcription factor TFIIB through a domain that is conserved in the yeast coactivator ADA-1 (ref. 8).", 
+    "annotations": [
+      {
+        "id": "AIMed.d119.s1011.e0", 
+        "type": "Protein", 
+        "text": "CBP", 
+        "start": 25, 
+        "end": 28
+      }, 
+      {
+        "id": "AIMed.d119.s1011.e1", 
+        "type": "Protein", 
+        "text": "TFIIB", 
+        "start": 75, 
+        "end": 80
+      }, 
+      {
+        "id": "AIMed.d119.s1011.e2", 
+        "type": "Protein", 
+        "text": "ADA-1", 
+        "start": 141, 
+        "end": 146
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d119.s1011.p0", 
+        "arg1": "AIMed.d119.s1011.e0", 
+        "arg2": "AIMed.d119.s1011.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d119.s1011.p1", 
+        "arg1": "AIMed.d119.s1011.e0", 
+        "arg2": "AIMed.d119.s1011.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d119.s1011.p2", 
+        "arg1": "AIMed.d119.s1011.e1", 
+        "arg2": "AIMed.d119.s1011.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d120.s1020", 
+    "text": "Immunoblotting studies were used to confirm the binding of FXIII from fresh platelet lysates to the HSP27 fusion protein.", 
+    "annotations": [
+      {
+        "id": "AIMed.d120.s1020.e0", 
+        "type": "Protein", 
+        "text": "FXIII", 
+        "start": 59, 
+        "end": 64
+      }, 
+      {
+        "id": "AIMed.d120.s1020.e1", 
+        "type": "Protein", 
+        "text": "HSP27", 
+        "start": 100, 
+        "end": 105
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d120.s1020.p0", 
+        "arg1": "AIMed.d120.s1020.e0", 
+        "arg2": "AIMed.d120.s1020.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d125.s1070", 
+    "text": "This cytotoxicity could be abrogated by B42 fusion proteins containing Bcl-2, Bcl-X-L, or Mcl-1 but not those containing Bcl-X-S (an alternatively spliced form of Bcl-X that lacks a well-conserved 63-amino acid region).", 
+    "annotations": [
+      {
+        "id": "AIMed.d125.s1070.e0", 
+        "type": "Protein", 
+        "text": "Bcl-2", 
+        "start": 71, 
+        "end": 76
+      }, 
+      {
+        "id": "AIMed.d125.s1070.e1", 
+        "type": "Protein", 
+        "text": "Bcl-X-L", 
+        "start": 78, 
+        "end": 85
+      }, 
+      {
+        "id": "AIMed.d125.s1070.e2", 
+        "type": "Protein", 
+        "text": "Mcl-1", 
+        "start": 90, 
+        "end": 95
+      }, 
+      {
+        "id": "AIMed.d125.s1070.e3", 
+        "type": "Protein", 
+        "text": "Bcl-X-S", 
+        "start": 121, 
+        "end": 128
+      }, 
+      {
+        "id": "AIMed.d125.s1070.e4", 
+        "type": "Protein", 
+        "text": "Bcl-X", 
+        "start": 163, 
+        "end": 168
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d125.s1070.p0", 
+        "arg1": "AIMed.d125.s1070.e0", 
+        "arg2": "AIMed.d125.s1070.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p1", 
+        "arg1": "AIMed.d125.s1070.e0", 
+        "arg2": "AIMed.d125.s1070.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p2", 
+        "arg1": "AIMed.d125.s1070.e0", 
+        "arg2": "AIMed.d125.s1070.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p3", 
+        "arg1": "AIMed.d125.s1070.e0", 
+        "arg2": "AIMed.d125.s1070.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p4", 
+        "arg1": "AIMed.d125.s1070.e1", 
+        "arg2": "AIMed.d125.s1070.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p5", 
+        "arg1": "AIMed.d125.s1070.e1", 
+        "arg2": "AIMed.d125.s1070.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p6", 
+        "arg1": "AIMed.d125.s1070.e1", 
+        "arg2": "AIMed.d125.s1070.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p7", 
+        "arg1": "AIMed.d125.s1070.e2", 
+        "arg2": "AIMed.d125.s1070.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p8", 
+        "arg1": "AIMed.d125.s1070.e2", 
+        "arg2": "AIMed.d125.s1070.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d125.s1070.p9", 
+        "arg1": "AIMed.d125.s1070.e3", 
+        "arg2": "AIMed.d125.s1070.e4", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d126.s1080", 
+    "text": "In contrast, the renaturation rate for rhodanese with the groE chaperonins mirrored the committed renaturation rates following groEL depletion.", 
+    "annotations": [
+      {
+        "id": "AIMed.d126.s1080.e0", 
+        "type": "Protein", 
+        "text": "rhodanese", 
+        "start": 39, 
+        "end": 48
+      }, 
+      {
+        "id": "AIMed.d126.s1080.e1", 
+        "type": "Protein", 
+        "text": "groEL", 
+        "start": 127, 
+        "end": 132
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d126.s1080.p0", 
+        "arg1": "AIMed.d126.s1080.e0", 
+        "arg2": "AIMed.d126.s1080.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d127.s1090", 
+    "text": "Thus, gamma c mutations in at least some XSCID and XCID patients prevent normal Jak3 activation, suggesting that mutations of Jak3 may result in an XSCID-like phenotype.", 
+    "annotations": [
+      {
+        "id": "AIMed.d127.s1090.e0", 
+        "type": "Protein", 
+        "text": "Jak3", 
+        "start": 80, 
+        "end": 84
+      }, 
+      {
+        "id": "AIMed.d127.s1090.e1", 
+        "type": "Protein", 
+        "text": "Jak3", 
+        "start": 126, 
+        "end": 130
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d127.s1090.p0", 
+        "arg1": "AIMed.d127.s1090.e0", 
+        "arg2": "AIMed.d127.s1090.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d129.s1110", 
+    "text": "Bacterially overexpressed human p23 was used to raise several monoclonal antibodies to p23.", 
+    "annotations": [
+      {
+        "id": "AIMed.d129.s1110.e0", 
+        "type": "Protein", 
+        "text": "p23", 
+        "start": 32, 
+        "end": 35
+      }, 
+      {
+        "id": "AIMed.d129.s1110.e1", 
+        "type": "Protein", 
+        "text": "p23", 
+        "start": 87, 
+        "end": 90
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d129.s1110.p0", 
+        "arg1": "AIMed.d129.s1110.e0", 
+        "arg2": "AIMed.d129.s1110.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d131.s1121", 
+    "text": "The predicted amino acid sequence of hIL-10R is 60% identical and 73% similar to mouse IL-10R (mIL-10R). rIL-10R expressed in an IL-3-dependent mouse pro-B cell line (Ba/F3) binds hIL-10 with high affinity (200 to 250 pM), and the transfected cells exhibit a proliferative response to hIL-10.", 
+    "annotations": [
+      {
+        "id": "AIMed.d131.s1121.e0", 
+        "type": "Protein", 
+        "text": "hIL-10R", 
+        "start": 37, 
+        "end": 44
+      }, 
+      {
+        "id": "AIMed.d131.s1121.e1", 
+        "type": "Protein", 
+        "text": "IL-10R", 
+        "start": 87, 
+        "end": 93
+      }, 
+      {
+        "id": "AIMed.d131.s1121.e2", 
+        "type": "Protein", 
+        "text": "mIL-10R", 
+        "start": 95, 
+        "end": 102
+      }, 
+      {
+        "id": "AIMed.d131.s1121.e3", 
+        "type": "Protein", 
+        "text": "rIL-10R", 
+        "start": 105, 
+        "end": 112
+      }, 
+      {
+        "id": "AIMed.d131.s1121.e4", 
+        "type": "Protein", 
+        "text": "IL-3", 
+        "start": 129, 
+        "end": 133
+      }, 
+      {
+        "id": "AIMed.d131.s1121.e5", 
+        "type": "Protein", 
+        "text": "hIL-10", 
+        "start": 180, 
+        "end": 186
+      }, 
+      {
+        "id": "AIMed.d131.s1121.e6", 
+        "type": "Protein", 
+        "text": "hIL-10", 
+        "start": 285, 
+        "end": 291
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d131.s1121.p0", 
+        "arg1": "AIMed.d131.s1121.e0", 
+        "arg2": "AIMed.d131.s1121.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p1", 
+        "arg1": "AIMed.d131.s1121.e0", 
+        "arg2": "AIMed.d131.s1121.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p2", 
+        "arg1": "AIMed.d131.s1121.e0", 
+        "arg2": "AIMed.d131.s1121.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p3", 
+        "arg1": "AIMed.d131.s1121.e0", 
+        "arg2": "AIMed.d131.s1121.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p4", 
+        "arg1": "AIMed.d131.s1121.e0", 
+        "arg2": "AIMed.d131.s1121.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p5", 
+        "arg1": "AIMed.d131.s1121.e0", 
+        "arg2": "AIMed.d131.s1121.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p6", 
+        "arg1": "AIMed.d131.s1121.e1", 
+        "arg2": "AIMed.d131.s1121.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p7", 
+        "arg1": "AIMed.d131.s1121.e1", 
+        "arg2": "AIMed.d131.s1121.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p8", 
+        "arg1": "AIMed.d131.s1121.e1", 
+        "arg2": "AIMed.d131.s1121.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p9", 
+        "arg1": "AIMed.d131.s1121.e1", 
+        "arg2": "AIMed.d131.s1121.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p10", 
+        "arg1": "AIMed.d131.s1121.e1", 
+        "arg2": "AIMed.d131.s1121.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p11", 
+        "arg1": "AIMed.d131.s1121.e2", 
+        "arg2": "AIMed.d131.s1121.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p12", 
+        "arg1": "AIMed.d131.s1121.e2", 
+        "arg2": "AIMed.d131.s1121.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p13", 
+        "arg1": "AIMed.d131.s1121.e2", 
+        "arg2": "AIMed.d131.s1121.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p14", 
+        "arg1": "AIMed.d131.s1121.e2", 
+        "arg2": "AIMed.d131.s1121.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p15", 
+        "arg1": "AIMed.d131.s1121.e3", 
+        "arg2": "AIMed.d131.s1121.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p16", 
+        "arg1": "AIMed.d131.s1121.e3", 
+        "arg2": "AIMed.d131.s1121.e5", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p17", 
+        "arg1": "AIMed.d131.s1121.e3", 
+        "arg2": "AIMed.d131.s1121.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p18", 
+        "arg1": "AIMed.d131.s1121.e4", 
+        "arg2": "AIMed.d131.s1121.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p19", 
+        "arg1": "AIMed.d131.s1121.e4", 
+        "arg2": "AIMed.d131.s1121.e6", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d131.s1121.p20", 
+        "arg1": "AIMed.d131.s1121.e5", 
+        "arg2": "AIMed.d131.s1121.e6", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d134.s1141", 
+    "text": "A protein ligand for the ECK receptor protein-tyrosine kinase has been isolated by using the extracellular domain (ECK-X) of the receptor as an affinity reagent.", 
+    "annotations": [
+      {
+        "id": "AIMed.d134.s1141.e0", 
+        "type": "Protein", 
+        "text": "ECK", 
+        "start": 25, 
+        "end": 28
+      }, 
+      {
+        "id": "AIMed.d134.s1141.e1", 
+        "type": "Protein", 
+        "text": "ECK receptor protein-tyrosine kinase", 
+        "start": 25, 
+        "end": 61
+      }, 
+      {
+        "id": "AIMed.d134.s1141.e2", 
+        "type": "Protein", 
+        "text": "ECK", 
+        "start": 115, 
+        "end": 118
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d134.s1141.p0", 
+        "arg1": "AIMed.d134.s1141.e0", 
+        "arg2": "AIMed.d134.s1141.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d134.s1141.p1", 
+        "arg1": "AIMed.d134.s1141.e0", 
+        "arg2": "AIMed.d134.s1141.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d134.s1141.p2", 
+        "arg1": "AIMed.d134.s1141.e1", 
+        "arg2": "AIMed.d134.s1141.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d137.s1161", 
+    "text": "We show that the POU homeodomain of Oct2 and the evolutionarily conserved C-terminal core domain of TBP are both required and sufficient for the interaction.", 
+    "annotations": [
+      {
+        "id": "AIMed.d137.s1161.e0", 
+        "type": "Protein", 
+        "text": "Oct2", 
+        "start": 36, 
+        "end": 40
+      }, 
+      {
+        "id": "AIMed.d137.s1161.e1", 
+        "type": "Protein", 
+        "text": "TBP", 
+        "start": 100, 
+        "end": 103
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d137.s1161.p0", 
+        "arg1": "AIMed.d137.s1161.e0", 
+        "arg2": "AIMed.d137.s1161.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d139.s1171", 
+    "text": "Spectrin cagliari. an Ala-->Gly substitution in helix 1 of beta spectrin repeat 17 that severely disrupts the structure and self-association of the erythrocyte spectrin heterodimer.", 
+    "annotations": [
+      {
+        "id": "AIMed.d139.s1171.e0", 
+        "type": "Protein", 
+        "text": "Spectrin cagliari", 
+        "start": 0, 
+        "end": 17
+      }, 
+      {
+        "id": "AIMed.d139.s1171.e1", 
+        "type": "Protein", 
+        "text": "beta spectrin", 
+        "start": 59, 
+        "end": 72
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d139.s1171.p0", 
+        "arg1": "AIMed.d139.s1171.e0", 
+        "arg2": "AIMed.d139.s1171.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d140.s1183", 
+    "text": "In HeLa cells, Cdi1 is expressed at the G1 to S transition, and the protein forms stable complexes with Cdk2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d140.s1183.e0", 
+        "type": "Protein", 
+        "text": "Cdi1", 
+        "start": 15, 
+        "end": 19
+      }, 
+      {
+        "id": "AIMed.d140.s1183.e1", 
+        "type": "Protein", 
+        "text": "Cdk2", 
+        "start": 104, 
+        "end": 108
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d140.s1183.p0", 
+        "arg1": "AIMed.d140.s1183.e0", 
+        "arg2": "AIMed.d140.s1183.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d141.s1193", 
+    "text": "Cotransfection experiments indicate that CIP1 and SV40 T antigen function in a mutually antagonistic manner to control cell cycle progression.", 
+    "annotations": [
+      {
+        "id": "AIMed.d141.s1193.e0", 
+        "type": "Protein", 
+        "text": "CIP1", 
+        "start": 41, 
+        "end": 45
+      }, 
+      {
+        "id": "AIMed.d141.s1193.e1", 
+        "type": "Protein", 
+        "text": "SV40 T antigen", 
+        "start": 50, 
+        "end": 64
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d141.s1193.p0", 
+        "arg1": "AIMed.d141.s1193.e0", 
+        "arg2": "AIMed.d141.s1193.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d142.s1203", 
+    "text": "The physical interaction between YY1 and Sp1 may thus form the basis for the functional interplay observed previously.", 
+    "annotations": [
+      {
+        "id": "AIMed.d142.s1203.e0", 
+        "type": "Protein", 
+        "text": "YY1", 
+        "start": 33, 
+        "end": 36
+      }, 
+      {
+        "id": "AIMed.d142.s1203.e1", 
+        "type": "Protein", 
+        "text": "Sp1", 
+        "start": 41, 
+        "end": 44
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d142.s1203.p0", 
+        "arg1": "AIMed.d142.s1203.e0", 
+        "arg2": "AIMed.d142.s1203.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d146.s1233", 
+    "text": "We have previously demonstrated such changes by affinity cross-linking studies, and have shown that unstimulated human T cells express a single IL-7R of 90 kDa, whereas activated T cells express an additional 76-kDa IL-7 binding protein.", 
+    "annotations": [
+      {
+        "id": "AIMed.d146.s1233.e0", 
+        "type": "Protein", 
+        "text": "IL-7R", 
+        "start": 144, 
+        "end": 149
+      }, 
+      {
+        "id": "AIMed.d146.s1233.e1", 
+        "type": "Protein", 
+        "text": "IL-7", 
+        "start": 216, 
+        "end": 220
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d146.s1233.p0", 
+        "arg1": "AIMed.d146.s1233.e0", 
+        "arg2": "AIMed.d146.s1233.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d146.s1243", 
+    "text": "Taken together these data suggest that the 76-kDa receptor is a novel high affinity IL-7R that may be necessary for IL-7 driven proliferation in human T cells.", 
+    "annotations": [
+      {
+        "id": "AIMed.d146.s1243.e0", 
+        "type": "Protein", 
+        "text": "IL-7R", 
+        "start": 84, 
+        "end": 89
+      }, 
+      {
+        "id": "AIMed.d146.s1243.e1", 
+        "type": "Protein", 
+        "text": "IL-7", 
+        "start": 116, 
+        "end": 120
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d146.s1243.p0", 
+        "arg1": "AIMed.d146.s1243.e0", 
+        "arg2": "AIMed.d146.s1243.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d148.s1253", 
+    "text": "Other recent studies have identified human cyclin D1 (PRAD1) as a putative G1 cyclin and candidate proto-oncogene.", 
+    "annotations": [
+      {
+        "id": "AIMed.d148.s1253.e0", 
+        "type": "Protein", 
+        "text": "cyclin D1", 
+        "start": 43, 
+        "end": 52
+      }, 
+      {
+        "id": "AIMed.d148.s1253.e1", 
+        "type": "Protein", 
+        "text": "PRAD1", 
+        "start": 54, 
+        "end": 59
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d148.s1253.p0", 
+        "arg1": "AIMed.d148.s1253.e0", 
+        "arg2": "AIMed.d148.s1253.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d149.s1263", 
+    "text": "GRB2, a small protein comprising one SH2 domain and two SH3 domains, represents the human homologue of the Caenorhabditis elegans protein, sem-5.", 
+    "annotations": [
+      {
+        "id": "AIMed.d149.s1263.e0", 
+        "type": "Protein", 
+        "text": "GRB2", 
+        "start": 0, 
+        "end": 4
+      }, 
+      {
+        "id": "AIMed.d149.s1263.e1", 
+        "type": "Protein", 
+        "text": "sem-5", 
+        "start": 139, 
+        "end": 144
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d149.s1263.p0", 
+        "arg1": "AIMed.d149.s1263.e0", 
+        "arg2": "AIMed.d149.s1263.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d150.s1273", 
+    "text": "Regulation of the Ets-related transcription factor Elf-1 by binding to the retinoblastoma protein.", 
+    "annotations": [
+      {
+        "id": "AIMed.d150.s1273.e0", 
+        "type": "Protein", 
+        "text": "Ets", 
+        "start": 18, 
+        "end": 21
+      }, 
+      {
+        "id": "AIMed.d150.s1273.e1", 
+        "type": "Protein", 
+        "text": "Elf-1", 
+        "start": 51, 
+        "end": 56
+      }, 
+      {
+        "id": "AIMed.d150.s1273.e2", 
+        "type": "Protein", 
+        "text": "retinoblastoma", 
+        "start": 75, 
+        "end": 89
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d150.s1273.p0", 
+        "arg1": "AIMed.d150.s1273.e0", 
+        "arg2": "AIMed.d150.s1273.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d150.s1273.p1", 
+        "arg1": "AIMed.d150.s1273.e0", 
+        "arg2": "AIMed.d150.s1273.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d150.s1273.p2", 
+        "arg1": "AIMed.d150.s1273.e1", 
+        "arg2": "AIMed.d150.s1273.e2", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d152.s1293", 
+    "text": "TRADD is a TNFR1-associated signal transducer that is involved in activating both pathways.", 
+    "annotations": [
+      {
+        "id": "AIMed.d152.s1293.e0", 
+        "type": "Protein", 
+        "text": "TRADD", 
+        "start": 0, 
+        "end": 5
+      }, 
+      {
+        "id": "AIMed.d152.s1293.e1", 
+        "type": "Protein", 
+        "text": "TNFR1", 
+        "start": 11, 
+        "end": 16
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d152.s1293.p0", 
+        "arg1": "AIMed.d152.s1293.e0", 
+        "arg2": "AIMed.d152.s1293.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d153.s1303", 
+    "text": "In keeping with this observation, we showed that human CD26-transfected murine pre-B cell lines lacking human ADA acquired ADA from an extracellular source.", 
+    "annotations": [
+      {
+        "id": "AIMed.d153.s1303.e0", 
+        "type": "Protein", 
+        "text": "CD26", 
+        "start": 55, 
+        "end": 59
+      }, 
+      {
+        "id": "AIMed.d153.s1303.e1", 
+        "type": "Protein", 
+        "text": "ADA", 
+        "start": 110, 
+        "end": 113
+      }, 
+      {
+        "id": "AIMed.d153.s1303.e2", 
+        "type": "Protein", 
+        "text": "ADA", 
+        "start": 123, 
+        "end": 126
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d153.s1303.p0", 
+        "arg1": "AIMed.d153.s1303.e0", 
+        "arg2": "AIMed.d153.s1303.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d153.s1303.p1", 
+        "arg1": "AIMed.d153.s1303.e0", 
+        "arg2": "AIMed.d153.s1303.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d153.s1303.p2", 
+        "arg1": "AIMed.d153.s1303.e1", 
+        "arg2": "AIMed.d153.s1303.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d154.s1313", 
+    "text": "Somatic cell hybrids and fluorescent in situ hybridization were both used to determine their chromosomal locations: beta 2-syntrophin to chromosome 16q22-23 and alpha 1-syntrophin to chromosome 20q11.2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d154.s1313.e0", 
+        "type": "Protein", 
+        "text": "beta 2-syntrophin", 
+        "start": 116, 
+        "end": 133
+      }, 
+      {
+        "id": "AIMed.d154.s1313.e1", 
+        "type": "Protein", 
+        "text": "alpha 1-syntrophin", 
+        "start": 161, 
+        "end": 179
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d154.s1313.p0", 
+        "arg1": "AIMed.d154.s1313.e0", 
+        "arg2": "AIMed.d154.s1313.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d156.s1323", 
+    "text": "A protein kinase designated IRAK (IL-1 receptor-associated kinase) was purified, and its complementary DNA was molecularly cloned.", 
+    "annotations": [
+      {
+        "id": "AIMed.d156.s1323.e0", 
+        "type": "Protein", 
+        "text": "IRAK", 
+        "start": 28, 
+        "end": 32
+      }, 
+      {
+        "id": "AIMed.d156.s1323.e1", 
+        "type": "Protein", 
+        "text": "IL-1", 
+        "start": 34, 
+        "end": 38
+      }, 
+      {
+        "id": "AIMed.d156.s1323.e2", 
+        "type": "Protein", 
+        "text": "IL-1 receptor-associated kinase", 
+        "start": 34, 
+        "end": 65
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d156.s1323.p0", 
+        "arg1": "AIMed.d156.s1323.e0", 
+        "arg2": "AIMed.d156.s1323.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d156.s1323.p1", 
+        "arg1": "AIMed.d156.s1323.e0", 
+        "arg2": "AIMed.d156.s1323.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d156.s1323.p2", 
+        "arg1": "AIMed.d156.s1323.e1", 
+        "arg2": "AIMed.d156.s1323.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d158.s1333", 
+    "text": "The death domain of tumor necrosis factor (TNF) receptor-1 (TNFR1) triggers distinct signaling pathways leading to apoptosis and NF-kappa B activation through its interaction with the death domain protein TRADD.", 
+    "annotations": [
+      {
+        "id": "AIMed.d158.s1333.e0", 
+        "type": "Protein", 
+        "text": "tumor necrosis factor (TNF) receptor-1", 
+        "start": 20, 
+        "end": 58
+      }, 
+      {
+        "id": "AIMed.d158.s1333.e1", 
+        "type": "Protein", 
+        "text": "TNFR1", 
+        "start": 60, 
+        "end": 65
+      }, 
+      {
+        "id": "AIMed.d158.s1333.e2", 
+        "type": "Protein", 
+        "text": "NF-kappa B", 
+        "start": 129, 
+        "end": 139
+      }, 
+      {
+        "id": "AIMed.d158.s1333.e3", 
+        "type": "Protein", 
+        "text": "TRADD", 
+        "start": 205, 
+        "end": 210
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d158.s1333.p0", 
+        "arg1": "AIMed.d158.s1333.e0", 
+        "arg2": "AIMed.d158.s1333.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d158.s1333.p1", 
+        "arg1": "AIMed.d158.s1333.e0", 
+        "arg2": "AIMed.d158.s1333.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d158.s1333.p2", 
+        "arg1": "AIMed.d158.s1333.e0", 
+        "arg2": "AIMed.d158.s1333.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d158.s1333.p3", 
+        "arg1": "AIMed.d158.s1333.e1", 
+        "arg2": "AIMed.d158.s1333.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d158.s1333.p4", 
+        "arg1": "AIMed.d158.s1333.e1", 
+        "arg2": "AIMed.d158.s1333.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d158.s1333.p5", 
+        "arg1": "AIMed.d158.s1333.e2", 
+        "arg2": "AIMed.d158.s1333.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d160.s1345", 
+    "text": "VEGF mediates endothelial cell proliferation, angiogenesis, vascular growth, and vascular permeability via the endothelial cell receptors, kinase insert domain-containing receptor (KDR)/fetal liver kinase 1 (Flk-1) and FLT-1.", 
+    "annotations": [
+      {
+        "id": "AIMed.d160.s1345.e0", 
+        "type": "Protein", 
+        "text": "VEGF", 
+        "start": 0, 
+        "end": 4
+      }, 
+      {
+        "id": "AIMed.d160.s1345.e1", 
+        "type": "Protein", 
+        "text": "kinase insert domain-containing receptor", 
+        "start": 139, 
+        "end": 179
+      }, 
+      {
+        "id": "AIMed.d160.s1345.e2", 
+        "type": "Protein", 
+        "text": "KDR", 
+        "start": 181, 
+        "end": 184
+      }, 
+      {
+        "id": "AIMed.d160.s1345.e3", 
+        "type": "Protein", 
+        "text": "fetal liver kinase 1", 
+        "start": 186, 
+        "end": 206
+      }, 
+      {
+        "id": "AIMed.d160.s1345.e4", 
+        "type": "Protein", 
+        "text": "Flk-1", 
+        "start": 208, 
+        "end": 213
+      }, 
+      {
+        "id": "AIMed.d160.s1345.e5", 
+        "type": "Protein", 
+        "text": "FLT-1", 
+        "start": 219, 
+        "end": 224
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d160.s1345.p0", 
+        "arg1": "AIMed.d160.s1345.e0", 
+        "arg2": "AIMed.d160.s1345.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p1", 
+        "arg1": "AIMed.d160.s1345.e0", 
+        "arg2": "AIMed.d160.s1345.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p2", 
+        "arg1": "AIMed.d160.s1345.e0", 
+        "arg2": "AIMed.d160.s1345.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p3", 
+        "arg1": "AIMed.d160.s1345.e0", 
+        "arg2": "AIMed.d160.s1345.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p4", 
+        "arg1": "AIMed.d160.s1345.e0", 
+        "arg2": "AIMed.d160.s1345.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p5", 
+        "arg1": "AIMed.d160.s1345.e1", 
+        "arg2": "AIMed.d160.s1345.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p6", 
+        "arg1": "AIMed.d160.s1345.e1", 
+        "arg2": "AIMed.d160.s1345.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p7", 
+        "arg1": "AIMed.d160.s1345.e1", 
+        "arg2": "AIMed.d160.s1345.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p8", 
+        "arg1": "AIMed.d160.s1345.e1", 
+        "arg2": "AIMed.d160.s1345.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p9", 
+        "arg1": "AIMed.d160.s1345.e2", 
+        "arg2": "AIMed.d160.s1345.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p10", 
+        "arg1": "AIMed.d160.s1345.e2", 
+        "arg2": "AIMed.d160.s1345.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p11", 
+        "arg1": "AIMed.d160.s1345.e2", 
+        "arg2": "AIMed.d160.s1345.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p12", 
+        "arg1": "AIMed.d160.s1345.e3", 
+        "arg2": "AIMed.d160.s1345.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p13", 
+        "arg1": "AIMed.d160.s1345.e3", 
+        "arg2": "AIMed.d160.s1345.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d160.s1345.p14", 
+        "arg1": "AIMed.d160.s1345.e4", 
+        "arg2": "AIMed.d160.s1345.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d161.s1355", 
+    "text": "SHPTP2 associates with the platelet-derived growth factor (PDGF) receptor after ligand stimulation, and binding of SHPTP2 to this receptor promotes tyrosine phosphorylation of SHPTP2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d161.s1355.e0", 
+        "type": "Protein", 
+        "text": "SHPTP2", 
+        "start": 0, 
+        "end": 6
+      }, 
+      {
+        "id": "AIMed.d161.s1355.e1", 
+        "type": "Protein", 
+        "text": "platelet-derived growth factor", 
+        "start": 27, 
+        "end": 57
+      }, 
+      {
+        "id": "AIMed.d161.s1355.e2", 
+        "type": "Protein", 
+        "text": "PDGF", 
+        "start": 59, 
+        "end": 63
+      }, 
+      {
+        "id": "AIMed.d161.s1355.e3", 
+        "type": "Protein", 
+        "text": "platelet-derived growth factor (PDGF) receptor", 
+        "start": 27, 
+        "end": 73
+      }, 
+      {
+        "id": "AIMed.d161.s1355.e4", 
+        "type": "Protein", 
+        "text": "SHPTP2", 
+        "start": 115, 
+        "end": 121
+      }, 
+      {
+        "id": "AIMed.d161.s1355.e5", 
+        "type": "Protein", 
+        "text": "SHPTP2", 
+        "start": 176, 
+        "end": 182
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d161.s1355.p0", 
+        "arg1": "AIMed.d161.s1355.e0", 
+        "arg2": "AIMed.d161.s1355.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p1", 
+        "arg1": "AIMed.d161.s1355.e0", 
+        "arg2": "AIMed.d161.s1355.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p2", 
+        "arg1": "AIMed.d161.s1355.e0", 
+        "arg2": "AIMed.d161.s1355.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p3", 
+        "arg1": "AIMed.d161.s1355.e0", 
+        "arg2": "AIMed.d161.s1355.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p4", 
+        "arg1": "AIMed.d161.s1355.e0", 
+        "arg2": "AIMed.d161.s1355.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p5", 
+        "arg1": "AIMed.d161.s1355.e1", 
+        "arg2": "AIMed.d161.s1355.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p6", 
+        "arg1": "AIMed.d161.s1355.e1", 
+        "arg2": "AIMed.d161.s1355.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p7", 
+        "arg1": "AIMed.d161.s1355.e1", 
+        "arg2": "AIMed.d161.s1355.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p8", 
+        "arg1": "AIMed.d161.s1355.e1", 
+        "arg2": "AIMed.d161.s1355.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p9", 
+        "arg1": "AIMed.d161.s1355.e2", 
+        "arg2": "AIMed.d161.s1355.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p10", 
+        "arg1": "AIMed.d161.s1355.e2", 
+        "arg2": "AIMed.d161.s1355.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p11", 
+        "arg1": "AIMed.d161.s1355.e2", 
+        "arg2": "AIMed.d161.s1355.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p12", 
+        "arg1": "AIMed.d161.s1355.e3", 
+        "arg2": "AIMed.d161.s1355.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p13", 
+        "arg1": "AIMed.d161.s1355.e3", 
+        "arg2": "AIMed.d161.s1355.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d161.s1355.p14", 
+        "arg1": "AIMed.d161.s1355.e4", 
+        "arg2": "AIMed.d161.s1355.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d163.s1375", 
+    "text": "SNX1 contains a region of homology to a yeast vacuolar sorting protein, and overexpression of SNX1 decreased the amount of EGFR on the cell surface as a result of enhanced rates of constitutive and ligand-induced degradation.", 
+    "annotations": [
+      {
+        "id": "AIMed.d163.s1375.e0", 
+        "type": "Protein", 
+        "text": "SNX1", 
+        "start": 0, 
+        "end": 4
+      }, 
+      {
+        "id": "AIMed.d163.s1375.e1", 
+        "type": "Protein", 
+        "text": "SNX1", 
+        "start": 94, 
+        "end": 98
+      }, 
+      {
+        "id": "AIMed.d163.s1375.e2", 
+        "type": "Protein", 
+        "text": "EGFR", 
+        "start": 123, 
+        "end": 127
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d163.s1375.p0", 
+        "arg1": "AIMed.d163.s1375.e0", 
+        "arg2": "AIMed.d163.s1375.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d163.s1375.p1", 
+        "arg1": "AIMed.d163.s1375.e0", 
+        "arg2": "AIMed.d163.s1375.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d163.s1375.p2", 
+        "arg1": "AIMed.d163.s1375.e1", 
+        "arg2": "AIMed.d163.s1375.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d166.s1395", 
+    "text": "The region of hLIF most important for binding to the hLIF-R is composed of residues from the amino terminus of the D-helix, carboxyl terminus of the B-helix, and C-D loop.", 
+    "annotations": [
+      {
+        "id": "AIMed.d166.s1395.e0", 
+        "type": "Protein", 
+        "text": "hLIF", 
+        "start": 14, 
+        "end": 18
+      }, 
+      {
+        "id": "AIMed.d166.s1395.e1", 
+        "type": "Protein", 
+        "text": "hLIF-R", 
+        "start": 53, 
+        "end": 59
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d166.s1395.p0", 
+        "arg1": "AIMed.d166.s1395.e0", 
+        "arg2": "AIMed.d166.s1395.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d167.s1405", 
+    "text": "A truncated version of the integral membrane glycoprotein Glut 1 (GT155) was synthesized in a rabbit reticulocyte translation system in the presence of canine pancreatic microsomes.", 
+    "annotations": [
+      {
+        "id": "AIMed.d167.s1405.e0", 
+        "type": "Protein", 
+        "text": "Glut 1", 
+        "start": 58, 
+        "end": 64
+      }, 
+      {
+        "id": "AIMed.d167.s1405.e1", 
+        "type": "Protein", 
+        "text": "GT155", 
+        "start": 66, 
+        "end": 71
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d167.s1405.p0", 
+        "arg1": "AIMed.d167.s1405.e0", 
+        "arg2": "AIMed.d167.s1405.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d168.s1415", 
+    "text": "Mutant proteins were expressed in bacteria as soluble EPO binding proteins (EBP) and characterized for EPO binding activity in a number of different assays.", 
+    "annotations": [
+      {
+        "id": "AIMed.d168.s1415.e0", 
+        "type": "Protein", 
+        "text": "EPO", 
+        "start": 54, 
+        "end": 57
+      }, 
+      {
+        "id": "AIMed.d168.s1415.e1", 
+        "type": "Protein", 
+        "text": "EBP", 
+        "start": 76, 
+        "end": 79
+      }, 
+      {
+        "id": "AIMed.d168.s1415.e2", 
+        "type": "Protein", 
+        "text": "EPO", 
+        "start": 103, 
+        "end": 106
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d168.s1415.p0", 
+        "arg1": "AIMed.d168.s1415.e0", 
+        "arg2": "AIMed.d168.s1415.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d168.s1415.p1", 
+        "arg1": "AIMed.d168.s1415.e0", 
+        "arg2": "AIMed.d168.s1415.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d168.s1415.p2", 
+        "arg1": "AIMed.d168.s1415.e1", 
+        "arg2": "AIMed.d168.s1415.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d169.s1425", 
+    "text": "Interleukin-13 (IL-13) is a cytokine secreted by activated T lymphocytes that shares many, but not all, biological activities with IL-4.", 
+    "annotations": [
+      {
+        "id": "AIMed.d169.s1425.e0", 
+        "type": "Protein", 
+        "text": "Interleukin-13", 
+        "start": 0, 
+        "end": 14
+      }, 
+      {
+        "id": "AIMed.d169.s1425.e1", 
+        "type": "Protein", 
+        "text": "IL-13", 
+        "start": 16, 
+        "end": 21
+      }, 
+      {
+        "id": "AIMed.d169.s1425.e2", 
+        "type": "Protein", 
+        "text": "IL-4", 
+        "start": 131, 
+        "end": 135
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d169.s1425.p0", 
+        "arg1": "AIMed.d169.s1425.e0", 
+        "arg2": "AIMed.d169.s1425.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d169.s1425.p1", 
+        "arg1": "AIMed.d169.s1425.e0", 
+        "arg2": "AIMed.d169.s1425.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d169.s1425.p2", 
+        "arg1": "AIMed.d169.s1425.e1", 
+        "arg2": "AIMed.d169.s1425.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d170.s1439", 
+    "text": "This is the first report to demonstrate that two of cytosolic components of cytochrome b558, p47-phox binding to p67-phox each other.", 
+    "annotations": [
+      {
+        "id": "AIMed.d170.s1439.e0", 
+        "type": "Protein", 
+        "text": "cytochrome b558", 
+        "start": 76, 
+        "end": 91
+      }, 
+      {
+        "id": "AIMed.d170.s1439.e1", 
+        "type": "Protein", 
+        "text": "p47-phox", 
+        "start": 93, 
+        "end": 101
+      }, 
+      {
+        "id": "AIMed.d170.s1439.e2", 
+        "type": "Protein", 
+        "text": "p67-phox", 
+        "start": 113, 
+        "end": 121
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d170.s1439.p0", 
+        "arg1": "AIMed.d170.s1439.e0", 
+        "arg2": "AIMed.d170.s1439.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d170.s1439.p1", 
+        "arg1": "AIMed.d170.s1439.e0", 
+        "arg2": "AIMed.d170.s1439.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d170.s1439.p2", 
+        "arg1": "AIMed.d170.s1439.e1", 
+        "arg2": "AIMed.d170.s1439.e2", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d173.s1459", 
+    "text": "Fusion proteins were created by linking the Abeta fragment to a LexA DNA-binding domain (bait) and also to a B42 transactivation domain (prey).", 
+    "annotations": [
+      {
+        "id": "AIMed.d173.s1459.e0", 
+        "type": "Protein", 
+        "text": "Abeta", 
+        "start": 44, 
+        "end": 49
+      }, 
+      {
+        "id": "AIMed.d173.s1459.e1", 
+        "type": "Protein", 
+        "text": "LexA", 
+        "start": 64, 
+        "end": 68
+      }, 
+      {
+        "id": "AIMed.d173.s1459.e2", 
+        "type": "Protein", 
+        "text": "B42", 
+        "start": 109, 
+        "end": 112
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d173.s1459.p0", 
+        "arg1": "AIMed.d173.s1459.e0", 
+        "arg2": "AIMed.d173.s1459.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d173.s1459.p1", 
+        "arg1": "AIMed.d173.s1459.e0", 
+        "arg2": "AIMed.d173.s1459.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d173.s1459.p2", 
+        "arg1": "AIMed.d173.s1459.e1", 
+        "arg2": "AIMed.d173.s1459.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d174.s1469", 
+    "text": "Although IL-6D has a higher binding affinity for immobilized sIL-6R, as determined by biosensor analysis employing surface plasmon resonance detection, IL-6M is more potent than IL-6D in a STAT3 phosphorylation assay.", 
+    "annotations": [
+      {
+        "id": "AIMed.d174.s1469.e0", 
+        "type": "Protein", 
+        "text": "IL-6D", 
+        "start": 9, 
+        "end": 14
+      }, 
+      {
+        "id": "AIMed.d174.s1469.e1", 
+        "type": "Protein", 
+        "text": "sIL-6R", 
+        "start": 61, 
+        "end": 67
+      }, 
+      {
+        "id": "AIMed.d174.s1469.e2", 
+        "type": "Protein", 
+        "text": "IL-6M", 
+        "start": 152, 
+        "end": 157
+      }, 
+      {
+        "id": "AIMed.d174.s1469.e3", 
+        "type": "Protein", 
+        "text": "IL-6D", 
+        "start": 178, 
+        "end": 183
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d174.s1469.p0", 
+        "arg1": "AIMed.d174.s1469.e0", 
+        "arg2": "AIMed.d174.s1469.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d174.s1469.p1", 
+        "arg1": "AIMed.d174.s1469.e0", 
+        "arg2": "AIMed.d174.s1469.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d174.s1469.p2", 
+        "arg1": "AIMed.d174.s1469.e0", 
+        "arg2": "AIMed.d174.s1469.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d174.s1469.p3", 
+        "arg1": "AIMed.d174.s1469.e1", 
+        "arg2": "AIMed.d174.s1469.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d174.s1469.p4", 
+        "arg1": "AIMed.d174.s1469.e1", 
+        "arg2": "AIMed.d174.s1469.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d174.s1469.p5", 
+        "arg1": "AIMed.d174.s1469.e2", 
+        "arg2": "AIMed.d174.s1469.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d175.s1479", 
+    "text": "CDK4 is a cyclin D-dependent kinase that controls progression through G1 of the mammalian cell cycle.", 
+    "annotations": [
+      {
+        "id": "AIMed.d175.s1479.e0", 
+        "type": "Protein", 
+        "text": "CDK4", 
+        "start": 0, 
+        "end": 4
+      }, 
+      {
+        "id": "AIMed.d175.s1479.e1", 
+        "type": "Protein", 
+        "text": "cyclin D-dependent kinase", 
+        "start": 10, 
+        "end": 35
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d175.s1479.p0", 
+        "arg1": "AIMed.d175.s1479.e0", 
+        "arg2": "AIMed.d175.s1479.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d176.s1489", 
+    "text": "P60 can bind either hsp70 or hsp90 independently and in an ATP-independent manner.", 
+    "annotations": [
+      {
+        "id": "AIMed.d176.s1489.e0", 
+        "type": "Protein", 
+        "text": "P60", 
+        "start": 0, 
+        "end": 3
+      }, 
+      {
+        "id": "AIMed.d176.s1489.e1", 
+        "type": "Protein", 
+        "text": "hsp70", 
+        "start": 20, 
+        "end": 25
+      }, 
+      {
+        "id": "AIMed.d176.s1489.e2", 
+        "type": "Protein", 
+        "text": "hsp90", 
+        "start": 29, 
+        "end": 34
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d176.s1489.p0", 
+        "arg1": "AIMed.d176.s1489.e0", 
+        "arg2": "AIMed.d176.s1489.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d176.s1489.p1", 
+        "arg1": "AIMed.d176.s1489.e0", 
+        "arg2": "AIMed.d176.s1489.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d176.s1489.p2", 
+        "arg1": "AIMed.d176.s1489.e1", 
+        "arg2": "AIMed.d176.s1489.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d178.s1509", 
+    "text": "Although many different types of proliferating cells contain p27 protein, neither the interactions of p27 with cyclin/CDK complexes nor the consequences of this interaction during the mitotic cycle have been fully explored.", 
+    "annotations": [
+      {
+        "id": "AIMed.d178.s1509.e0", 
+        "type": "Protein", 
+        "text": "p27", 
+        "start": 61, 
+        "end": 64
+      }, 
+      {
+        "id": "AIMed.d178.s1509.e1", 
+        "type": "Protein", 
+        "text": "p27", 
+        "start": 102, 
+        "end": 105
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d178.s1509.p0", 
+        "arg1": "AIMed.d178.s1509.e0", 
+        "arg2": "AIMed.d178.s1509.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d179.s1519", 
+    "text": "Gastrin stimulates tyrosine phosphorylation of insulin receptor substrate 1 and its association with Grb2 and the phosphatidylinositol 3-kinase.", 
+    "annotations": [
+      {
+        "id": "AIMed.d179.s1519.e0", 
+        "type": "Protein", 
+        "text": "Gastrin", 
+        "start": 0, 
+        "end": 7
+      }, 
+      {
+        "id": "AIMed.d179.s1519.e1", 
+        "type": "Protein", 
+        "text": "insulin", 
+        "start": 47, 
+        "end": 54
+      }, 
+      {
+        "id": "AIMed.d179.s1519.e2", 
+        "type": "Protein", 
+        "text": "insulin receptor", 
+        "start": 47, 
+        "end": 63
+      }, 
+      {
+        "id": "AIMed.d179.s1519.e3", 
+        "type": "Protein", 
+        "text": "insulin receptor substrate 1", 
+        "start": 47, 
+        "end": 75
+      }, 
+      {
+        "id": "AIMed.d179.s1519.e4", 
+        "type": "Protein", 
+        "text": "Grb2", 
+        "start": 101, 
+        "end": 105
+      }, 
+      {
+        "id": "AIMed.d179.s1519.e5", 
+        "type": "Protein", 
+        "text": "phosphatidylinositol 3-kinase", 
+        "start": 114, 
+        "end": 143
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d179.s1519.p0", 
+        "arg1": "AIMed.d179.s1519.e0", 
+        "arg2": "AIMed.d179.s1519.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p1", 
+        "arg1": "AIMed.d179.s1519.e0", 
+        "arg2": "AIMed.d179.s1519.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p2", 
+        "arg1": "AIMed.d179.s1519.e0", 
+        "arg2": "AIMed.d179.s1519.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p3", 
+        "arg1": "AIMed.d179.s1519.e0", 
+        "arg2": "AIMed.d179.s1519.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p4", 
+        "arg1": "AIMed.d179.s1519.e0", 
+        "arg2": "AIMed.d179.s1519.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p5", 
+        "arg1": "AIMed.d179.s1519.e1", 
+        "arg2": "AIMed.d179.s1519.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p6", 
+        "arg1": "AIMed.d179.s1519.e1", 
+        "arg2": "AIMed.d179.s1519.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p7", 
+        "arg1": "AIMed.d179.s1519.e1", 
+        "arg2": "AIMed.d179.s1519.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p8", 
+        "arg1": "AIMed.d179.s1519.e1", 
+        "arg2": "AIMed.d179.s1519.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p9", 
+        "arg1": "AIMed.d179.s1519.e2", 
+        "arg2": "AIMed.d179.s1519.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p10", 
+        "arg1": "AIMed.d179.s1519.e2", 
+        "arg2": "AIMed.d179.s1519.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p11", 
+        "arg1": "AIMed.d179.s1519.e2", 
+        "arg2": "AIMed.d179.s1519.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p12", 
+        "arg1": "AIMed.d179.s1519.e3", 
+        "arg2": "AIMed.d179.s1519.e4", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p13", 
+        "arg1": "AIMed.d179.s1519.e3", 
+        "arg2": "AIMed.d179.s1519.e5", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d179.s1519.p14", 
+        "arg1": "AIMed.d179.s1519.e4", 
+        "arg2": "AIMed.d179.s1519.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d179.s1529", 
+    "text": "Taken together, our results suggest that IRS-1 may serve as a converging target in the signaling pathways stimulated by receptors that belong to different families, such as the gastrin/CCKB G protein-coupled receptor and the insulin receptor.", 
+    "annotations": [
+      {
+        "id": "AIMed.d179.s1529.e0", 
+        "type": "Protein", 
+        "text": "IRS-1", 
+        "start": 41, 
+        "end": 46
+      }, 
+      {
+        "id": "AIMed.d179.s1529.e1", 
+        "type": "Protein", 
+        "text": "gastrin", 
+        "start": 177, 
+        "end": 184
+      }, 
+      {
+        "id": "AIMed.d179.s1529.e2", 
+        "type": "Protein", 
+        "text": "CCKB", 
+        "start": 185, 
+        "end": 189
+      }, 
+      {
+        "id": "AIMed.d179.s1529.e3", 
+        "type": "Protein", 
+        "text": "CCKB G protein-coupled receptor", 
+        "start": 185, 
+        "end": 216
+      }, 
+      {
+        "id": "AIMed.d179.s1529.e4", 
+        "type": "Protein", 
+        "text": "insulin", 
+        "start": 225, 
+        "end": 232
+      }, 
+      {
+        "id": "AIMed.d179.s1529.e5", 
+        "type": "Protein", 
+        "text": "insulin receptor", 
+        "start": 225, 
+        "end": 241
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d179.s1529.p0", 
+        "arg1": "AIMed.d179.s1529.e0", 
+        "arg2": "AIMed.d179.s1529.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p1", 
+        "arg1": "AIMed.d179.s1529.e0", 
+        "arg2": "AIMed.d179.s1529.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p2", 
+        "arg1": "AIMed.d179.s1529.e0", 
+        "arg2": "AIMed.d179.s1529.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p3", 
+        "arg1": "AIMed.d179.s1529.e0", 
+        "arg2": "AIMed.d179.s1529.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p4", 
+        "arg1": "AIMed.d179.s1529.e0", 
+        "arg2": "AIMed.d179.s1529.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p5", 
+        "arg1": "AIMed.d179.s1529.e1", 
+        "arg2": "AIMed.d179.s1529.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p6", 
+        "arg1": "AIMed.d179.s1529.e1", 
+        "arg2": "AIMed.d179.s1529.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p7", 
+        "arg1": "AIMed.d179.s1529.e1", 
+        "arg2": "AIMed.d179.s1529.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p8", 
+        "arg1": "AIMed.d179.s1529.e1", 
+        "arg2": "AIMed.d179.s1529.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p9", 
+        "arg1": "AIMed.d179.s1529.e2", 
+        "arg2": "AIMed.d179.s1529.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p10", 
+        "arg1": "AIMed.d179.s1529.e2", 
+        "arg2": "AIMed.d179.s1529.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p11", 
+        "arg1": "AIMed.d179.s1529.e2", 
+        "arg2": "AIMed.d179.s1529.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p12", 
+        "arg1": "AIMed.d179.s1529.e3", 
+        "arg2": "AIMed.d179.s1529.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p13", 
+        "arg1": "AIMed.d179.s1529.e3", 
+        "arg2": "AIMed.d179.s1529.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d179.s1529.p14", 
+        "arg1": "AIMed.d179.s1529.e4", 
+        "arg2": "AIMed.d179.s1529.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d181.s1538", 
+    "text": "Structure of the p53 tumor suppressor bound to the ankyrin and SH3 domains of 53BP2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d181.s1538.e0", 
+        "type": "Protein", 
+        "text": "p53", 
+        "start": 17, 
+        "end": 20
+      }, 
+      {
+        "id": "AIMed.d181.s1538.e1", 
+        "type": "Protein", 
+        "text": "53BP2", 
+        "start": 78, 
+        "end": 83
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d181.s1538.p0", 
+        "arg1": "AIMed.d181.s1538.e0", 
+        "arg2": "AIMed.d181.s1538.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d182.s1548", 
+    "text": "The crystal structure of the 109-residue amino-terminal domain of MDM2 bound to a 15-residue transactivation domain peptide of p53 revealed that MDM2 has a deep hydrophobic cleft on which the p53 peptide binds as an amphipathic alpha helix.", 
+    "annotations": [
+      {
+        "id": "AIMed.d182.s1548.e0", 
+        "type": "Protein", 
+        "text": "MDM2", 
+        "start": 66, 
+        "end": 70
+      }, 
+      {
+        "id": "AIMed.d182.s1548.e1", 
+        "type": "Protein", 
+        "text": "p53", 
+        "start": 127, 
+        "end": 130
+      }, 
+      {
+        "id": "AIMed.d182.s1548.e2", 
+        "type": "Protein", 
+        "text": "MDM2", 
+        "start": 145, 
+        "end": 149
+      }, 
+      {
+        "id": "AIMed.d182.s1548.e3", 
+        "type": "Protein", 
+        "text": "p53", 
+        "start": 192, 
+        "end": 195
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d182.s1548.p0", 
+        "arg1": "AIMed.d182.s1548.e0", 
+        "arg2": "AIMed.d182.s1548.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d182.s1548.p1", 
+        "arg1": "AIMed.d182.s1548.e0", 
+        "arg2": "AIMed.d182.s1548.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d182.s1548.p2", 
+        "arg1": "AIMed.d182.s1548.e0", 
+        "arg2": "AIMed.d182.s1548.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d182.s1548.p3", 
+        "arg1": "AIMed.d182.s1548.e1", 
+        "arg2": "AIMed.d182.s1548.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d182.s1548.p4", 
+        "arg1": "AIMed.d182.s1548.e1", 
+        "arg2": "AIMed.d182.s1548.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d182.s1548.p5", 
+        "arg1": "AIMed.d182.s1548.e2", 
+        "arg2": "AIMed.d182.s1548.e3", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d183.s1558", 
+    "text": "In addition, JAK2 phosphorylated Raf-1 at sites different from those phosphorylated by pp60v-src.", 
+    "annotations": [
+      {
+        "id": "AIMed.d183.s1558.e0", 
+        "type": "Protein", 
+        "text": "JAK2", 
+        "start": 13, 
+        "end": 17
+      }, 
+      {
+        "id": "AIMed.d183.s1558.e1", 
+        "type": "Protein", 
+        "text": "Raf-1", 
+        "start": 33, 
+        "end": 38
+      }, 
+      {
+        "id": "AIMed.d183.s1558.e2", 
+        "type": "Protein", 
+        "text": "pp60v-src", 
+        "start": 87, 
+        "end": 96
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d183.s1558.p0", 
+        "arg1": "AIMed.d183.s1558.e0", 
+        "arg2": "AIMed.d183.s1558.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d183.s1558.p1", 
+        "arg1": "AIMed.d183.s1558.e0", 
+        "arg2": "AIMed.d183.s1558.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d183.s1558.p2", 
+        "arg1": "AIMed.d183.s1558.e1", 
+        "arg2": "AIMed.d183.s1558.e2", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d184.s1568", 
+    "text": "These results suggest that HIV-1 attachment to CD4 creates a high-affinity binding site for CCR-5, leading to membrane fusion and virus entry.", 
+    "annotations": [
+      {
+        "id": "AIMed.d184.s1568.e0", 
+        "type": "Protein", 
+        "text": "CD4", 
+        "start": 47, 
+        "end": 50
+      }, 
+      {
+        "id": "AIMed.d184.s1568.e1", 
+        "type": "Protein", 
+        "text": "CCR-5", 
+        "start": 92, 
+        "end": 97
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d184.s1568.p0", 
+        "arg1": "AIMed.d184.s1568.e0", 
+        "arg2": "AIMed.d184.s1568.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d187.s1588", 
+    "text": "The analysis of complexes of A beta with CSF proteins in a KBr gradient revealed an association of A beta only with free proteins and not with lipoprotein particles.", 
+    "annotations": [
+      {
+        "id": "AIMed.d187.s1588.e0", 
+        "type": "Protein", 
+        "text": "A beta", 
+        "start": 29, 
+        "end": 35
+      }, 
+      {
+        "id": "AIMed.d187.s1588.e1", 
+        "type": "Protein", 
+        "text": "A beta", 
+        "start": 99, 
+        "end": 105
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d187.s1588.p0", 
+        "arg1": "AIMed.d187.s1588.e0", 
+        "arg2": "AIMed.d187.s1588.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d188.s1598", 
+    "text": "In an unbiased search for potential coactivators of SREBP, we isolated a protein of 265 kD from HeLa cells that directly bound SREBP-1 and SREBP-2.", 
+    "annotations": [
+      {
+        "id": "AIMed.d188.s1598.e0", 
+        "type": "Protein", 
+        "text": "SREBP-1", 
+        "start": 127, 
+        "end": 134
+      }, 
+      {
+        "id": "AIMed.d188.s1598.e1", 
+        "type": "Protein", 
+        "text": "SREBP-2", 
+        "start": 139, 
+        "end": 146
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d188.s1598.p0", 
+        "arg1": "AIMed.d188.s1598.e0", 
+        "arg2": "AIMed.d188.s1598.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d189.s1608", 
+    "text": "The interaction of UBE2I with RAD52 is mediated by RAD52's self-association region.", 
+    "annotations": [
+      {
+        "id": "AIMed.d189.s1608.e0", 
+        "type": "Protein", 
+        "text": "UBE2I", 
+        "start": 19, 
+        "end": 24
+      }, 
+      {
+        "id": "AIMed.d189.s1608.e1", 
+        "type": "Protein", 
+        "text": "RAD52", 
+        "start": 30, 
+        "end": 35
+      }, 
+      {
+        "id": "AIMed.d189.s1608.e2", 
+        "type": "Protein", 
+        "text": "RAD52", 
+        "start": 51, 
+        "end": 56
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d189.s1608.p0", 
+        "arg1": "AIMed.d189.s1608.e0", 
+        "arg2": "AIMed.d189.s1608.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d189.s1608.p1", 
+        "arg1": "AIMed.d189.s1608.e0", 
+        "arg2": "AIMed.d189.s1608.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d189.s1608.p2", 
+        "arg1": "AIMed.d189.s1608.e1", 
+        "arg2": "AIMed.d189.s1608.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d190.s1611", 
+    "text": "Hemopoietic cell proliferation is mediated by non-tyrosine and tyrosine kinases that signal via uncommon and common sets of downstream effector molecules including the Grb2/c-Cbl.", 
+    "annotations": [
+      {
+        "id": "AIMed.d190.s1611.e0", 
+        "type": "Protein", 
+        "text": "Grb2", 
+        "start": 168, 
+        "end": 172
+      }, 
+      {
+        "id": "AIMed.d190.s1611.e1", 
+        "type": "Protein", 
+        "text": "c-Cbl", 
+        "start": 173, 
+        "end": 178
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d190.s1611.p0", 
+        "arg1": "AIMed.d190.s1611.e0", 
+        "arg2": "AIMed.d190.s1611.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d191.s1631", 
+    "text": "RANTES interacts with CCR5 and SDF-1 with CXCR4 receptors.", 
+    "annotations": [
+      {
+        "id": "AIMed.d191.s1631.e0", 
+        "type": "Protein", 
+        "text": "RANTES", 
+        "start": 0, 
+        "end": 6
+      }, 
+      {
+        "id": "AIMed.d191.s1631.e1", 
+        "type": "Protein", 
+        "text": "CCR5", 
+        "start": 22, 
+        "end": 26
+      }, 
+      {
+        "id": "AIMed.d191.s1631.e2", 
+        "type": "Protein", 
+        "text": "SDF-1", 
+        "start": 31, 
+        "end": 36
+      }, 
+      {
+        "id": "AIMed.d191.s1631.e3", 
+        "type": "Protein", 
+        "text": "CXCR4", 
+        "start": 42, 
+        "end": 47
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d191.s1631.p0", 
+        "arg1": "AIMed.d191.s1631.e0", 
+        "arg2": "AIMed.d191.s1631.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d191.s1631.p1", 
+        "arg1": "AIMed.d191.s1631.e0", 
+        "arg2": "AIMed.d191.s1631.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d191.s1631.p2", 
+        "arg1": "AIMed.d191.s1631.e0", 
+        "arg2": "AIMed.d191.s1631.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d191.s1631.p3", 
+        "arg1": "AIMed.d191.s1631.e1", 
+        "arg2": "AIMed.d191.s1631.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d191.s1631.p4", 
+        "arg1": "AIMed.d191.s1631.e1", 
+        "arg2": "AIMed.d191.s1631.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d191.s1631.p5", 
+        "arg1": "AIMed.d191.s1631.e2", 
+        "arg2": "AIMed.d191.s1631.e3", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d193.s1641", 
+    "text": "Physical and functional interactions between the transcriptional inhibitors Id3 and ITF-2b. Evidence toward a novel mechanism regulating muscle-specific gene expression.", 
+    "annotations": [
+      {
+        "id": "AIMed.d193.s1641.e0", 
+        "type": "Protein", 
+        "text": "Id3", 
+        "start": 76, 
+        "end": 79
+      }, 
+      {
+        "id": "AIMed.d193.s1641.e1", 
+        "type": "Protein", 
+        "text": "ITF-2b", 
+        "start": 84, 
+        "end": 90
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d193.s1641.p0", 
+        "arg1": "AIMed.d193.s1641.e0", 
+        "arg2": "AIMed.d193.s1641.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d197.s1681", 
+    "text": "Following this hypothesis, we altered in hIL-6 and hIL-6R residues predicted to reside in the contact region and to interact with each other.", 
+    "annotations": [
+      {
+        "id": "AIMed.d197.s1681.e0", 
+        "type": "Protein", 
+        "text": "hIL-6", 
+        "start": 41, 
+        "end": 46
+      }, 
+      {
+        "id": "AIMed.d197.s1681.e1", 
+        "type": "Protein", 
+        "text": "hIL-6R", 
+        "start": 51, 
+        "end": 57
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d197.s1681.p0", 
+        "arg1": "AIMed.d197.s1681.e0", 
+        "arg2": "AIMed.d197.s1681.e1", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d198.s1691", 
+    "text": "In addition, selected mutant proteins were expressed as full-length EPOR on the surface of COS cells and analyzed for 125I-EPO binding in receptor binding assays.", 
+    "annotations": [
+      {
+        "id": "AIMed.d198.s1691.e0", 
+        "type": "Protein", 
+        "text": "EPOR", 
+        "start": 68, 
+        "end": 72
+      }, 
+      {
+        "id": "AIMed.d198.s1691.e1", 
+        "type": "Protein", 
+        "text": "EPO", 
+        "start": 123, 
+        "end": 126
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d198.s1691.p0", 
+        "arg1": "AIMed.d198.s1691.e0", 
+        "arg2": "AIMed.d198.s1691.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d199.s1701", 
+    "text": "Sos in complex with a previously identified 90-kDa protein and designated protein 80K-H.", 
+    "annotations": [
+      {
+        "id": "AIMed.d199.s1701.e0", 
+        "type": "Protein", 
+        "text": "Sos", 
+        "start": 0, 
+        "end": 3
+      }, 
+      {
+        "id": "AIMed.d199.s1701.e1", 
+        "type": "Protein", 
+        "text": "80K-H", 
+        "start": 82, 
+        "end": 87
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d199.s1701.p0", 
+        "arg1": "AIMed.d199.s1701.e0", 
+        "arg2": "AIMed.d199.s1701.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d202.s1739", 
+    "text": "The IL-1 family currently consists of two agonists, IL-1alpha and IL-1beta, and one antagonist, IL-1ra.", 
+    "annotations": [
+      {
+        "id": "AIMed.d202.s1739.e0", 
+        "type": "Protein", 
+        "text": "IL-1", 
+        "start": 4, 
+        "end": 8
+      }, 
+      {
+        "id": "AIMed.d202.s1739.e1", 
+        "type": "Protein", 
+        "text": "IL-1alpha", 
+        "start": 52, 
+        "end": 61
+      }, 
+      {
+        "id": "AIMed.d202.s1739.e2", 
+        "type": "Protein", 
+        "text": "IL-1beta", 
+        "start": 66, 
+        "end": 74
+      }, 
+      {
+        "id": "AIMed.d202.s1739.e3", 
+        "type": "Protein", 
+        "text": "IL-1ra", 
+        "start": 96, 
+        "end": 102
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d202.s1739.p0", 
+        "arg1": "AIMed.d202.s1739.e0", 
+        "arg2": "AIMed.d202.s1739.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d202.s1739.p1", 
+        "arg1": "AIMed.d202.s1739.e0", 
+        "arg2": "AIMed.d202.s1739.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d202.s1739.p2", 
+        "arg1": "AIMed.d202.s1739.e0", 
+        "arg2": "AIMed.d202.s1739.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d202.s1739.p3", 
+        "arg1": "AIMed.d202.s1739.e1", 
+        "arg2": "AIMed.d202.s1739.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d202.s1739.p4", 
+        "arg1": "AIMed.d202.s1739.e1", 
+        "arg2": "AIMed.d202.s1739.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d202.s1739.p5", 
+        "arg1": "AIMed.d202.s1739.e2", 
+        "arg2": "AIMed.d202.s1739.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d206.s1779", 
+    "text": "As CD9 forms complexes with beta 1 integrins and the integrins are known to regulate keratinocyte behaviour, we investigated CD9 expression and function in human epidermal keratinocytes.", 
+    "annotations": [
+      {
+        "id": "AIMed.d206.s1779.e0", 
+        "type": "Protein", 
+        "text": "CD9", 
+        "start": 3, 
+        "end": 6
+      }, 
+      {
+        "id": "AIMed.d206.s1779.e1", 
+        "type": "Protein", 
+        "text": "CD9", 
+        "start": 125, 
+        "end": 128
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d206.s1779.p0", 
+        "arg1": "AIMed.d206.s1779.e0", 
+        "arg2": "AIMed.d206.s1779.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d209.s1809", 
+    "text": "The same domain of RIN1 that binds RAS also interacts with 14-3-3 proteins, extending the similarity between RIN1 and other RAS effectors.", 
+    "annotations": [
+      {
+        "id": "AIMed.d209.s1809.e0", 
+        "type": "Protein", 
+        "text": "RIN1", 
+        "start": 19, 
+        "end": 23
+      }, 
+      {
+        "id": "AIMed.d209.s1809.e1", 
+        "type": "Protein", 
+        "text": "RAS", 
+        "start": 35, 
+        "end": 38
+      }, 
+      {
+        "id": "AIMed.d209.s1809.e2", 
+        "type": "Protein", 
+        "text": "RIN1", 
+        "start": 109, 
+        "end": 113
+      }, 
+      {
+        "id": "AIMed.d209.s1809.e3", 
+        "type": "Protein", 
+        "text": "RAS", 
+        "start": 124, 
+        "end": 127
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d209.s1809.p0", 
+        "arg1": "AIMed.d209.s1809.e0", 
+        "arg2": "AIMed.d209.s1809.e1", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d209.s1809.p1", 
+        "arg1": "AIMed.d209.s1809.e0", 
+        "arg2": "AIMed.d209.s1809.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d209.s1809.p2", 
+        "arg1": "AIMed.d209.s1809.e0", 
+        "arg2": "AIMed.d209.s1809.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d209.s1809.p3", 
+        "arg1": "AIMed.d209.s1809.e1", 
+        "arg2": "AIMed.d209.s1809.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d209.s1809.p4", 
+        "arg1": "AIMed.d209.s1809.e1", 
+        "arg2": "AIMed.d209.s1809.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d209.s1809.p5", 
+        "arg1": "AIMed.d209.s1809.e2", 
+        "arg2": "AIMed.d209.s1809.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d212.s1838", 
+    "text": "Because cells lacking the protein tyrosine kinase c-Abl are also defective in radiation-induced G1 arrest, we investigated the possibility that ATM might interact with c-Abl in response to radiation damage.", 
+    "annotations": [
+      {
+        "id": "AIMed.d212.s1838.e0", 
+        "type": "Protein", 
+        "text": "c-Abl", 
+        "start": 50, 
+        "end": 55
+      }, 
+      {
+        "id": "AIMed.d212.s1838.e1", 
+        "type": "Protein", 
+        "text": "ATM", 
+        "start": 144, 
+        "end": 147
+      }, 
+      {
+        "id": "AIMed.d212.s1838.e2", 
+        "type": "Protein", 
+        "text": "c-Abl", 
+        "start": 168, 
+        "end": 173
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d212.s1838.p0", 
+        "arg1": "AIMed.d212.s1838.e0", 
+        "arg2": "AIMed.d212.s1838.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d212.s1838.p1", 
+        "arg1": "AIMed.d212.s1838.e0", 
+        "arg2": "AIMed.d212.s1838.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d212.s1838.p2", 
+        "arg1": "AIMed.d212.s1838.e1", 
+        "arg2": "AIMed.d212.s1838.e2", 
+        "label": "PPI-True"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d214.s1858", 
+    "text": "The molecular adapter c-Cbl is rapidly tyrosine phosphorylated following stimulation through the TCR and associates with Src homology domain-2 (SH2)/SH3 domain-containing adapters such as Grb2, Crk, and Crk-L, which interact with guanine nucleotide exchange factors specific for the Ras family.", 
+    "annotations": [
+      {
+        "id": "AIMed.d214.s1858.e0", 
+        "type": "Protein", 
+        "text": "c-Cbl", 
+        "start": 22, 
+        "end": 27
+      }, 
+      {
+        "id": "AIMed.d214.s1858.e1", 
+        "type": "Protein", 
+        "text": "TCR", 
+        "start": 97, 
+        "end": 100
+      }, 
+      {
+        "id": "AIMed.d214.s1858.e2", 
+        "type": "Protein", 
+        "text": "Src", 
+        "start": 121, 
+        "end": 124
+      }, 
+      {
+        "id": "AIMed.d214.s1858.e3", 
+        "type": "Protein", 
+        "text": "Grb2", 
+        "start": 188, 
+        "end": 192
+      }, 
+      {
+        "id": "AIMed.d214.s1858.e4", 
+        "type": "Protein", 
+        "text": "Crk", 
+        "start": 194, 
+        "end": 197
+      }, 
+      {
+        "id": "AIMed.d214.s1858.e5", 
+        "type": "Protein", 
+        "text": "Crk-L", 
+        "start": 203, 
+        "end": 208
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d214.s1858.p0", 
+        "arg1": "AIMed.d214.s1858.e0", 
+        "arg2": "AIMed.d214.s1858.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p1", 
+        "arg1": "AIMed.d214.s1858.e0", 
+        "arg2": "AIMed.d214.s1858.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p2", 
+        "arg1": "AIMed.d214.s1858.e0", 
+        "arg2": "AIMed.d214.s1858.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p3", 
+        "arg1": "AIMed.d214.s1858.e0", 
+        "arg2": "AIMed.d214.s1858.e4", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p4", 
+        "arg1": "AIMed.d214.s1858.e0", 
+        "arg2": "AIMed.d214.s1858.e5", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p5", 
+        "arg1": "AIMed.d214.s1858.e1", 
+        "arg2": "AIMed.d214.s1858.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p6", 
+        "arg1": "AIMed.d214.s1858.e1", 
+        "arg2": "AIMed.d214.s1858.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p7", 
+        "arg1": "AIMed.d214.s1858.e1", 
+        "arg2": "AIMed.d214.s1858.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p8", 
+        "arg1": "AIMed.d214.s1858.e1", 
+        "arg2": "AIMed.d214.s1858.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p9", 
+        "arg1": "AIMed.d214.s1858.e2", 
+        "arg2": "AIMed.d214.s1858.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p10", 
+        "arg1": "AIMed.d214.s1858.e2", 
+        "arg2": "AIMed.d214.s1858.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p11", 
+        "arg1": "AIMed.d214.s1858.e2", 
+        "arg2": "AIMed.d214.s1858.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p12", 
+        "arg1": "AIMed.d214.s1858.e3", 
+        "arg2": "AIMed.d214.s1858.e4", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p13", 
+        "arg1": "AIMed.d214.s1858.e3", 
+        "arg2": "AIMed.d214.s1858.e5", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d214.s1858.p14", 
+        "arg1": "AIMed.d214.s1858.e4", 
+        "arg2": "AIMed.d214.s1858.e5", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d215.s1868", 
+    "text": "Specific cleavage of laminin-5 (Ln-5) by matrix metalloprotease-2 (MMP2) was shown to induce migration of breast epithelial cells.", 
+    "annotations": [
+      {
+        "id": "AIMed.d215.s1868.e0", 
+        "type": "Protein", 
+        "text": "laminin-5", 
+        "start": 21, 
+        "end": 30
+      }, 
+      {
+        "id": "AIMed.d215.s1868.e1", 
+        "type": "Protein", 
+        "text": "Ln-5", 
+        "start": 32, 
+        "end": 36
+      }, 
+      {
+        "id": "AIMed.d215.s1868.e2", 
+        "type": "Protein", 
+        "text": "matrix metalloprotease-2", 
+        "start": 41, 
+        "end": 65
+      }, 
+      {
+        "id": "AIMed.d215.s1868.e3", 
+        "type": "Protein", 
+        "text": "MMP2", 
+        "start": 67, 
+        "end": 71
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d215.s1868.p0", 
+        "arg1": "AIMed.d215.s1868.e0", 
+        "arg2": "AIMed.d215.s1868.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d215.s1868.p1", 
+        "arg1": "AIMed.d215.s1868.e0", 
+        "arg2": "AIMed.d215.s1868.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d215.s1868.p2", 
+        "arg1": "AIMed.d215.s1868.e0", 
+        "arg2": "AIMed.d215.s1868.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d215.s1868.p3", 
+        "arg1": "AIMed.d215.s1868.e1", 
+        "arg2": "AIMed.d215.s1868.e2", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d215.s1868.p4", 
+        "arg1": "AIMed.d215.s1868.e1", 
+        "arg2": "AIMed.d215.s1868.e3", 
+        "label": "PPI-True"
+      }, 
+      {
+        "id": "AIMed.d215.s1868.p5", 
+        "arg1": "AIMed.d215.s1868.e2", 
+        "arg2": "AIMed.d215.s1868.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d216.s1878", 
+    "text": "Glycine-12 in the transition state mimic is within van der Waals distance of both arginine-789 of GAP-334 and glutamine-61 of Ras, and even its mutation to alanine would disturb the arrangements of residues in the transition state.", 
+    "annotations": [
+      {
+        "id": "AIMed.d216.s1878.e0", 
+        "type": "Protein", 
+        "text": "GAP-334", 
+        "start": 98, 
+        "end": 105
+      }, 
+      {
+        "id": "AIMed.d216.s1878.e1", 
+        "type": "Protein", 
+        "text": "Ras", 
+        "start": 126, 
+        "end": 129
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d216.s1878.p0", 
+        "arg1": "AIMed.d216.s1878.e0", 
+        "arg2": "AIMed.d216.s1878.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d218.s1898", 
+    "text": "These results suggest that TPO has two distinct receptor-binding sites that function to dimerize TPO receptors in a sequential fashion.", 
+    "annotations": [
+      {
+        "id": "AIMed.d218.s1898.e0", 
+        "type": "Protein", 
+        "text": "TPO", 
+        "start": 27, 
+        "end": 30
+      }, 
+      {
+        "id": "AIMed.d218.s1898.e1", 
+        "type": "Protein", 
+        "text": "TPO", 
+        "start": 97, 
+        "end": 100
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d218.s1898.p0", 
+        "arg1": "AIMed.d218.s1898.e0", 
+        "arg2": "AIMed.d218.s1898.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d219.s1908", 
+    "text": "Thus, 14-3-3 interaction with the Raf-CRD may serve in negative regulation of Raf-1 function by facilitating dissociation of 14-3-3 from the NH2 terminus of Raf-1 to promote subsequent events necessary for full activation of Raf-1.", 
+    "annotations": [
+      {
+        "id": "AIMed.d219.s1908.e0", 
+        "type": "Protein", 
+        "text": "Raf-CRD", 
+        "start": 34, 
+        "end": 41
+      }, 
+      {
+        "id": "AIMed.d219.s1908.e1", 
+        "type": "Protein", 
+        "text": "Raf-1", 
+        "start": 78, 
+        "end": 83
+      }, 
+      {
+        "id": "AIMed.d219.s1908.e2", 
+        "type": "Protein", 
+        "text": "Raf-1", 
+        "start": 157, 
+        "end": 162
+      }, 
+      {
+        "id": "AIMed.d219.s1908.e3", 
+        "type": "Protein", 
+        "text": "Raf-1", 
+        "start": 225, 
+        "end": 230
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d219.s1908.p0", 
+        "arg1": "AIMed.d219.s1908.e0", 
+        "arg2": "AIMed.d219.s1908.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d219.s1908.p1", 
+        "arg1": "AIMed.d219.s1908.e0", 
+        "arg2": "AIMed.d219.s1908.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d219.s1908.p2", 
+        "arg1": "AIMed.d219.s1908.e0", 
+        "arg2": "AIMed.d219.s1908.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d219.s1908.p3", 
+        "arg1": "AIMed.d219.s1908.e1", 
+        "arg2": "AIMed.d219.s1908.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d219.s1908.p4", 
+        "arg1": "AIMed.d219.s1908.e1", 
+        "arg2": "AIMed.d219.s1908.e3", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d219.s1908.p5", 
+        "arg1": "AIMed.d219.s1908.e2", 
+        "arg2": "AIMed.d219.s1908.e3", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d223.s1943", 
+    "text": "Functional studies in Jurkat T lymphocytic cells point to the importance of both the E2F and NF-kappaB binding sites in E2F-1 mediated repression of HIV-1 promoter, in vivo.", 
+    "annotations": [
+      {
+        "id": "AIMed.d223.s1943.e0", 
+        "type": "Protein", 
+        "text": "E2F", 
+        "start": 85, 
+        "end": 88
+      }, 
+      {
+        "id": "AIMed.d223.s1943.e1", 
+        "type": "Protein", 
+        "text": "NF-kappaB", 
+        "start": 93, 
+        "end": 102
+      }, 
+      {
+        "id": "AIMed.d223.s1943.e2", 
+        "type": "Protein", 
+        "text": "E2F-1", 
+        "start": 120, 
+        "end": 125
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d223.s1943.p0", 
+        "arg1": "AIMed.d223.s1943.e0", 
+        "arg2": "AIMed.d223.s1943.e1", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d223.s1943.p1", 
+        "arg1": "AIMed.d223.s1943.e0", 
+        "arg2": "AIMed.d223.s1943.e2", 
+        "label": "PPI-False"
+      }, 
+      {
+        "id": "AIMed.d223.s1943.p2", 
+        "arg1": "AIMed.d223.s1943.e1", 
+        "arg2": "AIMed.d223.s1943.e2", 
+        "label": "PPI-False"
+      }
+    ]
+  }, 
+  {
+    "id": "AIMed.d224.s1953", 
+    "text": "The correlation between HLA-E and MHC class I surface expression might be relevant to the function of HLA-E.", 
+    "annotations": [
+      {
+        "id": "AIMed.d224.s1953.e0", 
+        "type": "Protein", 
+        "text": "HLA-E", 
+        "start": 24, 
+        "end": 29
+      }, 
+      {
+        "id": "AIMed.d224.s1953.e1", 
+        "type": "Protein", 
+        "text": "HLA-E", 
+        "start": 102, 
+        "end": 107
+      }
+    ], 
+    "relations": [
+      {
+        "id": "AIMed.d224.s1953.p0", 
+        "arg1": "AIMed.d224.s1953.e0", 
+        "arg2": "AIMed.d224.s1953.e1", 
+        "label": "PPI-False"
+      }
+    ]
+  }
+]

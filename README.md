@@ -1,85 +1,62 @@
 # DeepRel
 
-One Paragraph of project description goes here
+This project provides a convolutional neural network model for relation
+extraction.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and  running on your
+local machine for development and testing  purposes.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+1. install the required packages
 
-```
-Give examples
-```
+```bash pip install -r requirements.txt ```
 
-### Installing
+2. Follow the [instruction ](http://www.nactem.ac.uk/GENIA/tagger/) to install
+`geniatagger` in `$GENIATAGGER_PATH`
 
-A step by step series of examples that tell you have to get a development env running
+3. [Download](http://nlp.stanford.edu/software/corenlp.shtml#Download) and
+unpack the compressed file to `$CORENLP_PATH`.
 
-Say what the step will be
+4. [Download](http://bio.nlplab.org/) the `word2vec` model to '$WORD2VEC_PATH'
 
-```
-Give the example
-```
+### Prepare the dataset
 
-And repeat
+The program needs three separated datasets in JSON format: training,
+development, and test.  Each file contains sentences with annotations and
+relations. `deeprel_schema.json` describes the data format.  The folder
+`examples` contains some examples.
 
-```
-until finished
-```
+### Prepare the configuration file
 
-End with an example of getting some data out of the system or using it for a little demo
+The program needs `ini` file to configure the locations of `genia tagger`,
+`stanford corenlp`, etc.  An example of `ini` file can be found in `examples`.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+Note: please do not include `.json` for each dataset.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read
+[CONTRIBUTING](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for
+details on our code of conduct, and the process for submitting pull requests to
+us.
 
-## Versioning
+## Developers
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* Yifan Peng - *Initial work- [NCBI,NLM,NHI](https://github.com/yfpeng)
 
-## Authors
-
-* **Yifan Peng** - *Initial work* - [NCBI,NLM,NHI](https://github.com/yfpeng)
-
-See also the list of [contributors](https://github.com/ncbi-nlp/DeepRel/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+See also the list of [contributors](https://github.com/ncbi-
+nlp/DeepRel/contributors) who participated in this project.
 
 ## Acknowledgments
 
-This work was supported by the Intramural Research Programs of the National Institutes of Health, National Library of Medicine. We are also grateful to Robert Leaman for the helpful discussion.
+This work was supported by the Intramural Research Programs of the National
+Institutes of Health, National Library of Medicine. We are also grateful to
+Robert Leaman for the helpful discussion.
+
+## Reference
+
+* Peng Y, Lu Z. Deep learning for extracting protein-protein interactions from
+* biomedical literature. In Proceedings of BioNLP workshop. 2017.

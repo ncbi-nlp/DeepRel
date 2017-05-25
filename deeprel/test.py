@@ -35,15 +35,7 @@ def main(argv):
     logging.info('CNN config: \n%s', json.dumps(config, indent=2))
 
     vocabs = train.read_vocabs(config)
-
-    embeddings = [VocabsCreater.word_embedding_file,
-                  VocabsCreater.pos_embedding_file,
-                  VocabsCreater.chunk_embedding_file,
-                  VocabsCreater.arg1_dis_embedding_file,
-                  VocabsCreater.arg2_dis_embedding_file,
-                  VocabsCreater.type_embedding_file,
-                  VocabsCreater.dependency_embedding_file]
-    matrices = train.read_embeddings(config, embeddings)
+    matrices = train.read_embeddings(config)
 
     x_test, y_test = create_matrix.read_matrix(config['test_matrix'])
     x_sp_test, y_sp_test = create_matrix.read_matrix(config['test_sp_matrix'])

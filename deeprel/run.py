@@ -28,21 +28,21 @@ from deeprel import train_doc2vec
 from deeprel.create_vocabs import VocabsCreater
 
 
-def test_locations(config):
-    jsondir = os.path.join(config['model_dir'], 'all')
+def test_locations(section):
+    jsondir = os.path.join(section['model_dir'], 'all')
     if not os.path.exists(jsondir):
         os.makedirs(jsondir)
 
-    training_set = os.path.join(config['model_dir'], config['training_set'] + '.json')
-    test_set = os.path.join(config['model_dir'], config['test_set'] + '.json')
-    dev_set = os.path.join(config['model_dir'], config['dev_set'] + '.json')
+    training_set = os.path.join(section['model_dir'], section['training_set'] + '.json')
+    test_set = os.path.join(section['model_dir'], section['test_set'] + '.json')
+    dev_set = os.path.join(section['model_dir'], section['dev_set'] + '.json')
 
     assert os.path.exists(training_set)
     assert os.path.exists(test_set)
     assert os.path.exists(dev_set)
-    assert os.path.exists(config['geniatagger'])
-    assert os.path.exists(config['corenlp_jars'])
-    assert os.path.exists(config['word2vec'])
+    assert os.path.exists(section['geniatagger'])
+    assert os.path.exists(section['corenlp_jars'])
+    assert os.path.exists(section['word2vec'])
 
 
 def main():
@@ -53,22 +53,24 @@ def main():
     config = configparser.ConfigParser()
     config.read(arguments['INI_FILE'])
 
-    test_locations(config)
-    jsondir = os.path.join(config['model_dir'], 'all')
-    training_set = os.path.join(config['model_dir'], config['training_set'] + '.json')
-    test_set = os.path.join(config['model_dir'], config['test_set'] + '.json')
-    dev_set = os.path.join(config['model_dir'], config['dev_set'] + '.json')
+    cnn_section = config['cnn']
+    test_locations(cnn_section)
+
+    jsondir = os.path.join(cnn_section['model_dir'], 'all')
+    training_set = str(os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '.json'))
+    test_set = str(os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.json'))
+    dev_set = str(os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.json'))
 
     if arguments['-p']:
         argv = [
-            config['geniatagger'],
-            config['corenlp_jars'],
+            cnn_section['geniatagger'],
+            cnn_section['corenlp_jars'],
             jsondir,
             training_set,
             test_set,
             dev_set,
         ]
-        preparse.main_batch(argv)
+        preparse.main(argv)
     if arguments['-f']:
         argv = [
             jsondir,
@@ -79,9 +81,9 @@ def main():
         create_features.main_batch(argv)
     if arguments['-v']:
         argv = [
-            '-w', config['word2vec'],
+            '-w', cnn_section['word2vec'],
             '-e',
-            '-o', config['model_dir'],
+            '-o', cnn_section['model_dir'],
             jsondir,
             training_set,
             test_set,
@@ -89,86 +91,56 @@ def main():
         ]
         create_vocabs.main(argv)
     if arguments['-m']:
-        argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            jsondir,
-            training_set,
-            os.path.join(config['model_dir'], config['training_set'] + '.npz')
-        ]
-        create_matrix.main(argv)
-        argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            jsondir,
-            training_set,
-            os.path.join(config['model_dir'], config['test_set'] + '.npz')
-        ]
-        create_matrix.main(argv)
-        argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            jsondir,
-            training_set,
-            os.path.join(config['model_dir'], config['dev_set'] + '.npz')
-        ]
-        create_matrix.main(argv)
+        vocab = os.path.join(cnn_section['model_dir'], VocabsCreater.vocab_file)
+        for src, dst in zip([training_set, test_set, dev_set], ['training_set', 'test_set', 'dev_set']):
+            argv = [
+                vocab,
+                jsondir,
+                src,
+                os.path.join(cnn_section['model_dir'], cnn_section[dst] + '.npz')
+            ]
+            create_matrix.main(argv)
     if arguments['-s']:
-        argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            jsondir,
-            training_set,
-            os.path.join(config['model_dir'], config['training_set'] + '-sp.npz')
-        ]
-        create_sp_matrix.main(argv)
-        argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            jsondir,
-            training_set,
-            os.path.join(config['model_dir'], config['test_set'] + '-sp.npz')
-        ]
-        create_sp_matrix.main(argv)
-        argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            jsondir,
-            training_set,
-            os.path.join(config['model_dir'], config['dev_set'] + '-sp.npz')
-        ]
-        create_sp_matrix.main(argv)
+        vocab = os.path.join(cnn_section['model_dir'], VocabsCreater.vocab_file)
+        for src, dst in zip([training_set, test_set, dev_set], ['training_set', 'test_set', 'dev_set']):
+            argv = [
+                vocab,
+                jsondir,
+                src,
+                os.path.join(cnn_section['model_dir'], cnn_section[dst] + '-sp.npz')
+            ]
+            create_sp_matrix.main(argv)
     if arguments['-t']:
         argv = [
-            os.path.join(config['model_dir'], VocabsCreater.vocab_file),
-            os.path.join(config['model_dir'], config['training_set'] + '-sp.npz'),
-            os.path.join(config['model_dir'], config['test_set'] + '-sp.npz'),
-            os.path.join(config['model_dir'], config['dev_set'] + '-sp.npz')
+            os.path.join(cnn_section['model_dir'], VocabsCreater.vocab_file),
+            os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '.npz'),
+            os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.npz'),
+            os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.npz')
+        ]
+        test_matrix.main(argv)
+        argv = [
+            os.path.join(cnn_section['model_dir'], VocabsCreater.vocab_file),
+            os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-sp.npz'),
+            os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-sp.npz'),
+            os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-sp.npz')
         ]
         test_matrix.main(argv)
     if arguments['-d']:
-        model_file = os.path.join(config['model_dir'], config['training_set'] + '.doc2vec')
+        model_file = os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '.doc2vec')
         argv = [
             jsondir,
             training_set,
             model_file
         ]
         train_doc2vec.main(argv)
-        argv = [
-            jsondir,
-            model_file,
-            training_set,
-            os.path.join(config['model_dir'], config['training_set'] + '-doc.npz'),
-        ]
-        create_doc2vec.main(argv)
-        argv = [
-            jsondir,
-            model_file,
-            test_set,
-            os.path.join(config['model_dir'], config['test_set'] + '-doc.npz'),
-        ]
-        create_doc2vec.main(argv)
-        argv = [
-            jsondir,
-            model_file,
-            dev_set,
-            os.path.join(config['model_dir'], config['dev_set'] + '-doc.npz'),
-        ]
-        create_doc2vec.main(argv)
+        for src, dst in zip([training_set, test_set, dev_set], ['training_set', 'test_set', 'dev_set']):
+            argv = [
+                jsondir,
+                model_file,
+                src,
+                os.path.join(cnn_section['model_dir'], cnn_section[dst] + '-doc.npz'),
+            ]
+            create_doc2vec.main(argv)
 
 
 if __name__ == '__main__':
