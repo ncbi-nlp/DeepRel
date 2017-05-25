@@ -59,4 +59,4 @@ Robert Leaman for the helpful discussion.
 ## Reference
 
 * Peng Y, Lu Z. Deep learning for extracting protein-protein interactions from
-* biomedical literature. In Proceedings of BioNLP workshop. 2017.
+  biomedical literature. In Proceedings of BioNLP workshop. 2017.
