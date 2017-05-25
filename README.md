@@ -47,8 +47,7 @@ us.
 
 * Yifan Peng - *Initial work- [NCBI,NLM,NHI](https://github.com/yfpeng)
 
-See also the list of [contributors](https://github.com/ncbi-
-nlp/DeepRel/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/ncbi-nlp/DeepRel/contributors) who participated in this project.
 
 ## Acknowledgments
 
