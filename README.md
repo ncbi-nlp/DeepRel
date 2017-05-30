@@ -1,4 +1,4 @@
-# DeepRel
+# <img src="http://pengyifan.com/images/deeprel3.png" height='100'>
 
 This project provides a convolutional neural network model for relation
 extraction. 
