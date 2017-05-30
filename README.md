@@ -7,7 +7,7 @@ See [`CONTRIBUTING.md`](/CONTRIBUTING.md) before filing an issue or creating a p
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and  running on your
+These instructions will get you a copy of the project up and  run on your
 local machine for development and testing  purposes.
 
 ### Prerequisites
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 3. Follow the [instruction ](http://www.nactem.ac.uk/GENIA/tagger/) to install
 `geniatagger` to `GENIATAGGER_PATH`
 
-4. [Download](http://nlp.stanford.edu/software/corenlp.shtml#Download) and
+4. [Download](http://nlp.stanford.edu/software/corenlp.shtml#Download) Stanford CoreNLP and
 unpack the compressed file to `CORENLP_PATH`.
 
 5. [Download](http://bio.nlplab.org/) the `word2vec` model to `WORD2VEC_PATH`
@@ -49,8 +49,8 @@ jsonschema -i examples/aimed-dev.json deeprel_schema.json
 
 ### Prepare the configuration file
 
-The program needs `INI_FILE` to configure the locations of `genia tagger`,
-`stanford corenlp`, etc.  An example of `INI_FILE` can be found in `examples`.
+The program needs `INI_FILE` to configure the locations of `Genia tagger`,
+`Stanford CoreNLP`, etc.  An example of `INI_FILE` can be found in `examples`.
 It is a good practice to place the `INI_FILE` in the same folder of `model_dir`, but it is not required.
 
 ### Preparse the datasets
