@@ -25,17 +25,6 @@ def GeniaTagger(genia_path):
     return GeniaTagger(genia_path)
 
 
-def Bllip(model_dir=None):
-    """
-    Bllip parser
-    
-    Args:
-        model_dir(str): the location to download the model.
-    """
-    from .bllip import Bllip
-    return Bllip(model_dir=model_dir)
-
-
 def StanfordParser(corenlp_jars):
     """
     Stanford parser
