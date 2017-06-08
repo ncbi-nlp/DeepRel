@@ -94,6 +94,7 @@ Options:
     -s           create shortest path matrix [default: False]
     -d           create doc2vec [default: False]
     -t           test matrix format [default: False]
+    -k           skip pre-parsed documents [default: False]
 ```
 
 ### Train the model

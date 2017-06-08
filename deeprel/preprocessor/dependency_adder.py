@@ -50,7 +50,7 @@ class DependencyAdder(object):
                     gov = m[node1.refid]
                     dep = m[node0.refid]
                 if gov == dep:
-                    logging.warning('Discard self loop')
+                    logging.debug('Discard self loop')
                     continue
                 tok = obj['toks'][dep]
                 if 'governor' in tok:
@@ -59,7 +59,7 @@ class DependencyAdder(object):
                     if 'extra' in rel.infons:
                         pass
                     else:
-                        logging.error('Two heads: %s', str(rel))
+                        logging.debug('%s: Two heads: %s', obj['id'], str(rel))
                 else:
                     tok['governor'] = gov
                     tok['dependency'] = rel.infons['dependency']

@@ -21,10 +21,7 @@
               "type": "string"
             },
             "type": {
-              "type": "string",
-              "enum": [
-                "Protein"
-              ]
+              "type": "string"
             },
             "text": {
               "type": "string"
@@ -56,11 +53,7 @@
               "type": "string"
             },
             "label": {
-              "type": "string",
-              "enum": [
-                "PPI-False",
-                "PPI-True"
-              ]
+              "type": "string"
             }
           },
           "required": ["id", "arg1", "arg2", "label"]

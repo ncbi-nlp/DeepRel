@@ -4,6 +4,7 @@ Usage:
 
 Options:
     --log <str>     Log option. One of DEBUG, INFO, WARNING, ERROR, and CRITICAL. [default: INFO]
+    -k              Skip pre-parsed documents [default: False]
 """
 
 import collections
@@ -36,7 +37,7 @@ def get_concepts(mentions):
 
 class PreParse(object):
 
-    def __init__(self, save_path, genia_path, corenlp_path):
+    def __init__(self, save_path, genia_path, corenlp_path, skip_preparsed=False):
         """
         Args:
             save_path: output dir
@@ -47,6 +48,7 @@ class PreParse(object):
         self.splitter = NltkSSplitter()
         self.parser = StanfordParser(corenlp_path)
         self.dep_adder = dependency_adder.DependencyAdder()
+        self.skip_preparsed = skip_preparsed
 
     def parse_by_genia(self, text):
         """
@@ -67,6 +69,9 @@ class PreParse(object):
             return None
 
     def process(self, obj):
+        filename = os.path.join(self.save_path, obj['id'] + '.json')
+        if self.skip_preparsed and os.path.exists(filename):
+            return
         # tokenize
         if 'toks' not in obj:
             obj['toks'] = self.parse_by_genia(obj['text'])
@@ -75,18 +80,10 @@ class PreParse(object):
         # parse
         if 'parse tree' not in obj:
             obj['parse tree'] = self.parse(obj['text'])
-        self.add_dependency(obj)
-
-        filename = os.path.join(self.save_path, obj['id'] + '.json')
-        if os.path.exists(filename):
-            with open(filename) as fp:
-                oldobj = json.load(fp)
-        else:
-            oldobj = None
-
-        if obj != oldobj:
-            with open(filename, 'w') as fp:
-                json.dump(obj, fp, indent=2)
+            if obj['parse tree'] is not None:
+                self.add_dependency(obj)
+        with open(filename, 'w') as fp:
+            json.dump(obj, fp, indent=2)
 
 
 def main_batch(argv):
@@ -125,7 +122,7 @@ def main(argv):
     else:
         arguments['CORENLP_PATH'] += '/*'
 
-    preparse = PreParse(arguments['OUTPUT_DIR'], arguments['GENIA_PATH'], [arguments['CORENLP_PATH']])
+    preparse = PreParse(arguments['OUTPUT_DIR'], arguments['GENIA_PATH'], [arguments['CORENLP_PATH']], arguments['-k'])
 
     for obj in utils.json_iterator(arguments['INPUT_FILE']):
         preparse.process(obj)

@@ -28,23 +28,12 @@ POSITION_MATRIX = np.array([
 ])
 
 
-def get_word_embeddings(src, vocab, dst, type):
+def get_word_embeddings(src, vocab, dst):
     """
     Create np word2vec matrix based on vocabs
-
-    Args:
-        type(str): one of 'google', 'gensim'
-
-    Raises:
-        RuntimeError
     """
     start = time.time()
-    if type == 'google':
-        word_vectors = KeyedVectors.load_word2vec_format(src, binary=True)
-    elif type == 'gensim':
-        word_vectors = KeyedVectors.load(src)
-    else:
-        raise RuntimeError('Cannot parse word2vec file. Unknown type: ' + type)
+    word_vectors = KeyedVectors.load_word2vec_format(src, binary=True)
     logging.info("took {:.2f} seconds".format(time.time() - start))
     logging.info("vector size: %s", word_vectors.vector_size)
     logging.info("vocab  size: %s", len(word_vectors.vocab))

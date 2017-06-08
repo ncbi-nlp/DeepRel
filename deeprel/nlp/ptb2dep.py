@@ -54,10 +54,14 @@ class Ptb2Dep(object):
         """
         if len(sentence.annotations) <= 0:
             return
-        dependency_graph = self.convert(sentence.annotations[0].infons['parse tree'])
-        anns, rels = convert_dg(dependency_graph, sentence.text, sentence.offset)
-        sentence.annotations = anns
-        sentence.relations = rels
+        try:
+            dependency_graph = self.convert(sentence.annotations[0].infons['parse tree'])
+            anns, rels = convert_dg(dependency_graph, sentence.text, sentence.offset)
+            sentence.annotations = anns
+            sentence.relations = rels
+        except:
+            logging.exception('Cannot convert %s', sentence)
+            return
 
     def convert_c(self, collection):
         """
@@ -143,7 +147,7 @@ def convert_dg(dependency_graph, text, offset, ann_index=0, rel_index=0):
             if index == -1:
                 logger.debug('Cannot convert parse tree to dependency graph at %d\n%d\n%s',
                              start, offset, str(dependency_graph))
-                return
+                continue
 
         ann = bioc.BioCAnnotation()
         ann.id = 'T{}'.format(ann_index)
@@ -168,9 +172,10 @@ def convert_dg(dependency_graph, text, offset, ann_index=0, rel_index=0):
         relation.infons['dependency'] = node.deprel
         if node.extra:
             relation.infons['extra'] = node.extra
-        relation.add_node(bioc.BioCNode('T{}'.format(annotation_id_map[node.index]), 'dependant'))
-        relation.add_node(bioc.BioCNode('T{}'.format(annotation_id_map[node.head]), 'governor'))
-        relations.append(relation)
-        rel_index += 1
+        if node.index in annotation_id_map and node.head in annotation_id_map:
+            relation.add_node(bioc.BioCNode('T{}'.format(annotation_id_map[node.index]), 'dependant'))
+            relation.add_node(bioc.BioCNode('T{}'.format(annotation_id_map[node.head]), 'governor'))
+            relations.append(relation)
+            rel_index += 1
 
     return annotations, relations

@@ -11,6 +11,7 @@ Options:
     -s           create shortest path matrix [default: False]
     -d           create doc2vec [default: False]
     -t           test matrix format [default: False]
+    -k           skip pre-parsed documents [default: False]
 """
 import docopt
 import logging
@@ -70,6 +71,8 @@ def main():
             test_set,
             dev_set,
         ]
+        if arguments['-k']:
+            argv.append('-k')
         preparse.main(argv)
     if arguments['-f']:
         argv = [

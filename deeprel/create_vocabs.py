@@ -48,9 +48,9 @@ class VocabsCreater(object):
         for rel in obj['relations']:
             self.labels.add(rel['label'])
 
-    def save_word_embeddings(self, src, type):
+    def save_word_embeddings(self, src):
         dst = os.path.join(self.save_path, VocabsCreater.word_embedding_file)
-        embedding.get_word_embeddings(src, self.vocab.vocabs['word'], dst, type)
+        embedding.get_word_embeddings(src, self.vocab.vocabs['word'], dst)
 
     def save_pos_embeddings(self):
         dst = os.path.join(self.save_path, VocabsCreater.pos_embedding_file)
@@ -97,7 +97,7 @@ def main(argv):
     vc.save_vocab()
     if arguments['-e']:
         if '-w' in arguments:
-            vc.save_word_embeddings(arguments['-w'], 'google')
+            vc.save_word_embeddings(arguments['-w'])
         vc.save_pos_embeddings()
         vc.save_chunk_embeddings()
         vc.save_arg1_dis_embeddings()
