@@ -258,7 +258,7 @@ class CnnModel(object):
         h_sp = tf.nn.relu(tf.nn.bias_add(conv_sp, b_sp_filter), name="relu_sp_{}".format(window_size))
         # Max pooling over the outputs
         pool_sp = tf.nn.max_pool(
-            h,
+            h_sp,
             ksize=[1, self.config['seq_len'] - window_size + 1, 1, 1],
             strides=[1, 1, 1, 1],
             padding='VALID',
