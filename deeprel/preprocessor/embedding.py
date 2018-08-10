@@ -51,7 +51,7 @@ def get_word_embeddings(src, vocab, dst):
             logging.warning('Cannot find %s in word2vec', token)
 
     logging.info('word embedding matrix shape: %s', matrix.shape)
-    with open(dst, 'w') as f:
+    with open(dst, 'wb') as f:
         np.savez(f, embeddings=matrix)
 
 
@@ -84,7 +84,7 @@ def get_pos_embeddings(vocab, dst):
     matrix[np.arange(a.size), a] = 1
 
     logging.info('pos matrix shape: %s', matrix.shape)
-    with open(dst, 'w') as f:
+    with open(dst, 'wb') as f:
         np.savez(f, embeddings=matrix)
 
 
@@ -113,13 +113,13 @@ def get_distance_embeddings(vocab, dst, name=None):
         matrix[idx] = POSITION_MATRIX[dis]
 
     logging.info('%s matrix shape: %s', name, matrix.shape)
-    with open(dst, 'w') as f:
+    with open(dst, 'wb') as f:
         np.savez(f, embeddings=matrix)
 
 
 def get_one_hot(vocab, dst, name=None):
     matrix = np.diag(range(len(vocab)))
-    with open(dst, 'w') as f:
+    with open(dst, 'wb') as f:
         np.savez(f, embeddings=matrix)
     logging.info('%s matrix shape: %s', name, matrix.shape)
 
@@ -143,5 +143,5 @@ def get_dependency_embeddings(vocab, dst):
         matrix[idx, new_vocab.get(tag)] = 1
 
     logging.info('dependency matrix shape: %s', matrix.shape)
-    with open(dst, 'w') as f:
+    with open(dst, 'wb') as f:
         np.savez(f, embeddings=matrix)

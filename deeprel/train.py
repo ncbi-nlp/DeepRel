@@ -24,6 +24,7 @@ from deeprel import create_matrix
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model import re_vocabulary
 from deeprel.model.cnn_model import CnnModel
+from utils import pick_device
 
 
 def read_vocabs(config):
@@ -46,7 +47,7 @@ def read_embeddings(config):
     for embedding in embeddings:
         filename = os.path.join(config['model_dir'], embedding)
         logging.info('Loading embeddings: %s', filename)
-        with open(filename) as f:
+        with open(filename, 'rb') as f:
             npzfile = np.load(f)
             matrix = npzfile['embeddings']
             matrices.append(matrix)
@@ -55,7 +56,7 @@ def read_embeddings(config):
 
 
 def read_doc2vec(filename):
-    with open(filename) as f:
+    with open(filename, 'rb') as f:
         npzfile = np.load(f)
         return npzfile['x']
 
@@ -92,6 +93,8 @@ def main(argv):
     arguments = docopt.docopt(__doc__, argv=argv)
     print(arguments)
     logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
+
+    pick_device()
 
     logging.info('Read config: %s', arguments['INI_FILE'])
     oldconfig = configparser.ConfigParser()

@@ -33,7 +33,7 @@ def create_matrix(model_file, jsondir, src, dst):
 
     x = np.stack(xs, axis=0)
     logging.debug('Save to %s', dst)
-    with open(dst, 'w') as f:
+    with open(dst, 'wb') as f:
         np.savez(f, x=x)
 
 

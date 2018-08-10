@@ -16,9 +16,13 @@ class GeniaTagger(object):
             # lazy load
             self._tagger = subprocess.Popen('./' + os.path.basename(self.genia_path),
                                             cwd=os.path.dirname(self.genia_path),
-                                            stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+                                            stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                            bufsize=1,
+                                            universal_newlines=True
+                                            )
         for line in text.split('\n'):
-            self._tagger.stdin.write(line + '\n')
+            line += '\n'
+            self._tagger.stdin.write(line)
             while True:
                 r = self._tagger.stdout.readline()[:-1]
                 if not r:

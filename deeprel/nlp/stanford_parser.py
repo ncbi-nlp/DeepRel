@@ -25,3 +25,4 @@ class StanfordParser(object):
             for sent in json_rst['sentences']:
                 parse_tree= sent['parse']
                 yield parse_tree
+

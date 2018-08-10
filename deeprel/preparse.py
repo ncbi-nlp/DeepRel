@@ -15,9 +15,10 @@ import sys
 from concurrent import futures
 
 import docopt
+import tqdm
 
 from deeprel import utils
-from deeprel.nlp import StanfordParser
+from deeprel.nlp import BllipParser
 from deeprel.nlp import GeniaTagger
 from deeprel.nlp import NltkSSplitter
 from deeprel.preprocessor import dependency_adder
@@ -46,7 +47,7 @@ class PreParse(object):
         self.save_path = save_path
         self.tagger = GeniaTagger(genia_path)
         self.splitter = NltkSSplitter()
-        self.parser = StanfordParser(corenlp_path)
+        self.parser = BllipParser(None)
         self.dep_adder = dependency_adder.DependencyAdder()
         self.skip_preparsed = skip_preparsed
 
@@ -64,7 +65,7 @@ class PreParse(object):
 
     def parse(self, text):
         try:
-            return next(self.parser.parse(text))
+            return self.parser.parse(text)
         except:
             return None
 
@@ -78,7 +79,7 @@ class PreParse(object):
             # re-tokenize
             token_splitter.split(obj['toks'], obj['annotations'])
         # parse
-        if 'parse tree' not in obj:
+        if 'parse tree' not in obj or obj['parse tree'] is None:
             obj['parse tree'] = self.parse(obj['text'])
             if obj['parse tree'] is not None:
                 self.add_dependency(obj)

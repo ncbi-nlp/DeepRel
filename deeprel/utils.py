@@ -3,9 +3,12 @@ from __future__ import print_function
 import collections
 import json
 import logging
+import os
 import tempfile
 
+import GPUtil
 import numpy as np
+import tqdm
 
 from deeprel import metrics
 
@@ -15,13 +18,8 @@ def json_iterator(files):
         with open(input_file) as fp:
             objs = json.load(fp, object_pairs_hook=collections.OrderedDict)
 
-        idx = 1
-        for idx, obj in enumerate(objs, 1):
-            logging.debug('Process: %s', obj['id'])
-            if idx % 500 == 0:
-                logging.info('Process: %s documents', idx)
+        for obj in tqdm.tqdm(objs):
             yield obj
-        logging.info('Process: %s documents', idx)
 
 
 def intersect(range1, range2):
@@ -124,3 +122,16 @@ def print_confusion(confusion, vocab):
             total_guessed_tags[i] - confusion[i, i],
             total_true_tags[i] - confusion[i, i]]
     print(metrics.classification_report(total, type='markdown'))
+
+
+def pick_device():
+    try:
+        GPUtil.showUtilization()
+        # Get the first available GPU
+        DEVICE_ID_LIST = GPUtil.getFirstAvailable()
+        DEVICE_ID = DEVICE_ID_LIST[0]  # grab first element from list
+        # Set CUDA_VISIBLE_DEVICES to mask out all other GPUs than the first available device id
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(DEVICE_ID)
+        print('Device ID (unmasked): ' + str(DEVICE_ID))
+    except:
+        logging.exception('Cannot detect GPUs')

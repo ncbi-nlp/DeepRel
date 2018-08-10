@@ -100,7 +100,7 @@ class MatrixCreater(object):
 
         logging.info('x shape: %s', x.shape)
         logging.info('y shape: %s', one_hot.shape)
-        with open(dst, 'w') as f:
+        with open(dst, 'wb') as f:
             np.savez(f, x=x, y=one_hot)
 
         with open(dst + '.txt', 'w') as f:
@@ -112,7 +112,7 @@ class MatrixCreater(object):
 
 def read_matrix(src):
     logging.info('Read matrix: %s', src)
-    with open(src) as f:
+    with open(src, 'rb') as f:
         npzfile = np.load(f)
         return npzfile['x'], npzfile['y']
 

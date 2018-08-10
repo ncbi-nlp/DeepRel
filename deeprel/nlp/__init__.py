@@ -34,3 +34,15 @@ def StanfordParser(corenlp_jars):
     """
     from .stanford_parser import StanfordParser
     return StanfordParser(corenlp_jars=corenlp_jars)
+
+
+
+def BllipParser(model_dir):
+    """
+    Bllip parser
+
+    Args:
+        model_dir(str): the location to download the model.
+    """
+    from .bllip_parser import Bllip
+    return Bllip(model_dir=model_dir)

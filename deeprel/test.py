@@ -22,12 +22,15 @@ from deeprel import train
 from deeprel import utils
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model.cnn_model import CnnModel
+from utils import pick_device
 
 
 def main(argv):
     arguments = docopt.docopt(__doc__, argv=argv)
     print(arguments)
     logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
+
+    pick_device()
 
     config_file = os.path.join(arguments['MODEL_DIR'], 'cnn_model_config.json')
     with open(config_file) as fp:
