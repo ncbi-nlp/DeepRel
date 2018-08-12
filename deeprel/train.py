@@ -24,6 +24,7 @@ from deeprel import create_matrix
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model import re_vocabulary
 from deeprel.model.cnn_model import CnnModel
+from doc2vec import read_doc2vec
 from utils import pick_device
 
 
@@ -53,12 +54,6 @@ def read_embeddings(config):
             matrices.append(matrix)
             logging.info('%s shape: %s', embedding, matrix.shape)
     return matrices
-
-
-def read_doc2vec(filename):
-    with open(filename, 'rb') as f:
-        npzfile = np.load(f)
-        return npzfile['x']
 
 
 def prepare_config(config):
@@ -230,7 +225,7 @@ def main(argv):
 
 def cid_f1_score(y_true, y_pred):
     try:
-        return metrics.f1_score(y_true, y_pred)
+        return metrics.f1_score(y_true, y_pred, average='weighted')
     except:
         logging.exception('Cannot calculate f1')
         return 0

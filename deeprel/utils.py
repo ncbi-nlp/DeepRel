@@ -5,24 +5,40 @@ import json
 import logging
 import os
 import tempfile
+from typing import Tuple
 
 import GPUtil
 import numpy as np
 import tqdm
-
+import ijson
 from deeprel import metrics
 
 
-def json_iterator(files):
+def json_iterator(files, verbose=True):
     for input_file in files:
+        logging.debug('Processing %s', input_file)
         with open(input_file) as fp:
-            objs = json.load(fp, object_pairs_hook=collections.OrderedDict)
-
-        for obj in tqdm.tqdm(objs):
-            yield obj
+            for obj in tqdm.tqdm(ijson.items(fp, 'item'), disable=not verbose):
+                yield obj
 
 
-def intersect(range1, range2):
+def example_iterator(files, jsondir, verbose=True):
+    with tqdm.tqdm(unit='examples', disable=not verbose) as pbar:
+        for input_file in files:
+            logging.debug('Processing %s', input_file)
+            with open(input_file) as fp:
+                for obj in ijson.items(fp, 'item'):
+                    docid = obj['id']
+                    source = jsondir / '{}.json'.format(docid)
+                    with open(source) as fp:
+                        obj = json.load(fp)
+                    for ex in obj['examples']:
+                        yield obj, ex
+                    pbar.set_postfix(file=source.stem, refresh=False)
+                    pbar.update(len(obj['examples']))
+
+
+def intersect(range1: Tuple[int, int], range2: Tuple[int, int]) -> bool:
     """
     Args:
         range1(int, int): [begin, end)
@@ -54,15 +70,9 @@ def chunks(l, n):
         yield l[i:i + n]
 
 
-def create_tempfile(suffix):
+def create_tempfile(suffix: str) -> str:
     """
     Create a temporary file.
-
-    Args:
-        suffix(str):
-
-    Return:
-        file name
     """
     fp = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
     fp.close()
@@ -91,6 +101,7 @@ def data_iterator(orig_x, origin_x_sp, orign_x_global, orig_y=None, batch_size=3
         # Create the batch by selecting up to batch_size elements
         batch_start = step * batch_size
         batch_end = min(batch_start + batch_size, data_size)
+        # print(batch_start, batch_end)
         subx = x[range(batch_start, batch_end)]
         subx_sp = x_sp[range(batch_start, batch_end)]
         subx_global = x_global[range(batch_start, batch_end)]
@@ -102,8 +113,7 @@ def data_iterator(orig_x, origin_x_sp, orign_x_global, orig_y=None, batch_size=3
         total_processed_examples += len(subx)
     # Sanity check to make sure we iterated over all the dataset as intended
     assert total_processed_examples == len(x), \
-        'Expected {} and processed {}'.format(len(x),
-                                              total_processed_examples)
+        'Expected {} and processed {}'.format(len(x), total_processed_examples)
 
 
 def print_confusion(confusion, vocab):
@@ -121,7 +131,7 @@ def print_confusion(confusion, vocab):
             confusion[i, i],
             total_guessed_tags[i] - confusion[i, i],
             total_true_tags[i] - confusion[i, i]]
-    print(metrics.classification_report(total, type='markdown'))
+    print(metrics.classification_report(total))
 
 
 def pick_device():

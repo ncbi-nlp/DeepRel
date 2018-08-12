@@ -22,6 +22,7 @@ from deeprel import train
 from deeprel import utils
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model.cnn_model import CnnModel
+from doc2vec import read_doc2vec
 from utils import pick_device
 
 
@@ -42,7 +43,7 @@ def main(argv):
 
     x_test, y_test = create_matrix.read_matrix(config['test_matrix'])
     x_sp_test, y_sp_test = create_matrix.read_matrix(config['test_sp_matrix'])
-    x_global_test = train.read_doc2vec(config['test_doc_matrix'])
+    x_global_test = read_doc2vec(config['test_doc_matrix'])
     logging.debug('x_global_test shape: {}'.format(x_global_test.shape))
 
     with tf.Graph().as_default():

@@ -1,9 +1,12 @@
 """
 Usage: 
-    preparse.py [options] GENIA_PATH CORENLP_PATH OUTPUT_DIR INPUT_FILE...
+    preparse.py [options] --genia=<bin_path> --corenlp=<path> --output=<directory> INPUT_FILE...
 
 Options:
-    --log <str>     Log option. One of DEBUG, INFO, WARNING, ERROR, and CRITICAL. [default: INFO]
+    --verbose
+    --genia=<bin_path>
+    --corenlp=<path>
+    --output=<directory>
     -k              Skip pre-parsed documents [default: False]
 """
 
@@ -17,6 +20,7 @@ from concurrent import futures
 import docopt
 import tqdm
 
+from cli_utils import parse_args
 from deeprel import utils
 from deeprel.nlp import BllipParser
 from deeprel.nlp import GeniaTagger
@@ -102,8 +106,10 @@ def main_batch(argv):
                 tmpfilename = utils.create_tempfile('.json')
                 with open(tmpfilename, 'w') as fw:
                     json.dump(subobjs, fw, indent=2)
-                argvx = [argv[0], argv[1], argv[2], tmpfilename]
-                future = executor.submit(main, argvx)
+                cmd = 'python deeprel/preparse.py -k --genia {} --corenlp {} --output {}'.format(
+                    argv['--genia'], argv['--corenlp'], argv['--output'], tmpfilename)
+                argvx = docopt.docopt(__doc__, cmd.split(' '))
+                future = executor.submit(syn_process, argvx)
                 future_map[future] = argvx
         for future in futures.as_completed(future_map):
             argvx = future_map[future]
@@ -113,21 +119,17 @@ def main_batch(argv):
                 print('{} generated an exception: {}'.format(argvx, exc))
 
 
-def main(argv):
-    arguments = docopt.docopt(__doc__, argv=argv)
-    print(arguments)
-    logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
-
-    if arguments['CORENLP_PATH'][-1] == '/':
-        arguments['CORENLP_PATH'] += '*'
-    else:
-        arguments['CORENLP_PATH'] += '/*'
-
-    preparse = PreParse(arguments['OUTPUT_DIR'], arguments['GENIA_PATH'], [arguments['CORENLP_PATH']], arguments['-k'])
-
-    for obj in utils.json_iterator(arguments['INPUT_FILE']):
+def syn_process(argv):
+    preparse = PreParse(argv['--output'], argv['--genia'], [argv['--corenlp']], argv['-k'])
+    for obj in utils.json_iterator(argv['INPUT_FILE']):
         preparse.process(obj)
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    argv = parse_args(__doc__)
+    if argv['--corenlp'][-1] == '/':
+        argv['--corenlp'] += '*'
+    else:
+        argv['--corenlp'] += '/*'
+
+    syn_process(argv)

@@ -1,28 +1,27 @@
 """
 Usage: 
-    create_vocabs.py [options] -o OUTPUT_DIR JSON_DIR INPUT_FILE...
+    create_vocabs.py [options] --output=<directory> --all=<directory> INPUT_FILE...
 
 Options:
-    --log <str>     Log option. One of DEBUG, INFO, WARNING, ERROR, and CRITICAL. [default: INFO]
-    -o OUTPUT_FILE  Output file
-    -w WORD2VEC     word2vec file [default: ~/data/word2vec/PubMed-and-PMC-w2v.bin]
-    -e              embeddings [default: False]
+    --verbose
+    --output=<directory>  Output file
+    --word2vec=<file>     word2vec file
+    --embeddings          embeddings [default: False]
+    --all=<directory>
 """
 
 import json
 import logging
-import sys
-
-import docopt
 import os
+from pathlib import Path
 
+from cli_utils import parse_args
+from deeprel import utils
 from deeprel.model import re_vocabulary
 from deeprel.preprocessor import embedding
-from deeprel import utils
 
 
 class VocabsCreater(object):
-
     vocab_file = 'vocabs.json'
     word_embedding_file = 'word2vec.npz'
     pos_embedding_file = 'pos.npz'
@@ -31,7 +30,7 @@ class VocabsCreater(object):
     arg2_dis_embedding_file = 'arg2_dis.npz'
     type_embedding_file = 'type.npz'
     dependency_embedding_file = 'dependency.npz'
-    
+
     def __init__(self, save_path):
         self.save_path = save_path
         self.vocab = re_vocabulary.ReVocabulary()
@@ -77,34 +76,27 @@ class VocabsCreater(object):
         embedding.get_one_hot(self.vocab.vocabs['dependency'], dst, 'dependency')
 
 
-def main(argv):
-    arguments = docopt.docopt(__doc__, argv=argv)
-    print('create_vocabs')
-    print(arguments)
-    logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
+if __name__ == '__main__':
+    argv = parse_args(__doc__)
+    vc = VocabsCreater(os.path.join(argv['--output']))
 
-    vc = VocabsCreater(os.path.join(arguments['-o']))
-
-    for obj in utils.json_iterator(arguments['INPUT_FILE']):
+    json_dir = Path(argv['--all'])
+    for obj in utils.json_iterator(argv['INPUT_FILE']):
         docid = obj['id']
-        jsonfile = os.path.join(arguments['JSON_DIR'], docid + '.json')
-        if not os.path.exists(jsonfile):
-            logging.warning('Cannot find file %s', jsonfile)
+        source = json_dir / (docid + '.json')
+        if not source.exists():
+            logging.warning('Cannot find file %s', source)
         else:
-            with open(jsonfile) as jfp:
-                obj = json.load(jfp)
+            with open(source) as fp:
+                obj = json.load(fp)
                 vc.add(obj)
     vc.save_vocab()
-    if arguments['-e']:
-        if '-w' in arguments:
-            vc.save_word_embeddings(arguments['-w'])
+    if argv['--embeddings']:
+        if '--word2vec' in argv:
+            vc.save_word_embeddings(argv['--word2vec'])
         vc.save_pos_embeddings()
         vc.save_chunk_embeddings()
         vc.save_arg1_dis_embeddings()
         vc.save_arg2_dis_embeddings()
         vc.save_type_embeddings()
         vc.save_dependency_embedding()
-
-
-if __name__ == '__main__':
-    main(sys.argv[1:])
