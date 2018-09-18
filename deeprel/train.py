@@ -24,6 +24,9 @@ from deeprel import create_matrix
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model import re_vocabulary
 from deeprel.model.cnn_model import CnnModel
+from doc2vec import read_doc2vec
+from universal_sentence import read_universal_sentence
+from utils import pick_device
 
 
 def read_vocabs(config):
@@ -46,18 +49,12 @@ def read_embeddings(config):
     for embedding in embeddings:
         filename = os.path.join(config['model_dir'], embedding)
         logging.info('Loading embeddings: %s', filename)
-        with open(filename) as f:
+        with open(filename, 'rb') as f:
             npzfile = np.load(f)
             matrix = npzfile['embeddings']
             matrices.append(matrix)
             logging.info('%s shape: %s', embedding, matrix.shape)
     return matrices
-
-
-def read_doc2vec(filename):
-    with open(filename) as f:
-        npzfile = np.load(f)
-        return npzfile['x']
 
 
 def prepare_config(config):
@@ -72,17 +69,23 @@ def prepare_config(config):
         'log_dir': cnn_section['model_dir'],
         'checkpoint_dir': cnn_section['model_dir'],
         #
+        'train_set': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '.json'),
         'train_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '.npz'),
         'train_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-sp.npz'),
         'train_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-doc.npz'),
+        'train_uni_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-uni.npz'),
         #
+        'dev_set': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.json'),
         'dev_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.npz'),
         'dev_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-sp.npz'),
         'dev_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-doc.npz'),
+        'dev_uni_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-uni.npz'),
         #
+        'test_set': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.json'),
         'test_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.npz'),
         'test_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-sp.npz'),
         'test_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-doc.npz'),
+        'test_uni_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-uni.npz'),
     })
     return newconfig
 
@@ -92,6 +95,8 @@ def main(argv):
     arguments = docopt.docopt(__doc__, argv=argv)
     print(arguments)
     logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
+
+    pick_device()
 
     logging.info('Read config: %s', arguments['INI_FILE'])
     oldconfig = configparser.ConfigParser()
@@ -113,8 +118,10 @@ def main(argv):
     logging.debug('len y_sp_train: %s', len(y_sp_train))
     logging.debug('len y_sp_dev:   %s', len(y_sp_dev))
 
-    x_global_train = read_doc2vec(newconfig['train_doc_matrix'])
-    x_global_dev = read_doc2vec(newconfig['dev_doc_matrix'])
+    # x_global_train = read_doc2vec(newconfig['train_doc_matrix'])
+    # x_global_dev = read_doc2vec(newconfig['dev_doc_matrix'])
+    x_global_train = read_universal_sentence(newconfig['train_uni_matrix'])
+    x_global_dev = read_universal_sentence(newconfig['dev_uni_matrix'])
     logging.debug('x_global_train shape: {}'.format(x_global_train.shape))
     logging.debug('x_global_dev shape: {}'.format(x_global_dev.shape))
 
@@ -128,7 +135,7 @@ def main(argv):
 
             'num_filters': 400,
             'l2_reg_lambda': 0,
-            'num_epochs': 250,
+            'num_epochs': 50,
             'batch_size': 128,
             'training_keep_prob': 0.5,
             'validate_keep_prob': 1,
@@ -140,7 +147,7 @@ def main(argv):
             'dis2_emb_size': matrices[4].shape[1],
             'type_emb_size': matrices[5].shape[1],
             'dependency_emb_size': matrices[6].shape[1],
-            'doc_emb_size': 200,
+            'doc_emb_size': x_global_train.shape[1],
         }
     )
 
@@ -184,8 +191,8 @@ def main(argv):
                 print('Loading the latest model')
                 saver.restore(session, ckpt.model_checkpoint_path)
                 val_loss, y_pred = cnn.predict(session, x_dev, x_sp_dev, x_global_dev, y_dev)
-                best_dev_f1 = cid_f1_score(np.argmax(y_dev, 1),
-                                           np.argmax(y_pred, 1))
+                best_dev_f1 = f1_score(np.argmax(y_dev, 1),
+                                       np.argmax(y_pred, 1))
                 logging.info('Best f1: {:.5f}'.format(best_dev_f1))
 
             prev_epoch_loss = float('inf')
@@ -205,29 +212,29 @@ def main(argv):
                 # prev_epoch_loss = val_loss
 
                 now = datetime.now()
-                train_f1 = cid_f1_score(np.argmax(train_true, 1),
-                                        np.argmax(train_pred, 1))
+                train_f1 = f1_score(np.argmax(train_true, 1),
+                                    np.argmax(train_pred, 1))
                 print("{}: Epoch {:02d}, train loss {:.5f}, train f1 {:.5f}".format(
                     now.strftime("%Y-%m-%d %H:%M:%S"), epoch, train_loss, train_f1))
 
-                val_f1 = cid_f1_score(np.argmax(y_dev, 1),
-                                      np.argmax(y_pred, 1))
+                val_f1 = f1_score(np.argmax(y_dev, 1),
+                                  np.argmax(y_pred, 1))
                 print("{}: Epoch {:02d}, val loss   {:.5f}, val_f1   {:.5f}".format(
                     now.strftime("%Y-%m-%d %H:%M:%S"), epoch, val_loss, val_f1))
 
                 if best_dev_f1 < val_f1:
                     path = saver.save(
                         session,
-                        os.path.join(checkpoint_dir, 'cnn_mdoel'),
+                        os.path.join(checkpoint_dir, 'cnn_model'),
                         global_step=cnn.global_step)
                     print("Saved model checkpoint to {}\n".format(path))
                     best_dev_f1 = val_f1
     logging.info('Done. The model is saved at %s', newconfig['model_dir'])
 
 
-def cid_f1_score(y_true, y_pred):
+def f1_score(y_true, y_pred):
     try:
-        return metrics.f1_score(y_true, y_pred)
+        return metrics.f1_score(y_true, y_pred, average='weighted')
     except:
         logging.exception('Cannot calculate f1')
         return 0

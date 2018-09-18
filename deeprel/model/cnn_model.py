@@ -258,7 +258,7 @@ class CnnModel(object):
         h_sp = tf.nn.relu(tf.nn.bias_add(conv_sp, b_sp_filter), name="relu_sp_{}".format(window_size))
         # Max pooling over the outputs
         pool_sp = tf.nn.max_pool(
-            h,
+            h_sp,
             ksize=[1, self.config['seq_len'] - window_size + 1, 1, 1],
             strides=[1, 1, 1, 1],
             padding='VALID',
@@ -293,7 +293,7 @@ class CnnModel(object):
         return pred
 
     def add_loss_op(self, pred):
-        softmax_ce = tf.nn.softmax_cross_entropy_with_logits(
+        softmax_ce = tf.nn.softmax_cross_entropy_with_logits_v2(
             logits=pred,
             labels=self.labels_placeholder)
         loss = tf.reduce_mean(softmax_ce) + self.config['l2_reg_lambda'] * self.l2_loss
@@ -328,6 +328,7 @@ class CnnModel(object):
                                        global_inputs_batch,
                                        batch_size=self.config['batch_size'],
                                        shuffle=shuffle)
+
         for step, (x, x_sp, x_global, y) in enumerate(data):
             feed = self.create_feed_dict(
                 sentence_inputs_batch=x,
@@ -345,6 +346,7 @@ class CnnModel(object):
             if np.any(y):
                 losses.append(eval_ret[self.loss])
             results.extend(eval_ret[self.pred])
+
         if len(losses) == 0:
             return 0, results
         return np.mean(losses), results

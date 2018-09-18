@@ -26,7 +26,7 @@ class DependencyAdder(object):
             # find bioc annotation
             found = False
             for ann in sentence.annotations:
-                loc = ann.get_total_location()
+                loc = ann.total_span
                 if utils.intersect((tok['start'], tok['end']),
                                    (loc.offset, loc.offset + loc.length)):
                     if ann.id in m:

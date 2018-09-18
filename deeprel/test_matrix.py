@@ -1,21 +1,38 @@
 """
 Usage:
-    test_matrix.py [options] VOCAB_FILE TRAINING_MATRIX DEV_MATRIX TEST_MATRIX
+    test_matrix.py [options] --vocab=<file> TRAINING_MATRIX TEST_MATRIX
     
 Options:
-    --log <str>     Log option. One of DEBUG, INFO, WARNING, ERROR, and CRITICAL. [default: INFO]
+    --verbose
+    --vocab=<file>
 """
 
 from __future__ import division, absolute_import, print_function
 
 import json
 import logging
-import sys
 
-import docopt
-
+import doc2vec
+import universal_sentence
+from cli_utils import parse_args
 from deeprel import create_matrix
 from deeprel.model import re_vocabulary
+
+
+def test_doc(matrix, doc_matrix):
+    x, y = create_matrix.read_matrix(matrix)
+    doc = doc2vec.read_doc2vec(doc_matrix)
+    assert x.shape[0] == doc.shape[0], \
+        'train: x shape: {}, doc shape: {}'.format(x.shape, doc.shape)
+    print('Passed')
+
+
+def test_universal(matrix, universal_matrix):
+    x, y = create_matrix.read_matrix(matrix)
+    doc = universal_sentence.read_universal_sentence(universal_matrix)
+    assert x.shape[0] == doc.shape[0], \
+        'train: x shape: {}, doc shape: {}'.format(x.shape, doc.shape)
+    print('Passed')
 
 
 def test(vocab_file, training_matrix, test_matrix):
@@ -58,14 +75,6 @@ def test(vocab_file, training_matrix, test_matrix):
     print('Passed')
 
 
-def main(argv):
-    arguments = docopt.docopt(__doc__, argv=argv)
-    print(arguments)
-    logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
-
-    test(arguments['VOCAB_FILE'], arguments['TRAINING_MATRIX'], arguments['TEST_MATRIX'])
-    test(arguments['VOCAB_FILE'], arguments['TRAINING_MATRIX'], arguments['DEV_MATRIX'])
-
-
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    argv = parse_args(__doc__)
+    test(argv['--vocab'], argv['TRAINING_MATRIX'], argv['TEST_MATRIX'])

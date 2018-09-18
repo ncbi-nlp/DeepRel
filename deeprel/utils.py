@@ -3,28 +3,60 @@ from __future__ import print_function
 import collections
 import json
 import logging
-import tempfile
+import os
+from pathlib import Path
 
+import psutil
+import tempfile
+from typing import Tuple, List
+
+import GPUtil
 import numpy as np
+import pandas as pd
+import tqdm
+import ijson
+from numpy.compat import is_pathlib_path
 
 from deeprel import metrics
 
 
-def json_iterator(files):
+def json_iterator(files, verbose=True, **kwargs):
     for input_file in files:
+        logging.debug('Processing %s', input_file)
         with open(input_file) as fp:
-            objs = json.load(fp, object_pairs_hook=collections.OrderedDict)
-
-        idx = 1
-        for idx, obj in enumerate(objs, 1):
-            logging.debug('Process: %s', obj['id'])
-            if idx % 500 == 0:
-                logging.info('Process: %s documents', idx)
-            yield obj
-        logging.info('Process: %s documents', idx)
+            for obj in tqdm.tqdm(ijson.items(fp, 'item'), disable=not verbose, **kwargs):
+                yield obj
 
 
-def intersect(range1, range2):
+def example_iterator(files: List, jsondir, verbose=True):
+    with tqdm.tqdm(unit=' examples', disable=not verbose) as pbar:
+        for input_file in files:
+            logging.debug('Processing %s', input_file)
+            with open(input_file) as fp:
+                for obj in ijson.items(fp, 'item'):
+                    docid = obj['id']
+                    source = jsondir / '{}.json'.format(docid)
+                    with open(source) as fp:
+                        obj = json.load(fp)
+                    try:
+                        for ex in obj['examples']:
+                            yield obj, ex
+                    except:
+                        logging.exception('Cannot find examples: %s', obj['id'])
+                        exit(1)
+                    pbar.set_postfix(file=source.stem)
+                    pbar.update(len(obj['examples']))
+
+
+def to_path(s):
+    if isinstance(s, np.basestring):
+        return Path(s)
+    elif is_pathlib_path(s):
+        return s
+    raise TypeError('Cannot convert %r to Path' % s)
+
+
+def intersect(range1: Tuple[int, int], range2: Tuple[int, int]) -> bool:
     """
     Args:
         range1(int, int): [begin, end)
@@ -56,15 +88,9 @@ def chunks(l, n):
         yield l[i:i + n]
 
 
-def create_tempfile(suffix):
+def create_tempfile(suffix: str) -> str:
     """
     Create a temporary file.
-
-    Args:
-        suffix(str):
-
-    Return:
-        file name
     """
     fp = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
     fp.close()
@@ -93,6 +119,7 @@ def data_iterator(orig_x, origin_x_sp, orign_x_global, orig_y=None, batch_size=3
         # Create the batch by selecting up to batch_size elements
         batch_start = step * batch_size
         batch_end = min(batch_start + batch_size, data_size)
+        # print(batch_start, batch_end)
         subx = x[range(batch_start, batch_end)]
         subx_sp = x_sp[range(batch_start, batch_end)]
         subx_global = x_global[range(batch_start, batch_end)]
@@ -104,8 +131,7 @@ def data_iterator(orig_x, origin_x_sp, orign_x_global, orig_y=None, batch_size=3
         total_processed_examples += len(subx)
     # Sanity check to make sure we iterated over all the dataset as intended
     assert total_processed_examples == len(x), \
-        'Expected {} and processed {}'.format(len(x),
-                                              total_processed_examples)
+        'Expected {} and processed {}'.format(len(x), total_processed_examples)
 
 
 def print_confusion(confusion, vocab):
@@ -123,4 +149,37 @@ def print_confusion(confusion, vocab):
             confusion[i, i],
             total_guessed_tags[i] - confusion[i, i],
             total_true_tags[i] - confusion[i, i]]
-    print(metrics.classification_report(total, type='markdown'))
+    print(metrics.classification_report(total))
+
+    columns = [vocab.reverse(i) for i in range(len(vocab))]
+    with pd.option_context('display.width', 200, 'display.max_columns', None):
+        print(pd.DataFrame(confusion, columns=columns, index=columns))
+
+
+def pick_device():
+    try:
+        GPUtil.showUtilization()
+        # Get the first available GPU
+        DEVICE_ID_LIST = GPUtil.getFirstAvailable()
+        DEVICE_ID = DEVICE_ID_LIST[0]  # grab first element from list
+        # Set CUDA_VISIBLE_DEVICES to mask out all other GPUs than the first available device id
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(DEVICE_ID)
+        print('Device ID (unmasked): ' + str(DEVICE_ID))
+    except:
+        logging.exception('Cannot detect GPUs')
+
+
+def get_max_workers(max_workers=None):
+    w = max(len(psutil.Process().cpu_affinity()) - 1, 1)
+    if max_workers:
+        w = min(w, max_workers)
+    return w
+
+    # if hasattr(os, 'sched_getaffinity'):
+    #     return min(len(os.sched_getaffinity(0)) - 1, 1)
+    # else:
+    #     max_cpu = os.cpu_count() or 1
+    #     workers = 1
+    #     while 2 * workers < max_cpu:
+    #         workers *= 2
+    #     return workers
