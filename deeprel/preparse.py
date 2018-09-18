@@ -7,15 +7,18 @@ Options:
     --genia=<bin_path>
     --corenlp=<path>
     --output=<directory>
-    -k              Skip pre-parsed documents [default: False]
+    -k                      Skip pre-parsed documents [default: False]
+    --asyn                  asynchronous execution
 """
 
 import collections
 import json
 import logging
+import math
 import os
 import sys
 from concurrent import futures
+from subprocess import call
 
 import docopt
 import tqdm
@@ -27,6 +30,7 @@ from deeprel.nlp import GeniaTagger
 from deeprel.nlp import NltkSSplitter
 from deeprel.preprocessor import dependency_adder
 from deeprel.preprocessor import token_splitter
+from utils import get_max_workers
 
 
 def get_concepts(mentions):
@@ -91,32 +95,36 @@ class PreParse(object):
             json.dump(obj, fp, indent=2)
 
 
-def main_batch(argv):
-    arguments = docopt.docopt(__doc__, argv=argv)
-    print(arguments)
-    logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
-
-    with futures.ProcessPoolExecutor(max_workers=8) as executor:
+def asyn_process(argv):
+    max_works = get_max_workers(8)
+    print('Max workers', max_works)
+    with futures.ProcessPoolExecutor(max_workers=max_works) as executor:
         future_map = {}
-        for input_file in arguments['INPUT_FILE']:
+        for input_file in argv['INPUT_FILE']:
             with open(input_file) as fp:
                 objs = json.load(fp, object_pairs_hook=collections.OrderedDict)
 
-            for subobjs in utils.chunks(objs, 100):
+            chunk_size = math.ceil(len(objs) / max_works)
+            print('Chunk size', chunk_size)
+            for subobjs in utils.chunks(objs, chunk_size):
                 tmpfilename = utils.create_tempfile('.json')
                 with open(tmpfilename, 'w') as fw:
                     json.dump(subobjs, fw, indent=2)
-                cmd = 'python deeprel/preparse.py -k --genia {} --corenlp {} --output {}'.format(
+                cmd = 'python deeprel/preparse.py -k --genia {} --corenlp {} --output {} {}'.format(
                     argv['--genia'], argv['--corenlp'], argv['--output'], tmpfilename)
-                argvx = docopt.docopt(__doc__, cmd.split(' '))
-                future = executor.submit(syn_process, argvx)
-                future_map[future] = argvx
-        for future in futures.as_completed(future_map):
-            argvx = future_map[future]
+                print(cmd)
+                # argvx = docopt.docopt(__doc__, cmd.split(' '))
+                future = executor.submit(call, cmd.split(' '))
+                future_map[future] = cmd
+        done_iter = futures.as_completed(future_map)
+        if argv['--verbose']:
+            done_iter = tqdm.tqdm(done_iter)
+        for future in done_iter:
+            cmd = future_map[future]
             try:
                 future.result()
-            except Exception as exc:
-                print('{} generated an exception: {}'.format(argvx, exc))
+            except:
+                logging.exception(cmd)
 
 
 def syn_process(argv):
@@ -132,4 +140,7 @@ if __name__ == '__main__':
     else:
         argv['--corenlp'] += '/*'
 
-    syn_process(argv)
+    if argv['--asyn']:
+        asyn_process(argv)
+    else:
+        syn_process(argv)

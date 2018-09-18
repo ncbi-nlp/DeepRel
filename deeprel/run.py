@@ -10,6 +10,7 @@ Options:
     -m           create matrix [default: False]
     -s           create shortest path matrix [default: False]
     -d           create doc2vec [default: False]
+    -u           create universal sentence [default: False]
     -t           test matrix format [default: False]
     -k           skip pre-parsed documents [default: False]
 """
@@ -65,6 +66,9 @@ class Locations2(object):
     def doc_npz(self, name):
         return self.model_dir / (self.section[name] + '-doc.npz')
 
+    def universal_npz(self, name):
+        return self.model_dir / (self.section[name] + '-uni.npz')
+
     def datasets(self):
         return [self.dataset(n) for n in ('training_set', 'test_set', 'dev_set')]
 
@@ -95,12 +99,14 @@ if __name__ == '__main__':
     l = test_locations(cnn_section)
 
     if arguments['-p']:
-        cmd = 'python deeprel/preparse.py -k --genia {} --corenlp {} --output {} {} {} {}'.format(
+        cmd = 'python deeprel/preparse.py --asyn -k --genia {} --corenlp {} --output {} {} {} {}'.format(
             l.geniatagger, l.corenlp_jars, l.jsondir, *l.datasets())
+        print(cmd)
         call(cmd.split(' '))
     if arguments['-f']:
-        cmd = 'python deeprel/create_features.py --asyn --output {} {} {} {}'.format(
+        cmd = 'python deeprel/create_features.py --asyn -k --output {} {} {} {}'.format(
             l.jsondir, *l.datasets())
+        print(cmd)
         call(cmd.split(' '))
     if arguments['-v']:
         cmd = 'python deeprel/create_vocabs.py --word2vec {} --embeddings --output {} --all {} {} {} {}'.format(
@@ -108,14 +114,14 @@ if __name__ == '__main__':
         print(cmd)
         call(cmd.split(' '))
     if arguments['-m']:
-        cmd_prefix = 'python deeprel/create_matrix.py --vocab {} --all {}'.format(l.vocab, l.jsondir)
+        cmd_prefix = 'python deeprel/create_matrix.py matrix --vocab {} --all {}'.format(l.vocab, l.jsondir)
         for name in ('training_set', 'test_set', 'dev_set'):
             if not arguments['-k'] or not l.npz(name).exists():
                 cmd = cmd_prefix + ' --output {} {}'.format(l.npz(name), l.dataset(name))
                 print(cmd)
                 call(cmd.split(' '))
     if arguments['-s']:
-        cmd_prefix = 'python deeprel/create_sp_matrix.py --vocab {} --all {}'.format(l.vocab, l.jsondir)
+        cmd_prefix = 'python deeprel/create_matrix.py sp --vocab {} --all {}'.format(l.vocab, l.jsondir)
         for name in ('training_set', 'test_set', 'dev_set'):
             if not arguments['-k'] or not l.sp_npz(name).exists():
                 cmd = cmd_prefix + ' --output {} {}'.format(l.sp_npz(name), l.dataset(name))
@@ -133,6 +139,13 @@ if __name__ == '__main__':
         for name in ('training_set', 'test_set', 'dev_set'):
             if not arguments['-k'] or not l.doc_npz(name).exists():
                 cmd = cmd_prefix + ' --output {} {}'.format(l.doc_npz(name), l.dataset(name))
+                print(cmd)
+                call(cmd.split(' '))
+    if arguments['-u']:
+        cmd_prefix = 'python deeprel/universal_sentence.py transform --verbose --all {}'.format(l.jsondir)
+        for name in ('training_set', 'test_set', 'dev_set'):
+            if not arguments['-k'] or not l.doc_npz(name).exists():
+                cmd = cmd_prefix + ' --output {} {}'.format(l.universal_npz(name), l.dataset(name))
                 print(cmd)
                 call(cmd.split(' '))
     if arguments['-t']:
@@ -154,3 +167,4 @@ if __name__ == '__main__':
 
         for name in ('training_set', 'test_set', 'dev_set'):
             test_matrix.test_doc(l.npz(name), l.doc_npz(name))
+            test_matrix.test_universal(l.npz(name), l.universal_npz(name))

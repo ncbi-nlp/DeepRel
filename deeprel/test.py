@@ -1,9 +1,10 @@
 """
 Usage: 
-    test.py [options] MODEL_DIR
+    test.py [options] MODEL_CONFIG
     
 Options:
-    --log <str>     Log option. One of DEBUG, INFO, WARNING, ERROR, and CRITICAL. [default: INFO]
+    --verbose
+    --output
 """
 from __future__ import print_function
 
@@ -11,30 +12,31 @@ import json
 import logging
 import os
 import sys
+from pathlib import Path
 
 import docopt
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 from sklearn import metrics
 
+from cli_utils import parse_args
 from deeprel import create_matrix
 from deeprel import train
 from deeprel import utils
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model.cnn_model import CnnModel
 from doc2vec import read_doc2vec
+from universal_sentence import read_universal_sentence
 from utils import pick_device
 
 
-def main(argv):
-    arguments = docopt.docopt(__doc__, argv=argv)
-    print(arguments)
-    logging.basicConfig(level=getattr(logging, arguments['--log']), format='%(message)s')
+def main():
+    arguments = parse_args(__doc__)
 
     pick_device()
 
-    config_file = os.path.join(arguments['MODEL_DIR'], 'cnn_model_config.json')
-    with open(config_file) as fp:
+    with open(arguments['MODEL_CONFIG']) as fp:
         config = json.load(fp)
     logging.info('CNN config: \n%s', json.dumps(config, indent=2))
 
@@ -44,6 +46,7 @@ def main(argv):
     x_test, y_test = create_matrix.read_matrix(config['test_matrix'])
     x_sp_test, y_sp_test = create_matrix.read_matrix(config['test_sp_matrix'])
     x_global_test = read_doc2vec(config['test_doc_matrix'])
+    # x_global_test = read_universal_sentence(config['test_uni_matrix'])
     logging.debug('x_global_test shape: {}'.format(x_global_test.shape))
 
     with tf.Graph().as_default():
@@ -91,11 +94,29 @@ def main(argv):
             confusion = metrics.confusion_matrix(y_test, y_pred)
             utils.print_confusion(confusion, vocabs.label_vocab)
 
-            basename = os.path.splitext(os.path.basename(config['test_matrix']))[0]
-            with open(os.path.join(config['model_dir'], basename + '.rst'), 'w') as fp:
-                for t, p in zip(y_test, y_pred):
-                    fp.write('{}\t{}\n'.format(t, p))
+            if arguments['--output']:
+                with open(config['test_set']) as fp:
+                    objs = json.load(fp)
+
+                rel_index = 0
+                for x in objs:
+                    for r in x['relations']:
+                        gold = r['label']
+                        pred = vocabs.label_vocab.reverse(int(y_pred[rel_index]))
+                        test = vocabs.label_vocab.reverse(int(y_test[rel_index]))
+                        if gold != test:
+                            logging.warning('Cannot match relation %s: %s[gold] vs %s[test] vs %s[pred]',
+                                            r['id'], gold, test, pred)
+                        r['label-predicted'] = pred
+                        rel_index += 1
+
+                with open(Path(config['test_set']).with_suffix('.rst.json'), 'w') as fp:
+                    json.dump(objs, fp, indent=2)
+
+            # with open(Path(config['test_set']).with_suffix('.rst'), 'w') as fp:
+            #     for t, p in zip(y_test, y_pred):
+            #         fp.write('{}\t{}\n'.format(t, p))
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()

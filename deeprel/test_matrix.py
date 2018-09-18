@@ -13,6 +13,7 @@ import json
 import logging
 
 import doc2vec
+import universal_sentence
 from cli_utils import parse_args
 from deeprel import create_matrix
 from deeprel.model import re_vocabulary
@@ -23,6 +24,15 @@ def test_doc(matrix, doc_matrix):
     doc = doc2vec.read_doc2vec(doc_matrix)
     assert x.shape[0] == doc.shape[0], \
         'train: x shape: {}, doc shape: {}'.format(x.shape, doc.shape)
+    print('Passed')
+
+
+def test_universal(matrix, universal_matrix):
+    x, y = create_matrix.read_matrix(matrix)
+    doc = universal_sentence.read_universal_sentence(universal_matrix)
+    assert x.shape[0] == doc.shape[0], \
+        'train: x shape: {}, doc shape: {}'.format(x.shape, doc.shape)
+    print('Passed')
 
 
 def test(vocab_file, training_matrix, test_matrix):

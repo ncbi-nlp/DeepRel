@@ -17,7 +17,7 @@ class ReVocabulary(object):
         self.vocabs = {
             k: vocabulary.Vocabulary() for k in self.keys
         }
-        self.label_vocab = vocabulary.Vocabulary()
+        self.label_vocab = vocabulary.Vocabulary(unknown=False)
         self.max_len = 0
 
     def __getitem__(self, item):

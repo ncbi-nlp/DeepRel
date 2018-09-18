@@ -1,4 +1,8 @@
 import collections
+import logging
+
+
+UNKNOWN = 'UNKNOWN'
 
 
 class Vocabulary(object):
@@ -7,11 +11,13 @@ class Vocabulary(object):
     Accumulates and provides mapping from classes to indexes.
     Can be easily used for words.
     """
-    def __init__(self, categories=None):
+    def __init__(self, categories=None, unknown=True):
         self.mapping = {}
         self.reverse_mapping = []
         self.freq = collections.Counter()
         self.is_frozen = False
+        if unknown:
+            self.add(UNKNOWN)
         if categories:
             self.update(categories)
 
@@ -49,7 +55,9 @@ class Vocabulary(object):
             int: index in the vocabulary.
         """
         if category not in self.mapping:
-            raise IndexError('Cannot find ' + category + ' in the vocab', category)
+            logging.debug('Cannot find ' + category + ' in the vocab')
+            return self.mapping[UNKNOWN]
+            # raise IndexError('Cannot find ' + category + ' in the vocab', category)
         return self.mapping[category]
 
     def has(self, category):

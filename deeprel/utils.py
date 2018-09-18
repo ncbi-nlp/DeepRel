@@ -4,26 +4,32 @@ import collections
 import json
 import logging
 import os
+from pathlib import Path
+
+import psutil
 import tempfile
-from typing import Tuple
+from typing import Tuple, List
 
 import GPUtil
 import numpy as np
+import pandas as pd
 import tqdm
 import ijson
+from numpy.compat import is_pathlib_path
+
 from deeprel import metrics
 
 
-def json_iterator(files, verbose=True):
+def json_iterator(files, verbose=True, **kwargs):
     for input_file in files:
         logging.debug('Processing %s', input_file)
         with open(input_file) as fp:
-            for obj in tqdm.tqdm(ijson.items(fp, 'item'), disable=not verbose):
+            for obj in tqdm.tqdm(ijson.items(fp, 'item'), disable=not verbose, **kwargs):
                 yield obj
 
 
-def example_iterator(files, jsondir, verbose=True):
-    with tqdm.tqdm(unit='examples', disable=not verbose) as pbar:
+def example_iterator(files: List, jsondir, verbose=True):
+    with tqdm.tqdm(unit=' examples', disable=not verbose) as pbar:
         for input_file in files:
             logging.debug('Processing %s', input_file)
             with open(input_file) as fp:
@@ -32,10 +38,22 @@ def example_iterator(files, jsondir, verbose=True):
                     source = jsondir / '{}.json'.format(docid)
                     with open(source) as fp:
                         obj = json.load(fp)
-                    for ex in obj['examples']:
-                        yield obj, ex
-                    pbar.set_postfix(file=source.stem, refresh=False)
+                    try:
+                        for ex in obj['examples']:
+                            yield obj, ex
+                    except:
+                        logging.exception('Cannot find examples: %s', obj['id'])
+                        exit(1)
+                    pbar.set_postfix(file=source.stem)
                     pbar.update(len(obj['examples']))
+
+
+def to_path(s):
+    if isinstance(s, np.basestring):
+        return Path(s)
+    elif is_pathlib_path(s):
+        return s
+    raise TypeError('Cannot convert %r to Path' % s)
 
 
 def intersect(range1: Tuple[int, int], range2: Tuple[int, int]) -> bool:
@@ -133,6 +151,10 @@ def print_confusion(confusion, vocab):
             total_true_tags[i] - confusion[i, i]]
     print(metrics.classification_report(total))
 
+    columns = [vocab.reverse(i) for i in range(len(vocab))]
+    with pd.option_context('display.width', 200, 'display.max_columns', None):
+        print(pd.DataFrame(confusion, columns=columns, index=columns))
+
 
 def pick_device():
     try:
@@ -145,3 +167,19 @@ def pick_device():
         print('Device ID (unmasked): ' + str(DEVICE_ID))
     except:
         logging.exception('Cannot detect GPUs')
+
+
+def get_max_workers(max_workers=None):
+    w = max(len(psutil.Process().cpu_affinity()) - 1, 1)
+    if max_workers:
+        w = min(w, max_workers)
+    return w
+
+    # if hasattr(os, 'sched_getaffinity'):
+    #     return min(len(os.sched_getaffinity(0)) - 1, 1)
+    # else:
+    #     max_cpu = os.cpu_count() or 1
+    #     workers = 1
+    #     while 2 * workers < max_cpu:
+    #         workers *= 2
+    #     return workers

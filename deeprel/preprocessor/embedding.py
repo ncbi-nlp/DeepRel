@@ -51,8 +51,7 @@ def get_word_embeddings(src, vocab, dst):
             logging.warning('Cannot find %s in word2vec', token)
 
     logging.info('word embedding matrix shape: %s', matrix.shape)
-    with open(dst, 'wb') as f:
-        np.savez(f, embeddings=matrix)
+    np.savez(dst, embeddings=matrix)
 
 
 def get_pos_embeddings(vocab, dst):
@@ -84,43 +83,43 @@ def get_pos_embeddings(vocab, dst):
     matrix[np.arange(a.size), a] = 1
 
     logging.info('pos matrix shape: %s', matrix.shape)
-    with open(dst, 'wb') as f:
-        np.savez(f, embeddings=matrix)
+    np.savez(dst, embeddings=matrix)
 
 
 def get_distance_embeddings(vocab, dst, name=None):
     matrix = np.zeros((len(vocab), POSITION_MATRIX.shape[1]), dtype=np.float32)
     for idx in range(len(vocab)):
-        dis = int(vocab.reverse(idx))
-        if dis <= -31:
-            dis = 0
-        elif dis <= -21:
-            dis = 1
-        elif dis <= -11:
-            dis = 2
-        elif dis <= -6:
-            dis = 3
-        elif dis <= 5:
-            dis += 9
-        elif dis <= 10:
-            dis = 15
-        elif dis <= 20:
-            dis = 16
-        elif dis <= 30:
-            dis = 17
-        else:
+        try:
+            dis = int(vocab.reverse(idx))
+            if dis <= -31:
+                dis = 0
+            elif dis <= -21:
+                dis = 1
+            elif dis <= -11:
+                dis = 2
+            elif dis <= -6:
+                dis = 3
+            elif dis <= 5:
+                dis += 9
+            elif dis <= 10:
+                dis = 15
+            elif dis <= 20:
+                dis = 16
+            elif dis <= 30:
+                dis = 17
+            else:
+                dis = 18
+        except:
             dis = 18
         matrix[idx] = POSITION_MATRIX[dis]
 
     logging.info('%s matrix shape: %s', name, matrix.shape)
-    with open(dst, 'wb') as f:
-        np.savez(f, embeddings=matrix)
+    np.savez(dst, embeddings=matrix)
 
 
 def get_one_hot(vocab, dst, name=None):
     matrix = np.diag(range(len(vocab)))
-    with open(dst, 'wb') as f:
-        np.savez(f, embeddings=matrix)
+    np.savez(dst, embeddings=matrix)
     logging.info('%s matrix shape: %s', name, matrix.shape)
 
 
@@ -143,5 +142,4 @@ def get_dependency_embeddings(vocab, dst):
         matrix[idx, new_vocab.get(tag)] = 1
 
     logging.info('dependency matrix shape: %s', matrix.shape)
-    with open(dst, 'wb') as f:
-        np.savez(f, embeddings=matrix)
+    np.savez(dst, embeddings=matrix)
