@@ -1,96 +1,178 @@
 """
 Usage: 
-    create_features.py [options] --output=<directory> INPUT_FILE...
+    create_features.py [options] --input=<file> --output=<file>
 
 Options:
-    --verbose
-    --asyn                  asynchronous execution
-    --output=<directory>
-    -k                      Skip pre-parsed documents [default: False]
+    --verbose=<int>  logging level. [default: 0]
 """
-
 import collections
-import json
+import copy
 import logging
-import math
-import os
-from concurrent import futures
-from pathlib import Path
-from subprocess import call
+import sys
 
-import tqdm
+import networkx as nx
+import numpy as np
 
-from cli_utils import parse_args
-from deeprel import utils
-from deeprel.preprocessor import feature
+from utils import precess_jsonl, parse_args
 
 
-# def one_file(source):
-#     logging.debug('Process: %s', source)
-#     with open(source) as fp:
-#         obj = json.load(fp, object_pairs_hook=collections.OrderedDict)
-#     obj['examples'] = feature.generate(obj)
-#     with open(source, 'w') as fp:
-#         json.dump(obj, fp, indent=2)
-from utils import get_max_workers
+def create_features(obj):
+    relations = obj['relations']
+    protein_mentions = obj['annotations']
+    retoken_results = obj['toks']
+
+    examples = []
+    for idx, relation in enumerate(relations):
+
+        arg1id = relation['arg1']
+        arg2id = relation['arg2']
+
+        toks = copy.deepcopy(retoken_results)
+
+        arg1_indices = arg_indices(arg1id, protein_mentions, toks)
+        arg2_indices = arg_indices(arg2id, protein_mentions, toks)
+
+        others_indices = other_indices(protein_mentions, toks)
+
+        for i, tok in enumerate(toks):
+            # distance feature
+            arg1_dis = get_min_dis(i, arg1_indices)
+            arg2_dis = get_min_dis(i, arg2_indices)
+            # type feature
+            t = 'O'
+            if i in arg1_indices:
+                t = 'Arg_1'
+            elif i in arg2_indices:
+                t = 'Arg_2'
+            elif i in others_indices:
+                t = 'Arg_O'
+            tok['type'] = t
+            tok['arg1_dis'] = arg1_dis
+            tok['arg2_dis'] = arg2_dis
+        ex = collections.OrderedDict({
+            'id': relation['id'],
+            'arg1': arg1id,
+            'arg2': arg2id,
+            'label': relation['label'],
+            'toks': toks,
+        })
+
+        # shortest path
+        toks = copy.deepcopy(retoken_results)
+        if arg1_indices and arg2_indices:
+            toks = get_shortest_path(toks, arg1_indices[-1], arg2_indices[-1])
+            arg1_indices = arg_indices(arg1id, protein_mentions, toks)
+            arg2_indices = arg_indices(arg2id, protein_mentions, toks)
+
+        others_indices = other_indices(protein_mentions, toks)
+
+        for i, tok in enumerate(toks):
+            # distance feature
+            arg1_dis = get_min_dis(i, arg1_indices)
+            arg2_dis = get_min_dis(i, arg2_indices)
+            # type feature
+            t = 'O'
+            if i in arg1_indices:
+                t = 'Arg_1'
+            elif i in arg2_indices:
+                t = 'Arg_2'
+            elif i in others_indices:
+                t = 'Arg_O'
+            tok['type'] = t
+            tok['arg1_dis'] = arg1_dis
+            tok['arg2_dis'] = arg2_dis
+        ex['shortest path'] = toks
+        examples.append(ex)
+
+    obj['examples'] = examples
+    return obj
 
 
-def syn_process(argv):
-    output_dir = Path(argv['--output'])
-    for obj in utils.json_iterator(argv['INPUT_FILE']):
-        docid = obj['id']
-        source = output_dir / (docid + '.json')
-        if not source.exists():
-            logging.warning('Cannot find file %s', source)
-            continue
-        try:
-            logging.debug('Process: %s', source)
-            with open(source) as fp:
-                obj = json.load(fp, object_pairs_hook=collections.OrderedDict)
-            if argv['-k'] and 'examples' in obj:
-                continue
-            obj['examples'] = feature.generate(obj)
-            with open(source, 'w') as fp:
-                json.dump(obj, fp, indent=2)
-        except:
-            logging.exception('%s generated an exception', source)
+def get_shortest_path(toks, source, target):
+    # construct graph
+    graph = load(toks)
+
+    if toks[source]['start'] > toks[target]['start']:
+        tmp = source
+        source = target
+        target = tmp
+
+    try:
+        path = nx.shortest_path(graph, toks[source]['id'], toks[target]['id'])
+        subtoks = []
+        for i in sorted(path):
+            subtoks.append(toks[i])
+
+        # re index
+        d = {tok['id']: i for i, tok in enumerate(subtoks)}
+        for tok in subtoks:
+            tok['id'] = d[tok['id']]
+            if 'governor' in tok and tok['governor'] not in path:
+                del tok['governor']
+            else:
+                tok['governor'] = d[tok['governor']]
+
+        logging.debug("Successful find a shortest path: %s", path)
+        return subtoks
+    except:
+        return toks
 
 
-def asyn_process(argv):
-    max_works = get_max_workers(8)
-    print('Max workers', max_works)
-    with futures.ProcessPoolExecutor(max_workers=max_works) as executor:
-        future_map = {}
+def load(toks):
+    """Construct Graph from toks"""
+    graph = nx.Graph()
 
-        for input_file in argv['INPUT_FILE']:
-            with open(input_file) as fp:
-                objs = json.load(fp, object_pairs_hook=collections.OrderedDict)
+    for tok in toks:
+        graph.add_node(tok['id'])
 
-            chunk_size = math.ceil(len(objs) / max_works)
-            print('Chunk size', chunk_size)
-            for subobjs in utils.chunks(objs, chunk_size):
-                tmpfilename = utils.create_tempfile('.json')
-                with open(tmpfilename, 'w') as fw:
-                    json.dump(subobjs, fw, indent=2)
-                cmd = 'python deeprel/create_features.py -k --output {} {}'.format(argv['--output'], tmpfilename)
-                print(cmd)
-                future = executor.submit(call, cmd.split(' '))
-                future_map[future] = cmd
+    for tok in toks:
+        if 'governor' in tok:
+            governor = tok['governor']
+            dependant = tok['id']
+            graph.add_edge(governor, dependant)
+    return graph
 
-        done_iter = futures.as_completed(future_map)
-        if argv['--verbose']:
-            done_iter = tqdm.tqdm(done_iter)
-        for future in done_iter:
-            cmd = future_map[future]
-            try:
-                future.result()
-            except:
-                logging.exception(cmd)
+
+def get_min_dis(i, indices):
+    if not indices:
+        return -sys.maxsize
+    distances = np.array([abs(i - v) for v in indices])
+    min_idx = np.argmin(distances)
+    return i - indices[min_idx]
+
+
+def other_indices(mentions, toks):
+    """
+    Get indices of toks where toks[i].start == mention.start
+    """
+    indices = []
+    for i, tok in enumerate(toks):
+        for m in mentions:
+            if m['start'] <= tok['start'] and tok['end'] <= m['end']:
+                indices.append(i)
+                break
+    return indices
+
+
+def arg_indices(concept, mentions, toks):
+    """
+    Get indices of toks where toks[i].start == mention.start
+    """
+    indices = []
+    for i, tok in enumerate(toks):
+        for m in mentions:
+            if 'start' not in m:
+                logging.warning('%s', m)
+            if m['id'] == concept and m['start'] <= tok['start'] and tok['end'] <= m['end']:
+                indices.append(i)
+                break
+    return indices
 
 
 if __name__ == '__main__':
     argv = parse_args(__doc__)
-    if argv['--asyn']:
-        asyn_process(argv)
-    else:
-        syn_process(argv)
+    # if argv['--asyn']:
+    #     cmd = 'python deeprel/create_features.py'
+    #     split_apply_combine(argv['--input'], argv['--output'], cmd, number_of_lines=1000)
+    # else:
+    precess_jsonl(argv['--input'], argv['--output'], create_features, verbose=argv['--verbose'] > 0)

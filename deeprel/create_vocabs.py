@@ -1,22 +1,21 @@
 """
 Usage: 
-    create_vocabs.py [options] --output=<directory> --all=<directory> INPUT_FILE...
+    create_vocabs.py [options] --output=<directory> <input>...
 
 Options:
     --verbose
-    --output=<directory>  Output file
+    --output=<directory>  Output directory
     --word2vec=<file>     word2vec file
     --embeddings          embeddings [default: False]
-    --all=<directory>
 """
 
 import json
 import logging
 import os
-from pathlib import Path
 
-from cli_utils import parse_args
-from deeprel import utils
+import tqdm
+
+from utils import parse_args
 from deeprel.model import re_vocabulary
 from deeprel.preprocessor import embedding
 
@@ -78,18 +77,19 @@ class VocabsCreater(object):
 
 if __name__ == '__main__':
     argv = parse_args(__doc__)
-    vc = VocabsCreater(os.path.join(argv['--output']))
+    vc = VocabsCreater(argv['--output'])
 
-    json_dir = Path(argv['--all'])
-    for obj in utils.json_iterator(argv['INPUT_FILE']):
-        docid = obj['id']
-        source = json_dir / (docid + '.json')
-        if not source.exists():
-            logging.warning('Cannot find file %s', source)
-        else:
-            with open(source) as fp:
-                obj = json.load(fp)
-                vc.add(obj)
+    for source in argv['<input>']:
+        with open(source) as fin:
+            if argv['--verbose']:
+                fin = tqdm.tqdm(fin)
+            for i, line in enumerate(fin):
+                try:
+                    obj = json.loads(line)
+                except:
+                    logging.error('Line %s returns errors', i)
+                else:
+                    vc.add(obj)
     vc.save_vocab()
     if argv['--embeddings']:
         if '--word2vec' in argv:

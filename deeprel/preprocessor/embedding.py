@@ -1,8 +1,11 @@
 import logging
 import time
+from pathlib import Path
 
 import numpy as np
 from gensim.models import KeyedVectors
+from numpy.compat import basestring
+
 from deeprel.vocabulary import Vocabulary
 
 POSITION_MATRIX = np.array([
@@ -28,27 +31,85 @@ POSITION_MATRIX = np.array([
 ])
 
 
-def get_word_embeddings(src, vocab, dst):
+WORD2VEC = 'word2vec'
+WORD2VEC_BIN = 'word2vec_bin'
+FASTTEXT_BIN = 'fasttext_bin'
+
+
+class WordEmbeddingModel(object):
+    @classmethod
+    def load(cls, model_type: str, pathname):
+        if isinstance(pathname, basestring):
+            pathname = Path(pathname)
+
+        print('Load', pathname)
+        if model_type == 'word2vec':
+            model = KeyedVectors.load_word2vec_format(str(pathname), binary=True)
+            return WordEmbeddingModel(WORD2VEC_BIN, model, pathname)
+        elif model_type == 'fasttext':
+            if pathname.suffix == '.vec':
+                model = KeyedVectors.load_word2vec_format(str(pathname), binary=False)
+                return WordEmbeddingModel(WORD2VEC, model, pathname)
+            elif pathname.suffix == '' or pathname.suffix == '.vecbin':
+                model = KeyedVectors.load_word2vec_format(str(pathname), binary=True)
+                return WordEmbeddingModel(WORD2VEC_BIN, model, pathname)
+            elif pathname.suffix == '.bin':
+                import fastText
+                model = fastText.load_model(str(pathname))
+                return WordEmbeddingModel(FASTTEXT_BIN, model, pathname)
+            else:
+                raise KeyError
+        else:
+            raise KeyError
+
+    def __init__(self, model_type, model, pathname):
+        self.model_type = model_type
+        self.model = model
+        self.pathname = pathname
+
+    def get_word_vector(self, word: str):
+        if self.model_type in [WORD2VEC, WORD2VEC_BIN]:
+            return self.model[word]
+        elif self.model_type == FASTTEXT_BIN:
+            return self.model.get_word_vector(word)
+        else:
+            raise KeyError
+
+    @property
+    def vector_size(self):
+        if self.model_type in [WORD2VEC, WORD2VEC_BIN]:
+            return self.model.vector_size
+        elif self.model_type == FASTTEXT_BIN:
+            return 200
+        else:
+            raise KeyError
+
+
+
+def get_word_embeddings(model_pathname, vocab, dst):
     """
     Create np word2vec matrix based on vocabs
     """
     start = time.time()
-    word_vectors = KeyedVectors.load_word2vec_format(src, binary=True)
+    index = model_pathname.find(':')
+    word_vectors = WordEmbeddingModel.load(model_pathname[:index], model_pathname[index+1:])
+    # word_vectors = KeyedVectors.load_word2vec_format(model_pathname, binary=True)
     logging.info("took {:.2f} seconds".format(time.time() - start))
     logging.info("vector size: %s", word_vectors.vector_size)
-    logging.info("vocab  size: %s", len(word_vectors.vocab))
+    # logging.info("vocab  size: %s", len(word_vectors.vocab))
 
     matrix = np.zeros((len(vocab), word_vectors.vector_size), dtype=np.float32)
     # matrix = np.asarray(
     #     np.random.normal(0, 0.9, (len(vocab), word_vectors.vector_size)), dtype=np.float32)
     for idx in range(len(vocab)):
         token = vocab.reverse(idx)
-        if token in word_vectors:
-            matrix[idx] = word_vectors[token]
-        elif token.lower() in word_vectors:
-            matrix[idx] = word_vectors[token.lower()]
-        else:
-            logging.warning('Cannot find %s in word2vec', token)
+        try:
+            matrix[idx] = word_vectors.get_word_vector(token)
+        except:
+            try:
+                matrix[idx] = word_vectors.get_word_vector(token.lower())
+            except:
+                logging.warning('Cannot find %s in word2vec', token)
 
     logging.info('word embedding matrix shape: %s', matrix.shape)
     np.savez(dst, embeddings=matrix)

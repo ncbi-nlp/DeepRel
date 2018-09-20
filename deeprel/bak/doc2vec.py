@@ -22,13 +22,13 @@ import gensim
 import numpy as np
 import tqdm
 
-from cli_utils import parse_args
+from utils import parse_args
 from deeprel import utils
 
 
-def read_corpus(jsondir: Path, filename: Path):
+def read_corpus(filename: Path):
     ex_index = 0
-    for i, (obj, ex) in enumerate(utils.example_iterator([filename], jsondir)):
+    for i, (obj, ex) in enumerate(utils.example_iterator2(filename)):
         words = []
         for tok in ex['toks']:
             if tok['type'] == 'O':
@@ -39,10 +39,10 @@ def read_corpus(jsondir: Path, filename: Path):
         ex_index += 1
 
 
-def fit(model_file: Path, jsondir: Path, train_files: List, embedding_size: int):
+def fit(model_file: Path, train_files: List, embedding_size: int):
     corpus = []
     for source in train_files:
-        corpus += list(read_corpus(jsondir, Path(source)))
+        corpus += list(read_corpus(Path(source)))
     logging.debug('Read %s documents for training', len(corpus))
     model = gensim.models.doc2vec.Doc2Vec(vector_size=embedding_size, min_count=1, epochs=55, workers=10)
     model.build_vocab(corpus)
@@ -50,9 +50,9 @@ def fit(model_file: Path, jsondir: Path, train_files: List, embedding_size: int)
     model.save(str(model_file))
 
 
-def transform(model_file: Path, jsondir: Path, src: Path, dst: PathLike):
+def transform(model_file: Path, src: Path, dst: PathLike):
     model = gensim.models.doc2vec.Doc2Vec.load(str(model_file))
-    test_corpus = list(read_corpus(jsondir, src))
+    test_corpus = list(read_corpus(src))
     logging.debug('Read %s documents for test', len(test_corpus))
 
     xs = []
@@ -78,14 +78,12 @@ if __name__ == '__main__':
     argv = parse_args(__doc__)
 
     model = Path(argv['--model'])
-    all = Path(argv['--all'])
-    assert all.exists(), '%s does not exist' % all
 
     if argv['fit']:
         if not argv['--skip'] or not model.exists():
-            fit(model, all, argv['<input>'], int(argv['--size']))
+            fit(model, argv['<input>'], int(argv['--size']))
     elif argv['transform']:
         assert model.exists(), '%s does not exist' % model
         output = Path(argv['--output'])
         if not argv['--skip'] or not output.exists():
-            transform(model, all, Path(argv['INPUT_FILE']), output)
+            transform(model, Path(argv['INPUT_FILE']), output)

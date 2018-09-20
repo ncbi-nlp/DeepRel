@@ -6,6 +6,8 @@ import logging
 import StanfordDependencies
 import bioc
 
+import utils
+
 
 class Ptb2Dep(object):
     """
@@ -63,48 +65,71 @@ class Ptb2Dep(object):
             logging.exception('Cannot convert %s', sentence)
             return
 
-    def convert_c(self, collection):
-        """
-        Convert ptb trees in BioC collection
-        """
-        logger = logging.getLogger(__name__)
-        for document in collection.documents:
-            logger.debug('Processing document: %s', document.id)
-            for passage in document.passages:
-                for sentence in passage.sentences:
-                    try:
-                        self.convert_s(sentence)
-                    except:
-                        logger.exception("Cannot process sentence %d in %s",
-                                         sentence.offset, document.id)
+    def add_dependency(self, obj):
+        # create bioc sentence
+        sentence = bioc.BioCSentence()
+        sentence.offset = 0
+        sentence.text = obj['text']
+        annotation = bioc.BioCAnnotation()
+        annotation.infons['parse tree'] = obj['parse tree']
+        sentence.add_annotation(annotation)
 
-    def convert_f(self, src, dst):
-        """
-        Convert from BioC src file to BioC dst file
-        
-        Args:
-            src(str): source file name in BioC format
-            dst(str): target file name in BioC format
-        """
-        logger = logging.getLogger(__name__)
-        logger.info("Processing %s", src)
+        self.convert_s(sentence)
 
-        try:
-            with bioc.iterparse(src) as parser:
-                with bioc.iterwrite(dst, parser.get_collection_info()) as writer:
-                    for document in parser:
-                        logger.debug('Processing document: %s', document.id)
-                        for passage in document.passages:
-                            for sentence in passage.sentences:
-                                try:
-                                    self.convert_s(sentence)
-                                except:
-                                    logger.exception("Cannot process sentence %d in %s",
-                                                     sentence.offset, document.id)
-                        writer.writedocument(document)
-        except Exception:
-            logger.exception("Cannot process %s", src)
-            return
+        m = {}
+        for i, tok in enumerate(obj['toks']):
+            tok['id'] = i
+            # find bioc annotation
+            found = False
+            for ann in sentence.annotations:
+                loc = ann.total_span
+                if utils.intersect((tok['start'], tok['end']),
+                                   (loc.offset, loc.offset + loc.length)):
+                    if ann.id in m:
+                        logging.debug('Duplicated id mapping: %s', ann.id)
+                    m[ann.id] = i
+                    if 'ROOT' in ann.infons:
+                        tok['ROOT'] = True
+                    found = True
+                    break
+            if not found:
+                logging.debug('Cannot find %s in \n%s', tok, obj['id'])
+
+        for rel in sentence.relations:
+            node0 = rel.nodes[0]
+            node1 = rel.nodes[1]
+            if node0.refid in m and node1.refid in m:
+                if node0.role == 'governor':
+                    gov = m[node0.refid]
+                    dep = m[node1.refid]
+                else:
+                    gov = m[node1.refid]
+                    dep = m[node0.refid]
+                if gov == dep:
+                    logging.debug('Discard self loop')
+                    continue
+                tok = obj['toks'][dep]
+                if 'governor' in tok:
+                    if tok['governor'] == gov:
+                        pass
+                    if 'extra' in rel.infons:
+                        pass
+                    else:
+                        logging.debug('%s: Two heads: %s', obj['id'], str(rel))
+                else:
+                    tok['governor'] = gov
+                    tok['dependency'] = rel.infons['dependency']
+            else:
+                ann0 = None
+                ann1 = None
+                for annotation in sentence.annotations:
+                    if annotation.id == node0.refid:
+                        ann0 = annotation
+                    if annotation.id == node1.refid:
+                        ann1 = annotation
+                logging.debug('Cannot find %s or %s in sentence: %s', node0, node1, obj['id'])
+                logging.debug('%s', ann0)
+                logging.debug('%s', ann1)
 
 
 def adapt_value(value):
@@ -131,7 +156,6 @@ def convert_dg(dependency_graph, text, offset, ann_index=0, rel_index=0):
     """
     Convert dependency graph to annotations and relations
     """
-    logger = logging.getLogger(__name__)
     annotations = []
     relations = []
     annotation_id_map = {}
@@ -145,8 +169,8 @@ def convert_dg(dependency_graph, text, offset, ann_index=0, rel_index=0):
             node_form = adapt_value(node.form)
             index = text.find(node_form, start)
             if index == -1:
-                logger.debug('Cannot convert parse tree to dependency graph at %d\n%d\n%s',
-                             start, offset, str(dependency_graph))
+                logging.debug('Cannot convert parse tree to dependency graph at %d\n%d\n%s',
+                              start, offset, str(dependency_graph))
                 continue
 
         ann = bioc.BioCAnnotation()

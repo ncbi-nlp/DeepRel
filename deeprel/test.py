@@ -20,15 +20,14 @@ import pandas as pd
 import tensorflow as tf
 from sklearn import metrics
 
-from cli_utils import parse_args
+from sent2vec_sentence import read_s2v_sentence
+from utils import parse_args
 from deeprel import create_matrix
 from deeprel import train
 from deeprel import utils
-from deeprel.create_vocabs import VocabsCreater
 from deeprel.model.cnn_model import CnnModel
-from doc2vec import read_doc2vec
 from universal_sentence import read_universal_sentence
-from utils import pick_device
+from utils2 import pick_device
 
 
 def main():
@@ -45,8 +44,8 @@ def main():
 
     x_test, y_test = create_matrix.read_matrix(config['test_matrix'])
     x_sp_test, y_sp_test = create_matrix.read_matrix(config['test_sp_matrix'])
-    x_global_test = read_doc2vec(config['test_doc_matrix'])
-    # x_global_test = read_universal_sentence(config['test_uni_matrix'])
+    # x_global_test = read_doc2vec(config['test_doc_matrix'])
+    x_global_test = read_s2v_sentence(config['test_s2v_matrix'])
     logging.debug('x_global_test shape: {}'.format(x_global_test.shape))
 
     with tf.Graph().as_default():

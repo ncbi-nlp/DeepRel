@@ -1,6 +1,6 @@
 """
 Usage:
-    run_test.py [options] INI_FILE
+    run_test.py [options] CONFIG_FILE
     
 Options:
     --verbose
@@ -13,22 +13,18 @@ Options:
     -k           skip pre-parsed documents [default: False]
 """
 import configparser
+import json
 from subprocess import call
 
 import test_matrix
-from cli_utils import parse_args
+from utils import parse_args
 from run import Locations2
 
 
 def test_locations(section):
     l = Locations2(section)
-
-    if not l.jsondir.exists():
-        l.jsondir.mkdir(parents=True)
-
     assert l.dataset('test_set').exists()
     assert l.geniatagger.exists()
-    assert l.corenlp_jars.exists()
     assert l.word2vec.exists()
 
     return l
@@ -37,24 +33,25 @@ def test_locations(section):
 if __name__ == '__main__':
     arguments = parse_args(__doc__)
 
-    config = configparser.ConfigParser()
-    config.read(arguments['INI_FILE'])
+    with open(arguments['CONFIG_FILE']) as fp:
+        config = json.load(fp)
 
-    cnn_section = config['cnn']
-    l = test_locations(cnn_section)
+    l = test_locations(config)
 
     if arguments['-p']:
-        cmd_template = 'python deeprel/preparse.py --asyn --genia {} --corenlp {} --output {} {}'
-        if arguments['-k']:
-            cmd_template += ' -k'
-        cmd = cmd_template.format(l.geniatagger, l.corenlp_jars, l.jsondir, l.dataset('test_set'))
-        call(cmd.split(' '))
+        input = l.dataset('test_set')
+        output, error = l.preprocessed('test_set')
+        cmd = 'python deeprel/preparse.py --genia {} --input {} --output {} '.format(
+            l.geniatagger, input, output)
+        print(cmd)
+        call(cmd, shell=True)
     if arguments['-f']:
-        cmd_template = 'python deeprel/create_features.py --asyn --output {} {}'
-        if arguments['-k']:
-            cmd_template += ' -k'
-        cmd = cmd_template.format(l.jsondir, l.dataset('test_set'))
-        call(cmd.split(' '))
+        input = l.preprocessed('test_set')
+        output, error = l.features('test_set')
+        cmd = 'python deeprel/create_features.py --asyn --input {} --output {} --error {}'.format(
+            l.geniatagger, input, output, error)
+        print(cmd)
+        call(cmd, shell=True)
     if arguments['-m']:
         if not arguments['-k'] or not l.npz('test_set').exists():
             cmd = 'python deeprel/create_matrix.py matrix --vocab {} --all {} --output {} {}'.format(

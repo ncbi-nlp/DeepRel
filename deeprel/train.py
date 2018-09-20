@@ -1,6 +1,6 @@
 """
 Usage: 
-    train.py [options] INI_FILE
+    train.py [options] CONFIG_FILE
     
 Options:
     --log <str>     Log option. One of DEBUG, INFO, WARNING, ERROR, and CRITICAL. [default: INFO]
@@ -24,9 +24,9 @@ from deeprel import create_matrix
 from deeprel.create_vocabs import VocabsCreater
 from deeprel.model import re_vocabulary
 from deeprel.model.cnn_model import CnnModel
-from doc2vec import read_doc2vec
+from sent2vec_sentence import read_s2v_sentence
 from universal_sentence import read_universal_sentence
-from utils import pick_device
+from utils2 import pick_device
 
 
 def read_vocabs(config):
@@ -62,7 +62,7 @@ def prepare_config(config):
     Returns:
         dict: new config
     """
-    cnn_section = config['cnn']
+    cnn_section = config
     newconfig = OrderedDict({
         'model_dir': cnn_section['model_dir'],
         'cnn_config': os.path.join(cnn_section['model_dir'], 'cnn_model_config.json'),
@@ -74,18 +74,21 @@ def prepare_config(config):
         'train_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-sp.npz'),
         'train_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-doc.npz'),
         'train_uni_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-uni.npz'),
+        'train_s2v_matrix': os.path.join(cnn_section['model_dir'], cnn_section['training_set'] + '-s2v.npz'),
         #
         'dev_set': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.json'),
         'dev_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '.npz'),
         'dev_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-sp.npz'),
         'dev_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-doc.npz'),
         'dev_uni_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-uni.npz'),
+        'dev_s2v_matrix': os.path.join(cnn_section['model_dir'], cnn_section['dev_set'] + '-s2v.npz'),
         #
         'test_set': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.json'),
         'test_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '.npz'),
         'test_sp_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-sp.npz'),
         'test_doc_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-doc.npz'),
         'test_uni_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-uni.npz'),
+        'test_s2v_matrix': os.path.join(cnn_section['model_dir'], cnn_section['test_set'] + '-s2v.npz'),
     })
     return newconfig
 
@@ -98,9 +101,9 @@ def main(argv):
 
     pick_device()
 
-    logging.info('Read config: %s', arguments['INI_FILE'])
-    oldconfig = configparser.ConfigParser()
-    oldconfig.read(arguments['INI_FILE'])
+    logging.info('Read config: %s', arguments['CONFIG_FILE'])
+    with open(arguments['CONFIG_FILE']) as fp:
+        oldconfig = json.load(fp)
 
     newconfig = prepare_config(oldconfig)
     # read vocabs
@@ -120,8 +123,8 @@ def main(argv):
 
     # x_global_train = read_doc2vec(newconfig['train_doc_matrix'])
     # x_global_dev = read_doc2vec(newconfig['dev_doc_matrix'])
-    x_global_train = read_universal_sentence(newconfig['train_uni_matrix'])
-    x_global_dev = read_universal_sentence(newconfig['dev_uni_matrix'])
+    x_global_train = read_s2v_sentence(newconfig['train_s2v_matrix'])
+    x_global_dev = read_s2v_sentence(newconfig['dev_s2v_matrix'])
     logging.debug('x_global_train shape: {}'.format(x_global_train.shape))
     logging.debug('x_global_dev shape: {}'.format(x_global_dev.shape))
 
@@ -135,7 +138,7 @@ def main(argv):
 
             'num_filters': 400,
             'l2_reg_lambda': 0,
-            'num_epochs': 50,
+            'num_epochs': 100,
             'batch_size': 128,
             'training_keep_prob': 0.5,
             'validate_keep_prob': 1,

@@ -1,55 +1,43 @@
-from __future__ import print_function
-
-import collections
 import json
 import logging
 import os
-from pathlib import Path
-
-import psutil
+import random
+import string
 import tempfile
+from concurrent import futures
+from pathlib import Path
+from subprocess import call
 from typing import Tuple, List
 
-import GPUtil
+import docopt
+import ijson
 import numpy as np
 import pandas as pd
+import psutil
 import tqdm
-import ijson
 from numpy.compat import is_pathlib_path
 
 from deeprel import metrics
 
 
-def json_iterator(files, verbose=True, **kwargs):
-    for input_file in files:
-        logging.debug('Processing %s', input_file)
-        with open(input_file) as fp:
-            for obj in tqdm.tqdm(ijson.items(fp, 'item'), disable=not verbose, **kwargs):
-                yield obj
-
-
-def example_iterator(files: List, jsondir, verbose=True):
+def example_iterator2(*files, verbose=True):
     with tqdm.tqdm(unit=' examples', disable=not verbose) as pbar:
         for input_file in files:
             logging.debug('Processing %s', input_file)
             with open(input_file) as fp:
-                for obj in ijson.items(fp, 'item'):
-                    docid = obj['id']
-                    source = jsondir / '{}.json'.format(docid)
-                    with open(source) as fp:
-                        obj = json.load(fp)
+                for line in fp:
+                    obj = json.loads(line)
                     try:
                         for ex in obj['examples']:
                             yield obj, ex
                     except:
                         logging.exception('Cannot find examples: %s', obj['id'])
                         exit(1)
-                    pbar.set_postfix(file=source.stem)
                     pbar.update(len(obj['examples']))
 
 
 def to_path(s):
-    if isinstance(s, np.basestring):
+    if isinstance(s, np.compat.basestring):
         return Path(s)
     elif is_pathlib_path(s):
         return s
@@ -73,19 +61,11 @@ def intersect(range1: Tuple[int, int], range2: Tuple[int, int]) -> bool:
     return False
 
 
-def chunks(l, n):
+def random_text(k=3):
     """
-    Yield successive n-sized chunks from l.
-
-    Args:
-        l(list): a list
-        n(int): size of chunks
-
-    Return:
-        a chunk
+    Returns random text of length k
     """
-    for i in range(0, len(l), n):
-        yield l[i:i + n]
+    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=k))
 
 
 def create_tempfile(suffix: str) -> str:
@@ -156,19 +136,6 @@ def print_confusion(confusion, vocab):
         print(pd.DataFrame(confusion, columns=columns, index=columns))
 
 
-def pick_device():
-    try:
-        GPUtil.showUtilization()
-        # Get the first available GPU
-        DEVICE_ID_LIST = GPUtil.getFirstAvailable()
-        DEVICE_ID = DEVICE_ID_LIST[0]  # grab first element from list
-        # Set CUDA_VISIBLE_DEVICES to mask out all other GPUs than the first available device id
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(DEVICE_ID)
-        print('Device ID (unmasked): ' + str(DEVICE_ID))
-    except:
-        logging.exception('Cannot detect GPUs')
-
-
 def get_max_workers(max_workers=None):
     w = max(len(psutil.Process().cpu_affinity()) - 1, 1)
     if max_workers:
@@ -183,3 +150,60 @@ def get_max_workers(max_workers=None):
     #     while 2 * workers < max_cpu:
     #         workers *= 2
     #     return workers
+
+
+def submit_cmds(cmds, max_workers=4):
+    with futures.ProcessPoolExecutor(max_workers=max_workers) as exec:
+        future_map = {}
+        for cmd in cmds:
+            logging.info('Submit %s', cmd)
+            f = exec.submit(call, cmd, shell=True)
+            future_map[f] = cmd
+        for f in futures.as_completed(future_map):
+            cmd = future_map[f]
+            try:
+                r = f.result()
+            except:
+                logging.error('Failed: %s', cmd)
+            else:
+                logging.debug('Return: %s, %s', r, cmd)
+
+
+def precess_jsonl(source, dest, func, verbose=True):
+    dest = to_path(dest)
+    error = dest.parent / '{}-errorlines.jsonl'.format(dest.stem)
+    with open(source) as fin, open(dest, 'w') as fout, open(error, 'w') as ferr:
+        if verbose:
+            fin = tqdm.tqdm(fin, unit='lines')
+        for i, line in enumerate(fin):
+            line = line.strip()
+            try:
+                obj = json.loads(line)
+                obj = func(obj)
+                line = json.dumps(obj)
+            except:
+                logging.error('Line %s returns errors', i)
+                ferr.write(line + '\n')
+            else:
+                fout.write(line + '\n')
+
+
+def parse_args(doc, **kwargs):
+    argv = docopt.docopt(doc, **kwargs)
+
+    argv['--verbose'] = int(argv['--verbose'])
+    if argv['--verbose'] == 2:
+        logging.basicConfig(level=logging.DEBUG)
+    elif argv['--verbose'] == 1:
+        logging.basicConfig(level=logging.INFO)
+    elif argv['--verbose'] == 0:
+        logging.basicConfig(level=logging.WARNING)
+    else:
+        raise KeyError
+
+    s = ''
+    for k, v in argv.items():
+        s += '    {}: {}\n'.format(k, v)
+    logging.debug('Arguments:\n%s', s)
+    return argv
+
