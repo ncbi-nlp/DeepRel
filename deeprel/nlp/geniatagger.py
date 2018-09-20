@@ -1,25 +1,26 @@
-import collections
 import subprocess
+from typing import List, Tuple, Dict
 
-import os
+from utils import to_path
 
 
 class GeniaTagger(object):
     def __init__(self, genia_path):
         self._tagger = None
-        self.genia_path = genia_path
-        if not os.path.exists(genia_path):
-            raise ValueError(genia_path + ' does not exist', genia_path)
+        self.genia_path = to_path(genia_path)
+        if not self.genia_path.exists():
+            raise ValueError('{} does not exist'.format(self.genia_path))
 
     def __parse(self, text):
         if self._tagger is None:
             # lazy load
-            self._tagger = subprocess.Popen('./' + os.path.basename(self.genia_path),
-                                            cwd=os.path.dirname(self.genia_path),
-                                            stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+            cmd = './{}'.format(self.genia_path)
+            self._tagger = subprocess.Popen(cmd,
+                                            cwd=str(self.genia_path.parent),
+                                            stdin=subprocess.PIPE,
+                                            stdout=subprocess.PIPE,
                                             bufsize=1,
-                                            universal_newlines=True
-                                            )
+                                            universal_newlines=True)
         for line in text.split('\n'):
             line += '\n'
             self._tagger.stdin.write(line)
@@ -29,22 +30,22 @@ class GeniaTagger(object):
                     break
                 yield tuple(r.split('\t'))
 
-    def parse(self, s, offset=0):
+    def parse(self, s: str, offset: int = 0) -> List[Dict]:
         """Parses the sentence text using genia tagger.
 
         Args:
-            s (str): one sentence
-            offset(int, optional): the offset of the sentence in a document. Default is 0
+            s: one sentence
+            offset: the offset of the sentence in a document. Default is 0
 
         Returns:
-            list: a list of tokens containing word, base, part-of-speech,
+            a list of tokens containing word, base, part-of-speech,
                 chunk, named entity, start and end offset
         """
         toks = []
         char_index = 0
         for word, base, pos, chunk, ne in self.__parse(s):
             start = s.find(word, char_index)
-            toks.append(collections.OrderedDict({
+            toks.append({
                 "word": word,
                 'base': base,
                 'pos': pos,
@@ -52,7 +53,7 @@ class GeniaTagger(object):
                 'ne': ne,
                 'start': offset + start,
                 'end': offset + start + len(word)
-            }))
+            })
             if start != -1:
                 char_index = start + len(word)
         return toks

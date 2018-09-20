@@ -14,17 +14,20 @@ class Bllip:
                 'GENIA+PubMed', os.path.join(tempfile.gettempdir(), 'models'))
         self.model_dir = os.path.expanduser(model_dir)
 
-        logging.debug('loading model %s ...' % self.model_dir)
+        logging.debug('loading model %s ...', self.model_dir)
         self.rrp = RerankingParser.from_unified_model_dir(self.model_dir)
 
-    def parse(self, s):
+    def parse(self, s:str):
         """Parse the sentence text using Reranking parser.
 
         Args:
-            s(str): one sentence
+            s: one sentence
 
         Returns:
-            ScoredParse: parse tree, ScoredParse object in RerankingParser; None if failed
+            parse tree, ScoredParse object in RerankingParser
+
+        Raises:
+            ValueError
         """
         if not s:
             raise ValueError('Cannot parse empty sentence: {}'.format(s))

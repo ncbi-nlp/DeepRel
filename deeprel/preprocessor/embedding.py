@@ -85,7 +85,6 @@ class WordEmbeddingModel(object):
             raise KeyError
 
 
-
 def get_word_embeddings(model_pathname, vocab, dst):
     """
     Create np word2vec matrix based on vocabs

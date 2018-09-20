@@ -1,7 +1,5 @@
-"""
-Convert ptb trees to universal dependencies
-"""
 import logging
+from typing import Dict, Tuple, List
 
 import StanfordDependencies
 import bioc
@@ -19,12 +17,12 @@ class Ptb2Dep(object):
     CCprocessed = 'CCprocessed',
     collapsedTree = 'collapsedTree'
 
-    def __init__(self, representation='CCprocessed', universal=False):
+    def __init__(self, representation: str = 'CCprocessed', universal: bool = False):
         """
         Args:
-            representation(str): Currently supported representations are
+            representation: Currently supported representations are
                 'basic', 'collapsed', 'CCprocessed', and 'collapsedTree'
-            universal(bool): if True, use universal dependencies if they're available
+            universal: if True, use universal dependencies if they're available
         """
         try:
             import jpype
@@ -35,12 +33,12 @@ class Ptb2Dep(object):
         self.representation = representation
         self.universal = universal
 
-    def convert(self, parse_tree):
+    def convert(self, parse_tree: str):
         """
         Convert ptb trees in a BioC sentence
         
         Args:
-            parse_tree(str): parse tree in PTB format
+            parse_tree: parse tree in PTB format
             
         Examples:
             (ROOT (NP (JJ hello) (NN world) (. !)))
@@ -50,31 +48,25 @@ class Ptb2Dep(object):
                                                   universal=self.universal)
         return dependency_graph
 
-    def convert_s(self, sentence):
+    def convert_biocsentence(self, sentence: bioc.BioCSentence) -> None:
         """
         Convert ptb trees in a BioC sentence
         """
-        if len(sentence.annotations) <= 0:
-            return
         try:
-            dependency_graph = self.convert(sentence.annotations[0].infons['parse tree'])
+            dependency_graph = self.convert(sentence.infons['parse tree'])
             anns, rels = convert_dg(dependency_graph, sentence.text, sentence.offset)
             sentence.annotations = anns
             sentence.relations = rels
         except:
             logging.exception('Cannot convert %s', sentence)
-            return
 
-    def add_dependency(self, obj):
+    def add_dependency(self, obj: Dict) -> None:
         # create bioc sentence
         sentence = bioc.BioCSentence()
         sentence.offset = 0
         sentence.text = obj['text']
-        annotation = bioc.BioCAnnotation()
-        annotation.infons['parse tree'] = obj['parse tree']
-        sentence.add_annotation(annotation)
-
-        self.convert_s(sentence)
+        sentence.infons['parse tree'] = obj['parse tree']
+        self.convert_biocsentence(sentence)
 
         m = {}
         for i, tok in enumerate(obj['toks']):
@@ -132,7 +124,7 @@ class Ptb2Dep(object):
                 logging.debug('%s', ann1)
 
 
-def adapt_value(value):
+def adapt_value(value: str) -> str:
     """
     Adapt string in PTB
     """
@@ -152,7 +144,8 @@ def adapt_value(value):
     return value
 
 
-def convert_dg(dependency_graph, text, offset, ann_index=0, rel_index=0):
+def convert_dg(dependency_graph, text: str, offset: int, ann_index: int = 0, rel_index: int = 0) \
+        -> Tuple[List[bioc.BioCAnnotation], List[bioc.BioCRelation]]:
     """
     Convert dependency graph to annotations and relations
     """
