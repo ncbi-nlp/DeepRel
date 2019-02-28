@@ -32,7 +32,7 @@ pip install -r requirements.txt
 4. [Download](http://nlp.stanford.edu/software/corenlp.shtml#Download) Stanford CoreNLP and
 unpack the compressed file to `CORENLP_PATH`.
 
-5. [Download](http://bio.nlplab.org/) the `word2vec` model to `WORD2VEC_PATH`
+5. [Download](https://figshare.com/articles/Improving_Biomedical_Word_Embeddings_with_Subword_Information_and_MeSH_Ontology/6882647) the `word2vec` model to `WORD2VEC_PATH`
 
 ### Prepare the dataset
 
