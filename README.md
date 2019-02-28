@@ -135,5 +135,7 @@ Robert Leaman for the helpful discussion.
 
 ## Reference
 
+* Peng Y, Rios A, Kavuluru R, Lu Z. Extracting chemical-protein relations with 
+  ensembles of SVM and deep learning models. Database. 2018, 1-9. bay073.
 * Peng Y, Lu Z. Deep learning for extracting protein-protein interactions from
   biomedical literature. In Proceedings of BioNLP workshop. 2017.
